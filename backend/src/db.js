@@ -9,6 +9,10 @@ export const pool = new Pool({
   connectionString: process.env.DATABASE_URL
 });
 
+pool.on("error", (error) => {
+  console.error("PostgreSQL pool error:", error);
+});
+
 export async function initDatabase() {
   const createContactTable = `
     CREATE TABLE IF NOT EXISTS contact_requests (
@@ -93,6 +97,7 @@ export async function initDatabase() {
   await pool.query("ALTER TABLE products ADD COLUMN IF NOT EXISTS gallery_images JSONB DEFAULT '[]'::jsonb;");
   await pool.query("UPDATE products SET gallery_images = '[]'::jsonb WHERE gallery_images IS NULL;");
 }
+
 
 
 

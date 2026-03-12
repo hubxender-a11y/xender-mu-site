@@ -726,12 +726,13 @@ async function start() {
       console.log(`API running on http://localhost:${PORT}`);
     });
   } catch (error) {
-    console.error("Database init failed:", error.message);
+    console.error("Database init failed:", error);
     process.exit(1);
   }
 }
 
 start();
+
 
 
 
