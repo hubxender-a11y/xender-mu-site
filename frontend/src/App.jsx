@@ -1743,19 +1743,23 @@ function AdminPage() {
           <p className="admin-subtitle">Creer ou mettre a jour une actualite</p>
           <form className="contact-form" onSubmit={submitNews}>
             <input
+              id="news-title"
+              name="title"
               value={form.title}
               onChange={(e) => setForm((prev) => ({ ...prev, title: e.target.value }))}
               placeholder="Titre"
               required
             />
             <input
+              id="news-excerpt"
+              name="excerpt"
               value={form.excerpt}
               onChange={(e) => setForm((prev) => ({ ...prev, excerpt: e.target.value }))}
               placeholder="Resume court"
             />
             <label className="admin-upload">
               <span>Image de l'actualite</span>
-              <input type="file" accept="image/*" onChange={handleImageUpload} />
+              <input id="news-image" name="image" type="file" accept="image/*" onChange={handleImageUpload} />
             </label>
             {form.imageUrl ? (
               <div className="admin-image-preview">
@@ -1770,6 +1774,8 @@ function AdminPage() {
               </div>
             ) : null}
             <textarea
+              id="news-content"
+              name="content"
               rows={6}
               value={form.content}
               onChange={(e) => setForm((prev) => ({ ...prev, content: e.target.value }))}
@@ -1778,6 +1784,8 @@ function AdminPage() {
             />
             <label className="admin-check">
               <input
+                id="news-published"
+                name="isPublished"
                 type="checkbox"
                 checked={form.isPublished}
                 onChange={(e) => setForm((prev) => ({ ...prev, isPublished: e.target.checked }))}
@@ -1819,12 +1827,16 @@ function AdminPage() {
         <form className="contact-form" onSubmit={submitProduct}>
           <div className="grid cols-2">
             <input
+              id="product-slug"
+              name="slug"
               value={productForm.slug}
               onChange={(e) => setProductForm((prev) => ({ ...prev, slug: e.target.value }))}
               placeholder="Slug (ex: mu-sau)"
               required
             />
             <input
+              id="product-name"
+              name="name"
               value={productForm.name}
               onChange={(e) => setProductForm((prev) => ({ ...prev, name: e.target.value }))}
               placeholder="Nom"
@@ -1832,6 +1844,8 @@ function AdminPage() {
             />
           </div>
           <input
+            id="product-headline"
+            name="headline"
             value={productForm.headline}
             onChange={(e) => setProductForm((prev) => ({ ...prev, headline: e.target.value }))}
             placeholder="Titre complet"
@@ -1839,11 +1853,15 @@ function AdminPage() {
           />
           <div className="grid cols-2">
             <input
+              id="product-tag"
+              name="tag"
               value={productForm.tag}
               onChange={(e) => setProductForm((prev) => ({ ...prev, tag: e.target.value }))}
               placeholder="Tag (Populaire, Nouveau...)"
             />
             <input
+              id="product-category"
+              name="category"
               value={productForm.category}
               onChange={(e) => setProductForm((prev) => ({ ...prev, category: e.target.value }))}
               placeholder="Categorie"
@@ -1851,6 +1869,8 @@ function AdminPage() {
             />
           </div>
           <textarea
+            id="product-description"
+            name="description"
             rows={3}
             value={productForm.description}
             onChange={(e) => setProductForm((prev) => ({ ...prev, description: e.target.value }))}
@@ -1858,6 +1878,8 @@ function AdminPage() {
             required
           />
           <textarea
+            id="product-long-description"
+            name="longDescription"
             rows={4}
             value={productForm.longDescription}
             onChange={(e) => setProductForm((prev) => ({ ...prev, longDescription: e.target.value }))}
@@ -1865,24 +1887,30 @@ function AdminPage() {
           />
           <div className="grid cols-2">
             <input
+              id="product-stack"
+              name="stack"
               value={productForm.stack}
               onChange={(e) => setProductForm((prev) => ({ ...prev, stack: e.target.value }))}
               placeholder="Stack"
             />
             <input
+              id="product-delivery"
+              name="delivery"
               value={productForm.delivery}
               onChange={(e) => setProductForm((prev) => ({ ...prev, delivery: e.target.value }))}
               placeholder="Delai"
             />
           </div>
           <input
+            id="product-features"
+            name="featuresText"
             value={productForm.featuresText}
             onChange={(e) => setProductForm((prev) => ({ ...prev, featuresText: e.target.value }))}
             placeholder="Fonctionnalites (separees par des virgules)"
           />
           <label className="admin-upload">
             <span>Image miniature produit (Parcourir)</span>
-            <input type="file" accept="image/*" onChange={handleProductImageUpload} />
+            <input id="product-image" name="imageUrl" type="file" accept="image/*" onChange={handleProductImageUpload} />
           </label>
           {productForm.imageUrl ? (
             <div className="admin-image-preview">
@@ -1899,10 +1927,10 @@ function AdminPage() {
 
           <label className="admin-upload">
             <span>Galerie detail produit (glisser/deposer)</span>
-            <input type="file" accept="image/*" multiple onChange={handleProductGalleryUpload} />
+            <input id="product-gallery" name="galleryImages" type="file" accept="image/*" multiple onChange={handleProductGalleryUpload} />
             <div className="admin-gallery-config">
-              <label>Limite images</label>
-              <select value={productForm.galleryLimit} onChange={(e) => handleGalleryLimitChange(e.target.value)}>
+              <label htmlFor="product-gallery-limit">Limite images</label>
+              <select id="product-gallery-limit" name="galleryLimit" value={productForm.galleryLimit} onChange={(e) => handleGalleryLimitChange(e.target.value)}>
                 <option value={4}>4 images</option>
                 <option value={8}>8 images</option>
               </select>
@@ -1945,6 +1973,8 @@ function AdminPage() {
           ) : null}
           <div className="grid cols-3">
             <input
+              id="product-sort-order"
+              name="sortOrder"
               type="number"
               value={productForm.sortOrder}
               onChange={(e) => setProductForm((prev) => ({ ...prev, sortOrder: e.target.value }))}
@@ -1952,6 +1982,8 @@ function AdminPage() {
             />
             <label className="admin-check">
               <input
+                id="product-available"
+                name="isAvailable"
                 type="checkbox"
                 checked={productForm.isAvailable}
                 onChange={(e) => setProductForm((prev) => ({ ...prev, isAvailable: e.target.checked }))}
@@ -1960,6 +1992,8 @@ function AdminPage() {
             </label>
             <label className="admin-check">
               <input
+                id="product-published"
+                name="isPublished"
                 type="checkbox"
                 checked={productForm.isPublished}
                 onChange={(e) => setProductForm((prev) => ({ ...prev, isPublished: e.target.checked }))}
@@ -2003,12 +2037,16 @@ function AdminPage() {
         <form className="contact-form" onSubmit={submitStat}>
           <div className="grid cols-2">
             <input
+              id="stat-label"
+              name="label"
               value={statForm.label}
               onChange={(e) => setStatForm((prev) => ({ ...prev, label: e.target.value }))}
               placeholder="Label (ex: Projets livres)"
               required
             />
             <input
+              id="stat-value"
+              name="value"
               value={statForm.value}
               onChange={(e) => setStatForm((prev) => ({ ...prev, value: e.target.value }))}
               placeholder="Valeur (ex: 120+)"
@@ -2017,6 +2055,8 @@ function AdminPage() {
           </div>
           <div className="grid cols-2">
             <input
+              id="stat-sort-order"
+              name="sortOrder"
               type="number"
               value={statForm.sortOrder}
               onChange={(e) => setStatForm((prev) => ({ ...prev, sortOrder: e.target.value }))}
@@ -2024,6 +2064,8 @@ function AdminPage() {
             />
             <label className="admin-check">
               <input
+                id="stat-active"
+                name="isActive"
                 type="checkbox"
                 checked={statForm.isActive}
                 onChange={(e) => setStatForm((prev) => ({ ...prev, isActive: e.target.checked }))}
@@ -2057,18 +2099,24 @@ function AdminPage() {
         <form className="contact-form" onSubmit={submitTestimonial}>
           <div className="grid cols-2">
             <input
+              id="testimonial-name"
+              name="name"
               value={testimonialForm.name}
               onChange={(e) => setTestimonialForm((prev) => ({ ...prev, name: e.target.value }))}
               placeholder="Nom / entreprise"
               required
             />
             <input
+              id="testimonial-role"
+              name="role"
               value={testimonialForm.role}
               onChange={(e) => setTestimonialForm((prev) => ({ ...prev, role: e.target.value }))}
               placeholder="Role (optionnel)"
             />
           </div>
           <textarea
+            id="testimonial-quote"
+            name="quote"
             rows={4}
             value={testimonialForm.quote}
             onChange={(e) => setTestimonialForm((prev) => ({ ...prev, quote: e.target.value }))}
@@ -2077,6 +2125,8 @@ function AdminPage() {
           />
           <div className="grid cols-2">
             <input
+              id="testimonial-sort-order"
+              name="sortOrder"
               type="number"
               value={testimonialForm.sortOrder}
               onChange={(e) => setTestimonialForm((prev) => ({ ...prev, sortOrder: e.target.value }))}
@@ -2084,6 +2134,8 @@ function AdminPage() {
             />
             <label className="admin-check">
               <input
+                id="testimonial-active"
+                name="isActive"
                 type="checkbox"
                 checked={testimonialForm.isActive}
                 onChange={(e) => setTestimonialForm((prev) => ({ ...prev, isActive: e.target.checked }))}
