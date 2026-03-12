@@ -440,7 +440,10 @@ app.post("/api/admin/products", adminAuth, async (req, res) => {
     );
     return res.status(201).json({ product: result.rows[0] });
   } catch (error) {
-    console.error("POST /api/admin/products failed:", error.message);
+    console.error("POST /api/admin/products failed:", error);
+    if (error.code === "23505") {
+      return res.status(409).json({ error: "Ce slug existe deja. Choisis un slug unique." });
+    }
     return res.status(500).json({ error: "Erreur serveur lors de la creation du produit." });
   }
 });
@@ -517,7 +520,10 @@ app.put("/api/admin/products/:id", adminAuth, async (req, res) => {
 
     return res.json({ product: result.rows[0] });
   } catch (error) {
-    console.error("PUT /api/admin/products/:id failed:", error.message);
+    console.error("PUT /api/admin/products/:id failed:", error);
+    if (error.code === "23505") {
+      return res.status(409).json({ error: "Ce slug existe deja. Choisis un slug unique." });
+    }
     return res.status(500).json({ error: "Erreur serveur lors de la mise a jour du produit." });
   }
 });
