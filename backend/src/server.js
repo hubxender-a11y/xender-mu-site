@@ -40,7 +40,7 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
-app.use(express.json({ limit: "5mb" }));
+app.use(express.json({ limit: "25mb" }));
 app.use((_, res, next) => {
   res.setHeader("X-Content-Type-Options", "nosniff");
   res.setHeader("X-Frame-Options", "DENY");
@@ -722,6 +722,12 @@ app.delete("/api/admin/testimonials/:id", adminAuth, async (req, res) => {
 app.use((error, _, res, next) => {
   if (error?.message === "CORS_NOT_ALLOWED") {
     return res.status(403).json({ error: "Origine non autorisee par CORS." });
+  }
+  if (error?.type === "entity.too.large") {
+    return res.status(413).json({ error: "Donnees trop lourdes. Reduis la taille ou le nombre d'images." });
+  }
+  if (error instanceof SyntaxError && "body" in error) {
+    return res.status(400).json({ error: "JSON invalide dans la requete." });
   }
   return next(error);
 });

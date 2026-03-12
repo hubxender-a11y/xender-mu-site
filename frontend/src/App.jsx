@@ -1190,10 +1190,19 @@ function AdminPage() {
     };
 
     const response = await fetch(apiUrl(path), { ...options, headers });
-    const data = await response.json().catch(() => ({}));
+    const raw = await response.text();
+    let data = {};
+
+    if (raw) {
+      try {
+        data = JSON.parse(raw);
+      } catch {
+        data = { error: raw };
+      }
+    }
 
     if (!response.ok) {
-      throw new Error(data.error || "Erreur serveur admin.");
+      throw new Error(data.error || `Erreur admin (${response.status}).`);
     }
 
     return data;
