@@ -22,9 +22,9 @@ const heroSlides = [
     fallback: hero1
   },
   {
-    title: "MU-SAU - La gestion du cursus academique",
+    title: "X-MOMO - La gestion du cursus academique",
     text: "Concu pour optimiser votre gestion academique grace a des services et fonctionnalites innovantes ainsi qu'une fiabilite de pointe.",
-    cta: "Decouvrir MU-SAU",
+    cta: "Decouvrir X-MOMO",
     image: "/images/hero-2.jpg",
     fallback: hero2
   }
@@ -39,7 +39,7 @@ const devisSlides = [
   },
   {
     label: "devis",
-    title: "MU-SAU : La gestion du cursus académique",
+    title: "X-MOMO : La gestion du cursus académique",
     text: "Conçu pour optimiser votre gestion académique grâce à des services et fonctionnalités innovantes.",
     image: "/images/hero-2.jpg",
     fallback: hero2
@@ -103,15 +103,15 @@ const apiUrl = (path) => `${API_BASE_URL}${path}`;
 const fallbackProducts = [
   {
     slug: "rise",
-    name: "MU-SAU",
-    headline: "MU-SAU - Application de gestion Academique",
+    name:"X-MOMO",
+    headline: "X-MOMO - Application de gestion Academique",
     tag: "Populaire",
     category: "Education",
     is_available: true,
     description:
       "Concu pour optimiser votre gestion academique grace a des services et fonctionnalites innovantes ainsi qu'une fiabilite de pointe.",
     long_description:
-      "MU-SAU centralise inscriptions, planning, bulletins et suivi administratif dans une plateforme academique complete.",
+      "X-MOMO centralise inscriptions, planning, bulletins et suivi administratif dans une plateforme academique complete.",
     stack: "React, Node.js, PostgreSQL",
     delivery: "8 semaines",
     features: ["Gestion cursus", "Portail enseignant", "Rapports automatises", "Notifications"]
@@ -119,14 +119,14 @@ const fallbackProducts = [
   {
     slug: "rise-school",
     name: "MU-SAU SCHOOL",
-    headline: "MU-SAU SCHOOL - Gestion scolaire innovante",
+    headline: "X-MOMO SCHOOL - Gestion scolaire innovante",
     tag: "Nouveau",
     category: "Education",
     is_available: true,
     description:
       "Pour une gestion scolaire innovante et une implication etroite des parents dans l'education de leurs enfants.",
     long_description:
-      "MU-SAU SCHOOL renforce la communication parents-ecole, facilite le suivi pedagogique et digitalise les operations.",
+      "X-MOMO SCHOOL renforce la communication parents-ecole, facilite le suivi pedagogique et digitalise les operations.",
     stack: "React, Express, PostgreSQL",
     delivery: "10 semaines",
     features: ["Portail parents", "Suivi eleves", "Dashboard pedagogique", "Communication proactive"]
