@@ -550,40 +550,19 @@ function HeroCarousel() {
 
   const hero = heroSlides[heroIndex];
 
-
   return (
     <section className="hero-section" id="accueil">
       <div className="container hero-grid">
-        <div className="hero-content hero-content-premium">
-          <span className="pill premium-pill">Xender-MU Studio</span>
-          <div className="hero-editorial-meta">
-            <span>Strategie digitale</span>
-            <span>Design premium</span>
-            <span>Execution produit</span>
-          </div>
+        <div className="hero-content hero-content-premium hero-content-minimal">
+          <span className="pill premium-pill">Xender-MU</span>
+          <span className="hero-mono-line">Applications, plateformes et experiences digitales premium</span>
           <h1 className="hero-luxe-title">{hero.title}</h1>
           <p className="hero-luxe-copy">{hero.text}</p>
           <div className="hero-actions">
             <a className="btn btn-red" href="#contact">{hero.cta}</a>
             <a className="btn btn-ghost-light" href="#products">Voir nos solutions</a>
           </div>
-          <div className="hero-signature-panel">
-            <div className="hero-signature-copy">
-              <span className="hero-signature-kicker">Signature premium</span>
-              <strong>Une mise en forme claire, rouge, assumee et plus corporate pour mieux presenter Xender-MU.</strong>
-            </div>
-            <div className="hero-signature-stats">
-              <div>
-                <strong>Web & Mobile</strong>
-                <span>interfaces coherentes, lisibles et desirees</span>
-              </div>
-              <div>
-                <strong>Image de marque</strong>
-                <span>presentation plus serieuse des le premier contact</span>
-              </div>
-            </div>
-          </div>
-          <div className="hero-proof-row">
+          <div className="hero-proof-row hero-proof-row-minimal">
             <div className="hero-proof-item">
               <strong>Applications web</strong>
               <span>Conception sur mesure, structure claire et mise en ligne maitrisee</span>
@@ -597,7 +576,6 @@ function HeroCarousel() {
               <span>Suivi durable, ajustements continus et support apres lancement</span>
             </div>
           </div>
-
           <div className="dots">
             {heroSlides.map((_, idx) => (
               <button
@@ -611,7 +589,7 @@ function HeroCarousel() {
           </div>
         </div>
 
-        <div className="hero-image-wrap hero-image-stage">
+        <div className="hero-image-wrap hero-image-stage hero-image-stage-minimal">
           <img src={hero.image} onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = hero.fallback; }} alt={hero.title} className="hero-image" style={{ objectPosition: hero.imagePosition || "center center" }} loading="eager" decoding="async" />
           <div className="hero-floating-card hero-floating-card-main">
             <span>Experience premium</span>
@@ -626,6 +604,7 @@ function HeroCarousel() {
     </section>
   );
 }
+
 
 function BannerCarousel() {
   const [bannerIndex, setBannerIndex] = useState(0);
