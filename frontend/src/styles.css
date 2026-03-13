@@ -4158,3 +4158,265 @@ body.home-voda .hero-floating-card-side {
     min-height: 320px;
   }
 }
+/* ===== Vodafone premium responsive final pass ===== */
+body.home-voda .hero-section {
+  padding: 1.55rem 0 1.35rem;
+}
+
+body.home-voda .hero-content-premium {
+  padding: 1.7rem;
+  border-radius: 32px;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(230, 0, 40, 0.1), transparent 33%),
+    linear-gradient(180deg, rgba(255,255,255,0.98) 0%, rgba(249,244,244,0.96) 100%);
+}
+
+body.home-voda .premium-pill {
+  background: linear-gradient(90deg, rgba(230,0,40,0.08), rgba(230,0,40,0.02));
+  border-color: rgba(201, 23, 49, 0.18);
+  color: #b61231;
+}
+
+body.home-voda .hero-luxe-title {
+  max-width: 9.2ch;
+  color: #11182b;
+  font-size: clamp(2.85rem, 5.6vw, 5.15rem);
+  line-height: 0.92;
+  letter-spacing: -0.06em;
+}
+
+body.home-voda .hero-luxe-copy {
+  max-width: 56ch;
+  color: #5f6c83;
+  font-size: 1.02rem;
+  line-height: 1.75;
+}
+
+body.home-voda .hero-proof-row {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.7rem;
+  margin-top: 1.05rem;
+}
+
+body.home-voda .hero-proof-item {
+  min-height: 100%;
+  border-radius: 18px;
+  padding: 0.9rem 0.95rem;
+  background: linear-gradient(180deg, rgba(255,255,255,0.94), rgba(248,242,243,0.9));
+  border: 1px solid rgba(219, 224, 235, 0.98);
+  box-shadow: 0 12px 28px rgba(21, 30, 48, 0.05);
+}
+
+body.home-voda .hero-proof-item strong {
+  color: #a61231;
+  font-size: 0.88rem;
+  letter-spacing: -0.02em;
+}
+
+body.home-voda .hero-proof-item span {
+  color: #5e6c84;
+  font-size: 0.84rem;
+  line-height: 1.45;
+}
+
+body.home-voda .trust-strip-section {
+  padding: 0.35rem 0 1.55rem;
+}
+
+body.home-voda .trust-strip-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.95rem;
+  align-items: stretch;
+}
+
+body.home-voda .trust-chip {
+  position: relative;
+  overflow: hidden;
+  min-height: 100%;
+  padding: 1.2rem 1.15rem 1.05rem;
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(230, 0, 40, 0.09), transparent 34%),
+    linear-gradient(180deg, rgba(255,255,255,0.98) 0%, rgba(248,242,243,0.96) 100%);
+  border: 1px solid rgba(220, 225, 236, 0.98);
+  box-shadow: 0 16px 34px rgba(17, 27, 45, 0.07);
+}
+
+body.home-voda .trust-chip::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 4px;
+  background: linear-gradient(180deg, #e60028 0%, #ff6f86 100%);
+}
+
+body.home-voda .trust-chip strong {
+  display: block;
+  margin-bottom: 0.42rem;
+  color: #a71130;
+  font-size: clamp(1.55rem, 2vw, 1.95rem);
+  line-height: 1;
+  letter-spacing: -0.05em;
+}
+
+body.home-voda .trust-chip h3 {
+  margin: 0 0 0.35rem;
+  color: #15223b;
+  font-size: 1rem;
+  line-height: 1.22;
+  letter-spacing: -0.03em;
+}
+
+body.home-voda .trust-chip p {
+  margin: 0;
+  max-width: 30ch;
+  color: #65748d;
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+body.services-voda .trust-strip-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.95rem;
+}
+
+body.services-voda .trust-chip {
+  position: relative;
+  min-height: 100%;
+  padding: 1.15rem 1.1rem 1rem;
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(230, 0, 40, 0.09), transparent 34%),
+    linear-gradient(180deg, rgba(255,255,255,0.98) 0%, rgba(248,242,243,0.96) 100%);
+  border: 1px solid rgba(220, 225, 236, 0.98);
+  box-shadow: 0 16px 34px rgba(17, 27, 45, 0.07);
+}
+
+body.services-voda .trust-chip::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 4px;
+  background: linear-gradient(180deg, #e60028 0%, #ff6f86 100%);
+}
+
+body.services-voda .trust-chip strong {
+  color: #a71130;
+  font-size: clamp(1.55rem, 2vw, 1.95rem);
+  line-height: 1;
+}
+
+body.services-voda .trust-chip h3 {
+  margin: 0.42rem 0 0.35rem;
+  color: #15223b;
+  font-size: 1rem;
+}
+
+body.services-voda .trust-chip p {
+  color: #65748d;
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+@media (max-width: 1100px) {
+  body.home-voda .trust-strip-grid,
+  body.services-voda .trust-strip-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  body.home-voda .trust-chip:last-child,
+  body.services-voda .trust-chip:last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 980px) {
+  body.home-voda .hero-grid {
+    gap: 1rem;
+  }
+
+  body.home-voda .hero-content-premium {
+    padding: 1.35rem;
+  }
+
+  body.home-voda .hero-luxe-title {
+    max-width: none;
+    font-size: clamp(2.3rem, 8vw, 3.8rem);
+  }
+
+  body.home-voda .hero-proof-row {
+    grid-template-columns: 1fr;
+  }
+
+  body.home-voda .hero-proof-item {
+    padding: 0.85rem 0.9rem;
+  }
+}
+
+@media (max-width: 760px) {
+  body.home-voda .hero-section {
+    padding: 1.2rem 0 1rem;
+  }
+
+  body.home-voda .hero-content-premium,
+  body.home-voda .hero-image-wrap,
+  body.services-voda .premium-services-hero {
+    border-radius: 24px;
+  }
+
+  body.home-voda .hero-content-premium {
+    padding: 1.1rem;
+  }
+
+  body.home-voda .hero-luxe-title {
+    font-size: clamp(2rem, 11vw, 3rem);
+    line-height: 0.96;
+    margin-bottom: 0.7rem;
+  }
+
+  body.home-voda .hero-luxe-copy {
+    font-size: 0.96rem;
+    line-height: 1.68;
+  }
+
+  body.home-voda .hero-actions {
+    gap: 0.65rem;
+  }
+
+  body.home-voda .hero-actions .btn,
+  body.home-voda .conversion-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  body.home-voda .trust-strip-grid,
+  body.services-voda .trust-strip-grid {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+
+  body.home-voda .trust-chip,
+  body.services-voda .trust-chip,
+  body.home-voda .trust-chip:last-child,
+  body.services-voda .trust-chip:last-child {
+    grid-column: auto;
+    padding: 1rem 1rem 0.95rem;
+    border-radius: 20px;
+  }
+
+  body.home-voda .trust-chip strong,
+  body.services-voda .trust-chip strong {
+    font-size: 1.45rem;
+  }
+
+  body.home-voda .trust-chip h3,
+  body.services-voda .trust-chip h3 {
+    font-size: 0.98rem;
+  }
+
+  body.home-voda .trust-chip p,
+  body.services-voda .trust-chip p {
+    max-width: none;
+    font-size: 0.88rem;
+  }
+}

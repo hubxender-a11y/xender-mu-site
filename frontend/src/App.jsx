@@ -529,7 +529,7 @@ function BannerCarousel() {
         <div className="banner-layer">
           <span className="banner-kicker">Xender-MU Studio</span>
           <h3>{banner.title}</h3>
-          <p>Des interfaces plus credibles, une execution plus rapide et un accompagnement orient? impact.</p>
+          <p>Des interfaces plus credibles, une execution plus rapide et un accompagnement oriente impact.</p>
           <div className="dots">
             {bannerSlides.map((_, idx) => (
               <button
@@ -2794,6 +2794,7 @@ export default function App() {
     </Routes>
   );
 }
+
 
 
 
