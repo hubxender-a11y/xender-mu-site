@@ -123,6 +123,89 @@ const services = [
 const API_BASE_URL = (import.meta.env.VITE_API_BASE_URL || "").trim().replace(/\/$/, "");
 const apiUrl = (path) => `${API_BASE_URL}${path}`;
 
+const serviceDeliverables = [
+  {
+    title: "Cadrage et architecture",
+    text: "Nous transformons l'idee initiale en feuille de route claire, avec priorites, perimetre et logique de livraison.",
+    items: ["atelier de cadrage", "parcours utilisateur", "architecture fonctionnelle", "planning priorise"]
+  },
+  {
+    title: "Design et experience",
+    text: "Nous concevons des interfaces premium, rassurantes et adaptees a l'image que votre structure veut projeter.",
+    items: ["maquettes UI", "design system", "responsive complet", "prototype presentable"]
+  },
+  {
+    title: "Build et mise en ligne",
+    text: "Nous developpons, testons et deployons votre solution dans une logique de qualite et de stabilite.",
+    items: ["developpement web/mobile", "tests et corrections", "deploiement cloud", "support post-lancement"]
+  }
+];
+
+const serviceSectors = [
+  "PME et structures commerciales",
+  "Ecoles, universites et centres de formation",
+  "ONG, institutions et organisations",
+  "Startups et equipes produit en croissance"
+];
+
+const serviceCommitments = [
+  {
+    title: "Vision claire",
+    text: "Un projet bien presente, bien cadre et facile a piloter des la premiere semaine."
+  },
+  {
+    title: "Livrables concrets",
+    text: "Des maquettes, une feuille de route, un budget lisible et une execution qui se voit."
+  },
+  {
+    title: "Relation durable",
+    text: "Un accompagnement apres lancement pour stabiliser, corriger et faire evoluer la plateforme."
+  }
+];
+
+const servicesFaq = [
+  {
+    q: "Travaillez-vous uniquement sur des projets complets ?",
+    a: "Non. Nous pouvons intervenir sur une nouvelle plateforme, une refonte UI/UX, un module specifique ou une remise a niveau d'un produit existant."
+  },
+  {
+    q: "Pouvez-vous accompagner apres la livraison ?",
+    a: "Oui. Nous proposons une phase de suivi pour la stabilisation, la maintenance et les evolutions prioritaires."
+  },
+  {
+    q: "Combien de temps faut-il pour demarrer ?",
+    a: "Apres qualification du besoin, nous pouvons cadrer rapidement et lancer la production selon la priorite du projet."
+  }
+];
+const commercialHighlights = [
+  {
+    title: "Positionnement plus credible",
+    text: "Nous aidons votre structure a mieux se presenter avec des plateformes qui inspirent davantage confiance a vos clients, partenaires et equipes."
+  },
+  {
+    title: "Execution plus lisible",
+    text: "Vous obtenez une trajectoire claire: priorites, delais, livrables et arbitrages utiles des le depart."
+  },
+  {
+    title: "Mise en ligne plus solide",
+    text: "Nous ne nous arretons pas au design. Nous accompagnons la mise en ligne, la stabilisation et les premieres evolutions."
+  }
+];
+
+const homeOfferPillars = [
+  {
+    title: "Ce que voit votre client",
+    text: "Une interface plus nette, plus rassurante et plus coherente avec votre image de marque."
+  },
+  {
+    title: "Ce que gagne votre equipe",
+    text: "Des outils plus simples a piloter, des flux mieux organises et des operations moins disperses."
+  },
+  {
+    title: "Ce que cela change pour votre business",
+    text: "Une execution plus rapide, une meilleure lisibilite et une base digitale plus defendable face a des partenaires ou investisseurs."
+  }
+];
 const fallbackProducts = [
   {
     slug: "rise",
@@ -564,6 +647,48 @@ function TrustStrip() {
   );
 }
 
+function CommercialHighlightsSection() {
+
+  return (
+    <section className="section compact commercial-highlights-section">
+      <div className="container">
+        <h2>Une approche plus commerciale, plus claire et plus defendable</h2>
+        <p className="sub">Nous concevons des experiences digitales qui aident autant a vendre qu'a executer. C'est cette double lecture qui donne plus de valeur a chaque projet.</p>
+        <div className="grid cols-3 commercial-highlights-grid">
+          {commercialHighlights.map((item) => (
+            <article key={item.title} className="info-card commercial-highlight-card">
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function HomeOfferPillarsSection() {
+
+  return (
+    <section className="section compact offer-pillars-section">
+      <div className="container offer-pillars-shell">
+        <div className="offer-pillars-copy">
+          <span className="pill">Valeur concrete</span>
+          <h2>Pourquoi une plateforme bien pensee change vraiment votre trajectoire</h2>
+          <p className="sub">Nous intervenons au croisement de l'image, du produit et de l'execution pour que la solution soit belle, utile et viable dans le temps.</p>
+        </div>
+        <div className="grid cols-3 offer-pillars-grid">
+          {homeOfferPillars.map((item) => (
+            <article key={item.title} className="offer-pillar-card">
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
 function SegmentSection() {
 
   return (
@@ -1068,6 +1193,38 @@ function HomePage() {
         <BannerCarousel />
         <KeyStatsSection items={statsItems} />
         <ServicesSection showAllLink />
+        <section className="section compact services-commitments">
+          <div className="container">
+            <h2>Ce qui fait la difference Xender-MU</h2>
+            <p className="sub">Une posture agence claire: mieux cadrer, mieux presenter et mieux livrer.</p>
+            <div className="grid cols-3 services-commitment-grid">
+              {serviceCommitments.map((item) => (
+                <article key={item.title} className="info-card service-commitment-card">
+                  <h3>{item.title}</h3>
+                  <p>{item.text}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="section compact services-faq">
+          <div className="container">
+            <h2>Questions frequentes sur nos services</h2>
+            <div className="faq-list services-faq-list">
+              {servicesFaq.map((item) => (
+                <article key={item.q} className="faq-item service-faq-item open">
+                  <div className="service-faq-head">
+                    <span>{item.q}</span>
+                    <strong>+</strong>
+                  </div>
+                  <p>{item.a}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
         <SegmentSection />
 
         <section className="section compact">
@@ -1186,6 +1343,41 @@ function ServicesPage() {
           </div>
         </section>
 
+        <section className="section services-deliverables">
+          <div className="container">
+            <h2>Ce que vous recevez concretement</h2>
+            <p className="sub">Nous ne vendons pas seulement du developpement. Nous livrons un cadre clair, un design presentable et une execution qui peut etre defendue face a un comite, un partenaire ou un client final.</p>
+            <div className="grid cols-3 services-deliverables-grid">
+              {serviceDeliverables.map((item) => (
+                <article key={item.title} className="service-deliverable-card">
+                  <h3>{item.title}</h3>
+                  <p>{item.text}</p>
+                  <ul className="service-deliverable-list">
+                    {item.items.map((entry) => (
+                      <li key={entry}>{entry}</li>
+                    ))}
+                  </ul>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="section compact services-sectors">
+          <div className="container">
+            <h2>Secteurs que nous accompagnons</h2>
+            <p className="sub">Notre positionnement est pense pour des structures qui veulent une solution utile, presentable et exploitable rapidement.</p>
+            <div className="grid cols-2 services-sectors-grid">
+              {serviceSectors.map((sector) => (
+                <article key={sector} className="service-sector-card">
+                  <h3>{sector}</h3>
+                  <p>Une approche adaptee a vos contraintes de gouvernance, d'image et de mise en oeuvre.</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
         <section className="section compact services-process">
           <div className="container">
             <h2>Comment nous travaillons</h2>
@@ -1202,6 +1394,38 @@ function ServicesPage() {
                 <h3>3. Livraison</h3>
                 <p>Nous livrons avec exigence, suivi et accompagnement apres mise en ligne.</p>
               </article>
+            </div>
+          </div>
+        </section>
+
+        <section className="section compact services-commitments">
+          <div className="container">
+            <h2>Ce qui fait la difference Xender-MU</h2>
+            <p className="sub">Une posture agence claire: mieux cadrer, mieux presenter et mieux livrer.</p>
+            <div className="grid cols-3 services-commitment-grid">
+              {serviceCommitments.map((item) => (
+                <article key={item.title} className="info-card service-commitment-card">
+                  <h3>{item.title}</h3>
+                  <p>{item.text}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="section compact services-faq">
+          <div className="container">
+            <h2>Questions frequentes sur nos services</h2>
+            <div className="faq-list services-faq-list">
+              {servicesFaq.map((item) => (
+                <article key={item.q} className="faq-item service-faq-item open">
+                  <div className="service-faq-head">
+                    <span>{item.q}</span>
+                    <strong>+</strong>
+                  </div>
+                  <p>{item.a}</p>
+                </article>
+              ))}
             </div>
           </div>
         </section>
@@ -2794,6 +3018,14 @@ export default function App() {
     </Routes>
   );
 }
+
+
+
+
+
+
+
+
 
 
 
