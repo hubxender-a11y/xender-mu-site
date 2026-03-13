@@ -1,0 +1,33 @@
+﻿Scenario,Poste,Budget_Bas_USD,Budget_Haut_USD,Commentaire
+Minimum viable,Branding et supports,200,500,Identite visuelle minimale et documents de presentation
+Minimum viable,Domaine et outils pro,50,150,Nom de domaine et outils numeriques de base
+Minimum viable,Hebergement et cloud,20,80,Couts mensuels de fonctionnement technique
+Minimum viable,Developpement et ameliorations,500,1500,Corrections, petits modules et support initial
+Minimum viable,Commercial et prospection,300,800,Deplacements, appels, prospection digitale
+Minimum viable,Contenus marketing,150,400,Visuels, publications, supports reseaux sociaux
+Minimum viable,Support et maintenance,200,500,Suivi des premiers clients
+Minimum viable,Juridique et administratif,200,600,Formalisation et documents de base
+Serieux,Branding et image de marque,500,1200,Positionnement credibilite agence startup
+Serieux,Site et contenus premium,400,1000,SEO, pages commerciales, argumentaires
+Serieux,Developpement produit,2000,6000,Amelioration MU-SAU, SCHOOL, X-MOMO, Facture Sign
+Serieux,Infrastructure cloud,600,1800,Equivalent annuel de 50 a 150 USD par mois
+Serieux,Acquisition clients,1000,3000,Publicite, prospection, campagnes terrain
+Serieux,Community management et media,300,1000,Video, visuels, contenus commerciaux
+Serieux,Support QA maintenance,500,1500,Assurance qualite et stabilisation plateforme
+Serieux,Deplacements et demos,500,1500,Rencontres partenaires et clients
+Serieux,Juridique formalisation,300,1000,Contrats, structure, legal
+Serieux,Reserve operationnelle,1000,3000,Protection cashflow et imprévus
+Ambitieux,Equipe technique et design,5000,12000,Renforts freelance et acceleration livraison
+Ambitieux,Developpement avance produits,4000,10000,Industrialisation et nouvelles fonctionnalites
+Ambitieux,Commercial et partenariats,2000,6000,Equipe vente, acquisition et reseau
+Ambitieux,Communication et branding fort,1500,5000,Campagnes marque et credibilite
+Ambitieux,Infrastructure et securite,1200,3600,Equivalent annuel de 100 a 300 USD par mois
+Ambitieux,Support client structure,1000,3000,Process support et satisfaction client
+Ambitieux,Juridique et conformite,500,2000,Documentation, contrats, cadre reglementaire
+Recommande,Produit et technique,3500,3500,Repartition recommande sur enveloppe de 10000 USD
+Recommande,Commercial et acquisition,2500,2500,Repartition recommande sur enveloppe de 10000 USD
+Recommande,Marketing et communication,1500,1500,Repartition recommande sur enveloppe de 10000 USD
+Recommande,Support et QA,1000,1000,Repartition recommande sur enveloppe de 10000 USD
+Recommande,Infrastructure,500,500,Repartition recommande sur enveloppe de 10000 USD
+Recommande,Juridique et administratif,500,500,Repartition recommande sur enveloppe de 10000 USD
+Recommande,Reserve et imprevus,500,500,Repartition recommande sur enveloppe de 10000 USD

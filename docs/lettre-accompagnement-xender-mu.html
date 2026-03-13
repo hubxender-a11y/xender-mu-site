@@ -1,0 +1,169 @@
+﻿<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <title>Lettre d'accompagnement - Xender-MU</title>
+  <style>
+    @page { size: A4; margin: 20mm; }
+    :root {
+      --red: #cf1f25;
+      --ink: #171717;
+      --muted: #666b73;
+      --line: #e6e6ea;
+      --soft: #faf6f6;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      color: var(--ink);
+      line-height: 1.6;
+      font-size: 11.5pt;
+      background: #fff;
+    }
+    .sheet {
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 24px 26px;
+      background: linear-gradient(180deg, #fff, #fff9f9);
+    }
+    .top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 20px;
+      margin-bottom: 22px;
+    }
+    .brand-wrap {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+    .mark {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 35%, #ff9093, #cf1f25 58%, #8c0f14 100%);
+      box-shadow: inset 0 0 0 8px rgba(255,255,255,0.12);
+      position: relative;
+      flex: 0 0 auto;
+    }
+    .mark::before, .mark::after, .mark span {
+      content: "";
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #18090a;
+    }
+    .mark::before { left: 14px; top: 13px; }
+    .mark::after { right: 14px; top: 13px; }
+    .mark span { left: 50%; bottom: 12px; transform: translateX(-50%); }
+    .brand-title {
+      font-size: 18pt;
+      font-weight: 800;
+      color: var(--ink);
+      letter-spacing: -0.02em;
+    }
+    .brand-sub {
+      color: var(--muted);
+      font-size: 10pt;
+    }
+    .meta {
+      text-align: right;
+      color: var(--muted);
+      font-size: 10pt;
+    }
+    h1 {
+      margin: 0 0 18px;
+      font-size: 22pt;
+      color: var(--ink);
+      letter-spacing: -0.03em;
+    }
+    .lead {
+      background: var(--soft);
+      border-left: 4px solid var(--red);
+      padding: 14px 16px;
+      border-radius: 0 14px 14px 0;
+      margin-bottom: 18px;
+    }
+    p { margin: 0 0 12px; }
+    .cta {
+      margin-top: 20px;
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: #fff3f3;
+      border: 1px solid #f0d6d6;
+    }
+    .sign {
+      margin-top: 28px;
+    }
+    .sign-name {
+      font-family: "Segoe Script", "Brush Script MT", cursive;
+      font-size: 22pt;
+      color: #a41218;
+      margin: 8px 0 2px;
+    }
+    .sign-meta {
+      color: var(--muted);
+      font-size: 10pt;
+    }
+  </style>
+</head>
+<body>
+  <div class="sheet">
+    <div class="top">
+      <div class="brand-wrap">
+        <div class="mark"><span></span></div>
+        <div>
+          <div class="brand-title">Xender-MU</div>
+          <div class="brand-sub">Agence digitale et plateforme de solutions logicielles</div>
+        </div>
+      </div>
+      <div class="meta">
+        Kinshasa, RDC<br>
+        13 mars 2026<br>
+        hubxender@gmail.com<br>
+        +243 89 191 9192
+      </div>
+    </div>
+
+    <h1>Lettre d'accompagnement - Proposition de partenariat</h1>
+
+    <div class="lead">
+      Madame, Monsieur,<br>
+      Je vous transmets ci-joint le rapport de presentation de Xender-MU, dans le cadre d'une recherche de partenaire strategique ou financier pour accompagner le developpement du projet.
+    </div>
+
+    <p>
+      Xender-MU est une initiative technologique orientee vers la creation de solutions digitales a forte utilite pour les entreprises, les ecoles, les institutions et les organisations en phase de transformation numerique. Notre ambition est de construire un acteur credible, agile et localement pertinent dans les domaines des applications web, mobiles et des plateformes SaaS metier.
+    </p>
+
+    <p>
+      Le projet dispose deja d'une base technique concrete : site web professionnel, plateforme admin, backend connecte a une base de donnees, architecture cloud deployee et premiers produits positionnes autour de la gestion academique, du suivi scolaire, de la facturation et de la gestion d'evenements.
+    </p>
+
+    <p>
+      La prochaine etape consiste a accelerer la structuration commerciale, renforcer les produits, professionnaliser la marque et deployer les premieres references clients dans une logique de croissance durable.
+    </p>
+
+    <p>
+      Nous recherchons un partenaire capable d'apporter soit un financement d'amorcage, soit un acces au marche, soit un accompagnement strategique permettant de transformer ce socle en entreprise rentable et evolutive.
+    </p>
+
+    <div class="cta">
+      Nous serions heureux de vous presenter le projet en rendez-vous, de faire une demonstration de la plateforme et d'echanger sur les modalites de partenariat les plus pertinentes : investissement, partenariat commercial, co-developpement ou deploiement sectoriel.
+    </div>
+
+    <div class="sign">
+      <p>Je vous remercie pour votre attention et reste disponible pour toute discussion complementaire.</p>
+      <div class="sign-name">Xender-MU</div>
+      <div class="sign-meta">
+        Porteur du projet<br>
+        hubxender@gmail.com<br>
+        +243 89 191 9192
+      </div>
+    </div>
+  </div>
+</body>
+</html>
