@@ -490,8 +490,16 @@ function HeroCarousel() {
           </div>
         </div>
 
-        <div className="hero-image-wrap">
+        <div className="hero-image-wrap hero-image-stage">
           <img src={hero.image} onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = hero.fallback; }} alt="Hero slide" className="hero-image" loading="eager" decoding="async" />
+          <div className="hero-floating-card hero-floating-card-main">
+            <span>Experience premium</span>
+            <strong>Sites, apps et plateformes qui inspirent confiance</strong>
+          </div>
+          <div className="hero-floating-card hero-floating-card-side">
+            <strong>Architecture claire</strong>
+            <p>Design, produit, support et mise en ligne dans une logique agence moderne.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -1122,15 +1130,20 @@ function ServicesPage() {
 
       <main className="services-page services-page-simple">
         <section className="hero-section services-hero-simple">
-          <div className="container services-hero-simple-wrap">
-            <span className="pill">Services Xender-MU</span>
-            <h1>Nous transformons vos idees en solutions digitales claires</h1>
+          <div className="container services-hero-simple-wrap premium-services-hero">
+            <span className="pill premium-pill">Services Xender-MU</span>
+            <h1>Nous concevons des experiences digitales premium, utiles et vendables</h1>
             <p>
-              Une page simple pour comprendre rapidement ce que nous faisons: ERP, mobile et sites web.
+              Une page plus claire pour presenter notre valeur: architecture metier, applications mobiles et experiences web qui donnent une vraie image professionnelle.
             </p>
             <div className="services-hero-actions">
               <Link to="/#contact" className="btn btn-red">Demander un devis</Link>
               <Link to="/" className="btn btn-dark">Retour accueil</Link>
+            </div>
+            <div className="services-hero-metrics">
+              <div><strong>UX plus premium</strong><span>interfaces modernes et lisibles</span></div>
+              <div><strong>Execution rapide</strong><span>cadre agile, iterations courtes</span></div>
+              <div><strong>Support durable</strong><span>maintenance et accompagnement reel</span></div>
             </div>
           </div>
         </section>
