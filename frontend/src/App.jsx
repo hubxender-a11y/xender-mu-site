@@ -454,11 +454,28 @@ function HeroCarousel() {
   return (
     <section className="hero-section" id="accueil">
       <div className="container hero-grid">
-        <div className="hero-content">
-          <span className="pill">Xender-MU Digital Experience</span>
+        <div className="hero-content hero-content-premium">
+          <span className="pill premium-pill">Xender-MU Digital Experience</span>
           <h1>{hero.title}</h1>
           <p>{hero.text}</p>
-          <a className="btn btn-red" href="#contact">{hero.cta}</a>
+          <div className="hero-actions">
+            <a className="btn btn-red" href="#contact">{hero.cta}</a>
+            <a className="btn btn-ghost-light" href="#products">Voir nos solutions</a>
+          </div>
+          <div className="hero-proof-row">
+            <div className="hero-proof-item">
+              <strong>Applications web</strong>
+              <span>Conception, architecture et livraison rapide</span>
+            </div>
+            <div className="hero-proof-item">
+              <strong>Applications mobiles</strong>
+              <span>Experiences fluides pour Android et iPhone</span>
+            </div>
+            <div className="hero-proof-item">
+              <strong>Support durable</strong>
+              <span>Accompagnement reel apres mise en ligne</span>
+            </div>
+          </div>
 
           <div className="dots">
             {heroSlides.map((_, idx) => (
@@ -497,10 +514,12 @@ function BannerCarousel() {
 
   return (
     <section className="banner-section">
-      <div className="container banner-card">
+      <div className="container banner-card banner-card-premium">
         <img src={banner.image} onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = banner.fallback; }} alt="Banniere carousel" className="banner-image" loading="eager" decoding="async" />
         <div className="banner-layer">
+          <span className="banner-kicker">Xender-MU Studio</span>
           <h3>{banner.title}</h3>
+          <p>Des interfaces plus credibles, une execution plus rapide et un accompagnement orient? impact.</p>
           <div className="dots">
             {bannerSlides.map((_, idx) => (
               <button
