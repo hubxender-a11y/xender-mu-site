@@ -15,20 +15,20 @@ import detail3 from "./assets/images/detail-3.svg";
 
 const heroSlides = [
   {
-    title: "Donnez une dimension premium a vos projets digitaux",
-    text: "Confiez-nous vos ambitions web et mobiles pour concevoir des plateformes elegantes, performantes et credibles des les premiers instants.",
+    title: "Donnez a votre presence digitale une allure plus grande, plus nette et plus premium",
+    text: "Nous concevons des experiences web et mobiles qui renforcent la perception de votre marque, fluidifient l'usage et installent la confiance des le premier regard.",
     cta: "Demarrer mon projet",
-    image: "/images/banner-user.jpg",
+    image: "/images/hero-1.jpg",
     fallback: hero1,
-    imagePosition: "center center"
+    imagePosition: "center 34%"
   },
   {
-    title: "X-MOMO - La gestion du cursus academique",
-    text: "Concu pour optimiser votre gestion academique grace a des services et fonctionnalites innovantes ainsi qu'une fiabilite de pointe.",
-    cta: "Decouvrir X-MOMO",
-    image: "/images/banner-4.jpg",
+    title: "Des plateformes metier pensees pour convaincre, structurer et faire evoluer votre organisation",
+    text: "De la gestion academique a la facturation en passant par les plateformes internes, nous livrons des produits plus propres, plus lisibles et plus defendables face a vos clients et partenaires.",
+    cta: "Voir nos solutions",
+    image: "/images/hero-2.jpg",
     fallback: hero2,
-    imagePosition: "center 38%"
+    imagePosition: "center 44%"
   }
 ];
 const devisSlides = [
@@ -70,29 +70,44 @@ const targetSegments = [
 
 const bannerSlides = [
   {
+    kicker: "Equipe & execution",
     title: "L'equipe Xender-MU en action",
+    text: "Une equipe engagee, plus proche du terrain et concentree sur des livrables qui se voient.",
     image: "/images/banner-user.jpg",
-    fallback: banner1
+    fallback: banner1,
+    imagePosition: "center 38%"
   },
   {
+    kicker: "Conception premium",
     title: "Nous elevons vos projets avec une execution claire et haut de gamme",
+    text: "Des experiences digitales pensees pour inspirer confiance, clarifier la valeur et faire meilleure impression.",
     image: "/images/banner-1.jpg",
-    fallback: banner1
+    fallback: banner1,
+    imagePosition: "center 42%"
   },
   {
+    kicker: "Croissance structuree",
     title: "Des solutions sur mesure pour votre croissance",
+    text: "Nous transformons les besoins metier en plateformes utiles, presentables et faciles a projeter dans le temps.",
     image: "/images/banner-2.jpg",
-    fallback: banner2
+    fallback: banner2,
+    imagePosition: "center 45%"
   },
   {
+    kicker: "Fiabilite produit",
     title: "Innovation, performance et fiabilite",
+    text: "Une execution plus stable, plus propre et mieux cadree pour des projets qui doivent etre pris au serieux.",
     image: "/images/banner-3.jpg",
-    fallback: banner3
+    fallback: banner3,
+    imagePosition: "center 36%"
   },
   {
+    kicker: "Excellence operationnelle",
     title: "Technologie et excellence operationnelle",
+    text: "Des outils, des interfaces et un accompagnement qui donnent une vraie stature a votre transformation digitale.",
     image: "/images/banner-4.jpg",
-    fallback: banner4
+    fallback: banner4,
+    imagePosition: "center 34%"
   }
 ];
 
@@ -540,12 +555,33 @@ function HeroCarousel() {
     <section className="hero-section" id="accueil">
       <div className="container hero-grid">
         <div className="hero-content hero-content-premium">
-          <span className="pill premium-pill">Agence digitale premium</span>
+          <span className="pill premium-pill">Xender-MU Studio</span>
+          <div className="hero-editorial-meta">
+            <span>Strategie digitale</span>
+            <span>Design premium</span>
+            <span>Execution produit</span>
+          </div>
           <h1 className="hero-luxe-title">{hero.title}</h1>
           <p className="hero-luxe-copy">{hero.text}</p>
           <div className="hero-actions">
             <a className="btn btn-red" href="#contact">{hero.cta}</a>
             <a className="btn btn-ghost-light" href="#products">Voir nos solutions</a>
+          </div>
+          <div className="hero-signature-panel">
+            <div className="hero-signature-copy">
+              <span className="hero-signature-kicker">Signature premium</span>
+              <strong>Une mise en forme claire, rouge, assumee et plus corporate pour mieux presenter Xender-MU.</strong>
+            </div>
+            <div className="hero-signature-stats">
+              <div>
+                <strong>Web & Mobile</strong>
+                <span>interfaces coherentes, lisibles et desirees</span>
+              </div>
+              <div>
+                <strong>Image de marque</strong>
+                <span>presentation plus serieuse des le premier contact</span>
+              </div>
+            </div>
           </div>
           <div className="hero-proof-row">
             <div className="hero-proof-item">
@@ -608,11 +644,11 @@ function BannerCarousel() {
   return (
     <section className="banner-section">
       <div className="container banner-card banner-card-premium">
-        <img src={banner.image} onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = banner.fallback; }} alt="Banniere carousel" className="banner-image" loading="eager" decoding="async" />
+        <img src={banner.image} onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = banner.fallback; }} alt="Banniere carousel" className="banner-image" style={{ objectPosition: banner.imagePosition || "center center" }} loading="eager" decoding="async" />
         <div className="banner-layer">
-          <span className="banner-kicker">Xender-MU Studio</span>
+          <span className="banner-kicker">{banner.kicker || "Xender-MU Studio"}</span>
           <h3>{banner.title}</h3>
-          <p>Des interfaces plus credibles, une execution plus rapide et un accompagnement oriente impact.</p>
+          <p>{banner.text || "Des interfaces plus credibles, une execution plus rapide et un accompagnement oriente impact."}</p>
           <div className="dots">
             {bannerSlides.map((_, idx) => (
               <button
@@ -1065,28 +1101,57 @@ function SharedFooter() {
 
   return (
     <footer className="footer">
-      <div className="container footer-grid">
-        <div>
-          <h4>XENDER-MU</h4>
-          <p>Votre partenaire pour concevoir des solutions digitales plus solides, plus lisibles et mieux alignees avec vos ambitions de croissance.</p>
+      <div className="container footer-shell">
+        <div className="footer-topline">
+          <span className="footer-kicker">Xender-MU</span>
+          <p>Des experiences digitales plus nettes, plus desirees et plus defendables pour les structures qui veulent afficher une vraie ambition.</p>
         </div>
-        <div>
-          <h4>Navigation</h4>
-          <Link to="/">Accueil</Link>
-          <a href="/#services">Services</a>
-          <a href="/#products">Produits</a>
-          <a href="/#news">Blog</a>
-          <a href="/#contact">Contact</a>
-          
+
+        <div className="footer-grid">
+          <div className="footer-brand-column">
+            <div className="footer-brand-lockup">
+              <BrandIdentity />
+            </div>
+            <p>Nous concevons des applications, plateformes et experiences digitales dans une logique de marque premium, de clarte produit et d'execution fiable.</p>
+            <div className="footer-brand-tags">
+              <span>Applications web</span>
+              <span>Applications mobiles</span>
+              <span>Plateformes metier</span>
+            </div>
+          </div>
+
+          <div className="footer-column">
+            <h4>Navigation</h4>
+            <Link to="/">Accueil</Link>
+            <a href="/#services">Services</a>
+            <a href="/#products">Produits</a>
+            <a href="/#news">Actualites</a>
+            <a href="/#contact">Contact</a>
+          </div>
+
+          <div className="footer-column">
+            <h4>Offres</h4>
+            <a href="/#services">Applications ERP</a>
+            <a href="/#services">Applications mobiles</a>
+            <a href="/#services">Creation de sites web</a>
+            <a href="/#services">Design produit & UX</a>
+          </div>
+
+          <div className="footer-column footer-contact-column">
+            <h4>Adresse</h4>
+            <p>Kinshasa</p>
+            <p>Republique Democratique Du Congo</p>
+            <h4>Telephone</h4>
+            <p>+243 89 191 9192</p>
+            <h4>Email</h4>
+            <p>hubxender@gmail.com</p>
+            <a href="/#contact" className="btn btn-red">Demarrer un echange</a>
+          </div>
         </div>
-        <div>
-          <h4>Adresse</h4>
-          <p>Kinshasa</p>
-          <p>Republique Democratique Du Congo</p>
-          <h4>Telephone</h4>
-          <p>+243 89 191 9192</p>
-          <h4>Email</h4>
-          <p>hubxender@gmail.com</p>
+
+        <div className="footer-bottomline">
+          <p>Xender-MU. Une presence digitale premium, claire et evolutive.</p>
+          <span>Concu pour entreprises, ecoles, institutions et projets ambitieux.</span>
         </div>
       </div>
     </footer>
@@ -3089,6 +3154,7 @@ export default function App() {
     </Routes>
   );
 }
+
 
 
 
