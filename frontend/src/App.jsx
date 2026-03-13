@@ -15,8 +15,8 @@ import detail3 from "./assets/images/detail-3.svg";
 
 const heroSlides = [
   {
-    title: "Decouvrez comment concretiser vos projets !",
-    text: "Demandez votre devis gratuit des maintenant et transformez vos idees en realite avec une equipe qui con?oit des experiences digitales modernes et credibles.",
+    title: "Donnez une dimension premium a vos projets digitaux",
+    text: "Confiez-nous vos ambitions web et mobiles pour concevoir des plateformes elegantes, performantes et credibles des les premiers instants.",
     cta: "Demarrer mon projet",
     image: "/images/banner-user.jpg",
     fallback: hero1,
@@ -48,9 +48,9 @@ const devisSlides = [
   }
 ];
 const trustSignals = [
-  { value: "24h", label: "Delai moyen de reponse", text: "Qualification rapide des demandes et retour clair." },
-  { value: "B2B", label: "Execution orientee entreprise", text: "Solutions pensees pour PME, ecoles et institutions." },
-  { value: "Cloud", label: "Infrastructure evolutive", text: "Architecture deployee, maintenable et extensible." }
+  { value: "24h", label: "Reponse en 24h", text: "Un premier cadrage rapide, clair et directement exploitable." },
+  { value: "B2B", label: "Execution pensee pour l'entreprise", text: "Des solutions structurees pour PME, ecoles et organisations exigeantes." },
+  { value: "Cloud", label: "Architecture evolutive", text: "Une base technique stable, maintenable et prete a grandir avec vous." }
 ];
 
 const targetSegments = [
@@ -75,7 +75,7 @@ const bannerSlides = [
     fallback: banner1
   },
   {
-    title: "Nous transformons vos projets en realite",
+    title: "Nous elevons vos projets avec une execution claire et haut de gamme",
     image: "/images/banner-1.jpg",
     fallback: banner1
   },
@@ -467,15 +467,15 @@ function HeroCarousel() {
           <div className="hero-proof-row">
             <div className="hero-proof-item">
               <strong>Applications web</strong>
-              <span>Conception, architecture et livraison rapide</span>
+              <span>Conception sur mesure, structure claire et mise en ligne maitrisee</span>
             </div>
             <div className="hero-proof-item">
               <strong>Applications mobiles</strong>
-              <span>Experiences fluides pour Android et iPhone</span>
+              <span>Experiences mobiles fluides, elegantes et rassurantes</span>
             </div>
             <div className="hero-proof-item">
-              <strong>Support durable</strong>
-              <span>Accompagnement reel apres mise en ligne</span>
+              <strong>Presence durable</strong>
+              <span>Suivi durable, ajustements continus et support apres lancement</span>
             </div>
           </div>
 
@@ -571,8 +571,8 @@ function SegmentSection() {
       <div className="container segment-shell">
         <div className="segment-copy">
           <span className="pill">Positionnement marche</span>
-          <h2>Des offres pensees pour des clients qui veulent des resultats rapides</h2>
-          <p className="sub">Nous presentons une proposition claire, concrete et facile a acheter pour des structures qui veulent numeriser sans complexite inutile.</p>
+          <h2>Des offres pensees pour des structures qui veulent une execution nette</h2>
+          <p className="sub">Nous formulons des offres lisibles, credibles et faciles a engager pour les entreprises qui veulent avancer sans perte de temps.</p>
         </div>
         <div className="grid cols-3 segment-grid">
           {targetSegments.map((item) => (
@@ -612,7 +612,7 @@ function ServicesSection({ showAllLink = false }) {
     <section className="section" id="services">
       <div className="container">
         <h2>Services</h2>
-        <p className="sub">Nous transformons vos projets en realite</p>
+        <p className="sub">Nous elevons vos projets avec une execution claire et haut de gamme</p>
         <div className="grid cols-3">
           {services.map((service) => (
             <article key={service.title} className="service-card">
@@ -764,7 +764,7 @@ function TestimonialsSection({ items = [] }) {
     <section className="section compact" id="temoignages">
       <div className="container">
         <h2>Ils nous font confiance</h2>
-        <p className="sub">Des retours concrets sur nos livraisons.</p>
+        <p className="sub">Des retours concrets sur la qualite de nos livraisons.</p>
         <div className="grid cols-3 testimonials-grid">
           {items.map((item, idx) => (
             <article key={`${item.name}-${idx}`} className="info-card testimonial-card">
@@ -903,8 +903,8 @@ function ContactSection() {
     <section className="section" id="contact">
       <div className="container contact-wrap">
         <div>
-          <h2>Pret a transformer vos idees en realite ?</h2>
-          <p>Chaque demande est enregistree dans XMOMO et traitee rapidement.</p>
+          <h2>Pret a lancer une plateforme plus credible ?</h2>
+          <p>Chaque demande est qualifiee rapidement pour vous apporter une reponse claire et utile.</p>
         </div>
 
         <form className="contact-form" onSubmit={handleSubmit}>
@@ -943,7 +943,7 @@ function SharedFooter() {
       <div className="container footer-grid">
         <div>
           <h4>XENDER-MU</h4>
-          <p>Votre partenaire privilegie dans la transformation numerique. Nous concevons des solutions logicielles innovantes pour propulser votre entreprise vers l'avenir.</p>
+          <p>Votre partenaire pour concevoir des solutions digitales plus solides, plus lisibles et mieux alignees avec vos ambitions de croissance.</p>
         </div>
         <div>
           <h4>Navigation</h4>
@@ -1072,7 +1072,7 @@ function HomePage() {
 
         <section className="section compact">
           <div className="container cta-block">
-            <h3>Pret a transformer vos idees en realite ?</h3>
+            <h3>Pret a lancer une plateforme plus credible ?</h3>
             <p>Rejoignez les nombreuses entreprises qui nous font confiance.</p>
             <a href="#contact" className="btn btn-dark">Demarrer mon projet</a>
           </div>
@@ -1087,7 +1087,7 @@ function HomePage() {
 
         <section className="section" id="faq">
           <div className="container">
-            <h2>Questions frequentes</h2>
+            <h2>Questions essentielles</h2>
             <div className="faq-list">
               {faqData.map((item, idx) => {
                 const open = openFaq === idx;
@@ -1134,18 +1134,18 @@ function ServicesPage() {
         <section className="hero-section services-hero-simple">
           <div className="container services-hero-simple-wrap premium-services-hero">
             <span className="pill premium-pill">Services Xender-MU</span>
-            <h1>Nous concevons des experiences digitales premium, utiles et vendables</h1>
+            <h1>Nous concevons des experiences digitales premium, claires et desirables</h1>
             <p>
-              Une page plus claire pour presenter notre valeur: architecture metier, applications mobiles et experiences web qui donnent une vraie image professionnelle.
+              Une approche plus claire pour presenter notre valeur: architecture metier, applications mobiles et experiences web qui renforcent votre image de marque.
             </p>
             <div className="services-hero-actions">
               <Link to="/#contact" className="btn btn-red">Demander un devis</Link>
               <Link to="/" className="btn btn-dark">Retour accueil</Link>
             </div>
             <div className="services-hero-metrics">
-              <div><strong>UX plus premium</strong><span>interfaces modernes et lisibles</span></div>
-              <div><strong>Execution rapide</strong><span>cadre agile, iterations courtes</span></div>
-              <div><strong>Support durable</strong><span>maintenance et accompagnement reel</span></div>
+              <div><strong>Image de marque plus forte</strong><span>interfaces nettes, lisibles et rassurantes</span></div>
+              <div><strong>Execution maitrisee</strong><span>cadre agile, arbitrages rapides et delais tenus</span></div>
+              <div><strong>Presence durable</strong><span>maintenance, suivi et accompagnement dans la duree</span></div>
             </div>
           </div>
         </section>
@@ -1160,15 +1160,15 @@ function ServicesPage() {
             <div className="services-page-intro">
               <div className="service-intro-card">
                 <h3>Approche simple</h3>
-                <p>Nous clarifions vite le besoin, la priorite business et la feuille de route de livraison.</p>
+                <p>Nous clarifions vite le besoin, la priorite business et la feuille de route la plus pertinente.</p>
               </div>
               <div className="service-intro-card">
-                <h3>Livraison concrete</h3>
+                <h3>Livraison maitrisee</h3>
                 <p>Chaque service est pense pour etre deploye, maintenu et monnayable rapidement.</p>
               </div>
               <div className="service-intro-card">
                 <h3>Support reel</h3>
-                <p>Nous restons presents apres la mise en ligne pour stabiliser et faire evoluer la solution.</p>
+                <p>Nous restons presents apres la mise en ligne pour stabiliser, optimiser et faire evoluer la solution.</p>
               </div>
             </div>
 
@@ -1200,7 +1200,7 @@ function ServicesPage() {
               </article>
               <article className="info-card process-card">
                 <h3>3. Livraison</h3>
-                <p>Nous livrons vite avec suivi et support apres mise en ligne.</p>
+                <p>Nous livrons avec exigence, suivi et accompagnement apres mise en ligne.</p>
               </article>
             </div>
           </div>
@@ -1211,8 +1211,8 @@ function ServicesPage() {
 
         <section className="section compact">
           <div className="container cta-block">
-            <h3>Un projet en tete ?</h3>
-            <p>Obtenez une estimation gratuite et concrete pour demarrer rapidement.</p>
+            <h3>Un projet a structurer ?</h3>
+            <p>Recevez une estimation claire et une trajectoire de lancement adaptee a votre besoin.</p>
             <Link to="/#contact" className="btn btn-dark">Demarrer mon projet gratuit</Link>
           </div>
         </section>
@@ -2656,7 +2656,7 @@ function DetailPage() {
 
           <section className="detail-features">
             <h2>Galerie Facture Sign</h2>
-            <p className="sub">Presentation visuelle premium: image principale + miniatures cliquables.</p>
+            <p className="sub">Presentation visuelle premium avec image principale et miniatures interactives.</p>
             <ProductMediaGallery images={galleryImages} title={product.name} />
           </section>
 
@@ -2794,6 +2794,8 @@ export default function App() {
     </Routes>
   );
 }
+
+
 
 
 
