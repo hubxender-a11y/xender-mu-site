@@ -6305,3 +6305,190 @@ body.home-voda .footer::before {
     grid-template-columns: 1fr;
   }
 }
+/* ===== Global X-like modern UI direction ===== */
+body.home-voda,
+body.services-voda,
+body.detail-voda {
+  background:
+    radial-gradient(circle at 100% 0%, rgba(230,0,40,0.05), transparent 18%),
+    linear-gradient(180deg, #ffffff 0%, #f5f7fa 100%);
+  color: #0f172a;
+}
+
+body.home-voda .topbar,
+body.services-voda .topbar,
+body.detail-voda .topbar {
+  background: rgba(255,255,255,0.88);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.95);
+  backdrop-filter: blur(14px);
+}
+
+body.home-voda .desktop-menu a,
+body.services-voda .desktop-menu a,
+body.detail-voda .topbar .brand-word,
+body.home-voda .brand-word,
+body.services-voda .brand-word,
+body.detail-voda .desktop-menu a,
+body.detail-voda .text-link,
+body.home-voda .text-link,
+body.services-voda .text-link {
+  color: #0f172a;
+}
+
+body.home-voda .mobile-toggle,
+body.services-voda .mobile-toggle,
+body.detail-voda .mobile-toggle {
+  background: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.98);
+}
+
+body.home-voda .mobile-toggle span,
+body.services-voda .mobile-toggle span,
+body.detail-voda .mobile-toggle span {
+  background: #111827;
+}
+
+body.home-voda .mobile-menu,
+body.services-voda .mobile-menu,
+body.detail-voda .mobile-menu {
+  background: rgba(255,255,255,0.96);
+  border-top: 1px solid rgba(226, 232, 240, 0.95);
+}
+
+body.home-voda .mobile-menu a,
+body.services-voda .mobile-menu a,
+body.detail-voda .mobile-menu a {
+  color: #0f172a;
+  border-top: 1px solid rgba(226, 232, 240, 0.85);
+}
+
+body.home-voda .service-card,
+body.home-voda .product-card,
+body.home-voda .why-card,
+body.home-voda .info-card,
+body.home-voda .contact-wrap,
+body.home-voda .offer-pillars-shell,
+body.home-voda .commercial-highlight-card,
+body.home-voda .segment-card,
+body.services-voda .service-card,
+body.services-voda .service-intro-card,
+body.services-voda .segment-card,
+body.services-voda .info-card,
+body.services-voda .premium-services-hero,
+body.services-voda .services-hero-simple-wrap,
+body.detail-voda .detail-hero,
+body.detail-voda .detail-features,
+body.detail-voda .detail-page .info-card,
+body.detail-voda .detail-media-main-wrap,
+body.detail-voda .detail-thumb,
+body.detail-voda .news-detail-card {
+  background: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.98);
+  box-shadow: 0 16px 44px rgba(15, 23, 42, 0.06);
+}
+
+body.home-voda .service-card:hover,
+body.home-voda .product-card:hover,
+body.home-voda .why-card:hover,
+body.services-voda .service-card:hover,
+body.detail-voda .detail-thumb:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 48px rgba(15, 23, 42, 0.09);
+}
+
+body.home-voda h1,
+body.home-voda h2,
+body.home-voda h3,
+body.services-voda h1,
+body.services-voda h2,
+body.services-voda h3,
+body.detail-voda h1,
+body.detail-voda h2,
+body.detail-voda h3 {
+  color: #0f172a;
+}
+
+body.home-voda p,
+body.home-voda .sub,
+body.services-voda p,
+body.services-voda .sub,
+body.detail-voda p,
+body.detail-voda .sub {
+  color: #5b6472;
+}
+
+body.home-voda .product-tag,
+body.services-voda .product-tag,
+body.detail-voda .product-tag,
+body.home-voda .why-badge,
+body.services-voda .why-badge,
+body.home-voda .pill,
+body.services-voda .pill,
+body.detail-voda .pill {
+  background: #e60028;
+  border-color: transparent;
+  color: #ffffff;
+  box-shadow: none;
+}
+
+body.home-voda .btn.btn-red,
+body.services-voda .btn.btn-red,
+body.detail-voda .btn.btn-red {
+  background: #e60028;
+  border: 1px solid #e60028;
+  color: #ffffff;
+  box-shadow: none;
+}
+
+body.home-voda .btn.btn-red:hover,
+body.services-voda .btn.btn-red:hover,
+body.detail-voda .btn.btn-red:hover {
+  background: #c70022;
+  border-color: #c70022;
+}
+
+body.home-voda .btn.btn-ghost-light,
+body.home-voda .btn.btn-dark,
+body.services-voda .btn.btn-dark,
+body.services-voda .btn.btn-ghost-light,
+body.detail-voda .btn.btn-dark {
+  background: #ffffff;
+  color: #0f172a;
+  border: 1px solid rgba(226, 232, 240, 0.98);
+}
+
+body.home-voda .trust-chip,
+body.services-voda .trust-chip {
+  background: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.98);
+  box-shadow: 0 14px 34px rgba(15, 23, 42, 0.05);
+}
+
+body.home-voda .trust-chip strong,
+body.services-voda .trust-chip strong {
+  color: #e60028;
+}
+
+body.home-voda .banner-card-premium,
+body.home-voda .hero-image-wrap,
+body.services-voda .premium-services-hero,
+body.detail-voda .detail-hero {
+  border-radius: 24px;
+}
+
+body.home-voda .banner-layer {
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.04) 0%, rgba(15, 23, 42, 0.76) 100%);
+}
+
+body.home-voda .banner-layer h3,
+body.home-voda .banner-layer p,
+body.home-voda .banner-kicker {
+  color: #ffffff;
+}
+
+body.home-voda .footer,
+body.services-voda .footer,
+body.detail-voda .footer {
+  background: #ffffff;
+  border-top: 1px solid rgba(226, 232, 240, 0.98);
+}
