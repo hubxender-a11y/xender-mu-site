@@ -1101,40 +1101,22 @@ function SharedFooter() {
 
   return (
     <footer className="footer">
-      <div className="container footer-shell">
-        <div className="footer-topline">
-          <span className="footer-kicker">Xender-MU</span>
-          <p>Des experiences digitales plus nettes, plus desirees et plus defendables pour les structures qui veulent afficher une vraie ambition.</p>
-        </div>
-
-        <div className="footer-grid">
-          <div className="footer-brand-column">
+      <div className="container footer-shell footer-shell-simple">
+        <div className="footer-grid footer-grid-simple">
+          <div className="footer-column footer-brand-column footer-brand-column-simple">
             <div className="footer-brand-lockup">
               <BrandIdentity />
             </div>
-            <p>Nous concevons des applications, plateformes et experiences digitales dans une logique de marque premium, de clarte produit et d'execution fiable.</p>
-            <div className="footer-brand-tags">
-              <span>Applications web</span>
-              <span>Applications mobiles</span>
-              <span>Plateformes metier</span>
-            </div>
+            <p>Votre partenaire pour concevoir des solutions digitales plus solides, plus lisibles et mieux alignees avec vos ambitions de croissance.</p>
           </div>
 
-          <div className="footer-column">
+          <div className="footer-column footer-links-column">
             <h4>Navigation</h4>
             <Link to="/">Accueil</Link>
             <a href="/#services">Services</a>
             <a href="/#products">Produits</a>
             <a href="/#news">Actualites</a>
             <a href="/#contact">Contact</a>
-          </div>
-
-          <div className="footer-column">
-            <h4>Offres</h4>
-            <a href="/#services">Applications ERP</a>
-            <a href="/#services">Applications mobiles</a>
-            <a href="/#services">Creation de sites web</a>
-            <a href="/#services">Design produit & UX</a>
           </div>
 
           <div className="footer-column footer-contact-column">
@@ -1145,13 +1127,12 @@ function SharedFooter() {
             <p>+243 89 191 9192</p>
             <h4>Email</h4>
             <p>hubxender@gmail.com</p>
-            <a href="/#contact" className="btn btn-red">Demarrer un echange</a>
           </div>
         </div>
 
-        <div className="footer-bottomline">
-          <p>Xender-MU. Une presence digitale premium, claire et evolutive.</p>
-          <span>Concu pour entreprises, ecoles, institutions et projets ambitieux.</span>
+        <div className="footer-bottomline footer-bottomline-simple">
+          <p>Xender-MU. Presence digitale premium, claire et evolutive.</p>
+          <a href="/#contact" className="text-link">Demarrer un projet</a>
         </div>
       </div>
     </footer>
