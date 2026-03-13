@@ -4086,3 +4086,75 @@ body.detail-voda .text-link {
     grid-template-columns: 1fr;
   }
 }
+
+
+/* ===== Hero typography luxe ===== */
+body.home-voda .premium-pill {
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+.hero-luxe-title {
+  max-width: 10ch;
+  margin-top: 0.9rem;
+  margin-bottom: 0.85rem;
+  font-family: "Space Grotesk", "Manrope", sans-serif;
+  font-size: clamp(2.6rem, 5.4vw, 4.85rem);
+  line-height: 0.94;
+  letter-spacing: -0.055em;
+  text-wrap: balance;
+}
+
+.hero-luxe-copy {
+  max-width: 54ch;
+  font-size: 1.05rem;
+  line-height: 1.82;
+  color: #626d83;
+}
+
+@media (max-width: 760px) {
+  .hero-luxe-title {
+    max-width: none;
+    font-size: clamp(2.1rem, 11vw, 3.2rem);
+    line-height: 0.98;
+  }
+
+  .hero-luxe-copy {
+    font-size: 0.98rem;
+    line-height: 1.72;
+  }
+}
+
+
+/* ===== Hero image final polish ===== */
+body.home-voda .hero-image {
+  min-height: 560px;
+}
+
+body.home-voda .hero-image-wrap {
+  background: linear-gradient(180deg, #ffffff, #f4f0f0);
+}
+
+body.home-voda .hero-floating-card-main {
+  left: 18px;
+  bottom: 18px;
+}
+
+body.home-voda .hero-floating-card-side {
+  right: 18px;
+  top: 18px;
+}
+
+@media (max-width: 980px) {
+  body.home-voda .hero-image {
+    min-height: 420px;
+  }
+}
+
+@media (max-width: 760px) {
+  body.home-voda .hero-image {
+    min-height: 320px;
+  }
+}

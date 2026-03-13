@@ -16,17 +16,19 @@ import detail3 from "./assets/images/detail-3.svg";
 const heroSlides = [
   {
     title: "Decouvrez comment concretiser vos projets !",
-    text: "Demandez votre devis gratuit des maintenant et transformez vos idees en realite.",
+    text: "Demandez votre devis gratuit des maintenant et transformez vos idees en realite avec une equipe qui con?oit des experiences digitales modernes et credibles.",
     cta: "Demarrer mon projet",
-    image: "/images/hero-1.jpg",
-    fallback: hero1
+    image: "/images/banner-user.jpg",
+    fallback: hero1,
+    imagePosition: "center center"
   },
   {
     title: "X-MOMO - La gestion du cursus academique",
     text: "Concu pour optimiser votre gestion academique grace a des services et fonctionnalites innovantes ainsi qu'une fiabilite de pointe.",
     cta: "Decouvrir X-MOMO",
-    image: "/images/hero-2.jpg",
-    fallback: hero2
+    image: "/images/banner-4.jpg",
+    fallback: hero2,
+    imagePosition: "center 38%"
   }
 ];
 const devisSlides = [
@@ -455,9 +457,9 @@ function HeroCarousel() {
     <section className="hero-section" id="accueil">
       <div className="container hero-grid">
         <div className="hero-content hero-content-premium">
-          <span className="pill premium-pill">Xender-MU Digital Experience</span>
-          <h1>{hero.title}</h1>
-          <p>{hero.text}</p>
+          <span className="pill premium-pill">Agence digitale premium</span>
+          <h1 className="hero-luxe-title">{hero.title}</h1>
+          <p className="hero-luxe-copy">{hero.text}</p>
           <div className="hero-actions">
             <a className="btn btn-red" href="#contact">{hero.cta}</a>
             <a className="btn btn-ghost-light" href="#products">Voir nos solutions</a>
@@ -491,7 +493,7 @@ function HeroCarousel() {
         </div>
 
         <div className="hero-image-wrap hero-image-stage">
-          <img src={hero.image} onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = hero.fallback; }} alt="Hero slide" className="hero-image" loading="eager" decoding="async" />
+          <img src={hero.image} onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = hero.fallback; }} alt={hero.title} className="hero-image" style={{ objectPosition: hero.imagePosition || "center center" }} loading="eager" decoding="async" />
           <div className="hero-floating-card hero-floating-card-main">
             <span>Experience premium</span>
             <strong>Sites, apps et plateformes qui inspirent confiance</strong>
