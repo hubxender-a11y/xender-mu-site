@@ -3360,3 +3360,141 @@ body.detail-voda .detail-page > .detail-mark {
 
 
 
+
+.trust-strip-section {
+  padding: 0.4rem 0 1.2rem;
+}
+
+.trust-strip-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.trust-chip {
+  padding: 1rem;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: linear-gradient(160deg, rgba(25, 33, 52, 0.92) 0%, rgba(18, 25, 40, 0.96) 100%);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.24);
+}
+
+.trust-chip strong {
+  display: block;
+  font-size: 1.6rem;
+  font-family: "Space Grotesk", sans-serif;
+  color: #fff;
+}
+
+.trust-chip h3 {
+  margin: 0.3rem 0 0.35rem;
+  color: #f7f9ff;
+}
+
+.trust-chip p {
+  margin: 0;
+  color: var(--vf-muted);
+}
+
+.segment-section {
+  padding-top: 1.4rem;
+}
+
+.segment-shell {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 22px;
+  padding: 1.15rem;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(230, 0, 40, 0.18), transparent 30%),
+    linear-gradient(145deg, #141a29 0%, #101725 100%);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+}
+
+.segment-copy {
+  margin-bottom: 1rem;
+}
+
+.segment-grid {
+  gap: 1rem;
+}
+
+.segment-card {
+  border-radius: 16px;
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: linear-gradient(160deg, #1b2438 0%, #172033 100%);
+}
+
+.segment-card h3 {
+  margin-top: 0;
+  color: #fff;
+}
+
+.segment-card p {
+  margin: 0;
+  color: var(--vf-muted);
+}
+
+.conversion-section {
+  padding-top: 1.2rem;
+}
+
+.conversion-shell {
+  display: grid;
+  grid-template-columns: 1.1fr auto;
+  align-items: center;
+  gap: 1rem;
+  border-radius: 20px;
+  padding: 1.25rem;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(255, 255, 255, 0.18), transparent 25%),
+    linear-gradient(120deg, #cf1532 0%, #ff496a 100%);
+  color: #fff;
+  box-shadow: 0 18px 34px rgba(144, 10, 31, 0.36);
+}
+
+.conversion-shell h2 {
+  border-left: 0;
+  padding-left: 0;
+  color: #fff;
+}
+
+.conversion-shell p {
+  color: #ffe3ea;
+  margin: 0.45rem 0 0;
+}
+
+.conversion-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.conversion-actions .btn-dark {
+  background: rgba(10, 16, 28, 0.32);
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+.services-page-intro {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9rem;
+  margin: 0.8rem 0 1rem;
+}
+
+.service-intro-card {
+  padding: 1rem;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: linear-gradient(160deg, #1a2237 0%, #151d2f 100%);
+}
+
+.service-intro-card h3 {
+  margin-top: 0;
+  color: #fff;
+}
+
+.service-intro-card p {
+  margin: 0;
+  color: var(--vf-muted);
+}

@@ -45,6 +45,27 @@ const devisSlides = [
     fallback: hero2
   }
 ];
+const trustSignals = [
+  { value: "24h", label: "Delai moyen de reponse", text: "Qualification rapide des demandes et retour clair." },
+  { value: "B2B", label: "Execution orientee entreprise", text: "Solutions pensees pour PME, ecoles et institutions." },
+  { value: "Cloud", label: "Infrastructure evolutive", text: "Architecture deployee, maintenable et extensible." }
+];
+
+const targetSegments = [
+  {
+    title: "Ecoles et universites",
+    text: "Digitaliser l'administration, la communication et le suivi academique avec des outils simples a adopter."
+  },
+  {
+    title: "PME et structures commerciales",
+    text: "Structurer les operations, accelerer la facturation et centraliser les flux de travail critiques."
+  },
+  {
+    title: "Institutions et organisations",
+    text: "Deployer des plateformes robustes avec accompagnement, gouvernance et support durable."
+  }
+];
+
 const bannerSlides = [
   {
     title: "L'equipe Xender-MU en action",
@@ -491,6 +512,65 @@ function BannerCarousel() {
               />
             ))}
           </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function TrustStrip() {
+
+  return (
+    <section className="trust-strip-section">
+      <div className="container trust-strip-grid">
+        {trustSignals.map((item) => (
+          <article key={item.label} className="trust-chip">
+            <strong>{item.value}</strong>
+            <h3>{item.label}</h3>
+            <p>{item.text}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function SegmentSection() {
+
+  return (
+    <section className="section segment-section">
+      <div className="container segment-shell">
+        <div className="segment-copy">
+          <span className="pill">Positionnement marche</span>
+          <h2>Des offres pensees pour des clients qui veulent des resultats rapides</h2>
+          <p className="sub">Nous presentons une proposition claire, concrete et facile a acheter pour des structures qui veulent numeriser sans complexite inutile.</p>
+        </div>
+        <div className="grid cols-3 segment-grid">
+          {targetSegments.map((item) => (
+            <article key={item.title} className="segment-card">
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function FinalConversionSection() {
+
+  return (
+    <section className="section conversion-section">
+      <div className="container conversion-shell">
+        <div>
+          <span className="pill">Partenariat & execution</span>
+          <h2>Une base technique deja prete. La prochaine etape, c'est l'acceleration commerciale.</h2>
+          <p>Nous aidons les organisations a lancer vite, vendre mieux et structurer leurs operations avec des plateformes modernes et credibles.</p>
+        </div>
+        <div className="conversion-actions">
+          <a href="#contact" className="btn btn-red">Demander un devis</a>
+          <Link to="/services" className="btn btn-dark">Voir nos services</Link>
         </div>
       </div>
     </section>
@@ -955,9 +1035,11 @@ function HomePage() {
           </div>
         ) : null}
         <HeroCarousel />
+        <TrustStrip />
         <BannerCarousel />
         <KeyStatsSection items={statsItems} />
         <ServicesSection showAllLink />
+        <SegmentSection />
 
         <section className="section compact">
           <div className="container cta-block">
@@ -972,6 +1054,7 @@ function HomePage() {
         <ProcessSection />
         <NewsSection />
         <TestimonialsSection items={testimonialItems} />
+        <FinalConversionSection />
 
         <section className="section" id="faq">
           <div className="container">
@@ -1033,10 +1116,27 @@ function ServicesPage() {
           </div>
         </section>
 
+        <TrustStrip />
+
         <section className="section" id="services-content">
           <div className="container">
             <h2>Nos Services</h2>
-            <p className="sub">3 services principaux, faciles a comprendre</p>
+            <p className="sub">3 services principaux, faciles a comprendre, a presenter et a vendre</p>
+
+            <div className="services-page-intro">
+              <div className="service-intro-card">
+                <h3>Approche simple</h3>
+                <p>Nous clarifions vite le besoin, la priorite business et la feuille de route de livraison.</p>
+              </div>
+              <div className="service-intro-card">
+                <h3>Livraison concrete</h3>
+                <p>Chaque service est pense pour etre deploye, maintenu et monnayable rapidement.</p>
+              </div>
+              <div className="service-intro-card">
+                <h3>Support reel</h3>
+                <p>Nous restons presents apres la mise en ligne pour stabiliser et faire evoluer la solution.</p>
+              </div>
+            </div>
 
             <div className="grid cols-3 services-simple-grid">
               {services.map((service) => (
@@ -1071,6 +1171,9 @@ function ServicesPage() {
             </div>
           </div>
         </section>
+
+        <SegmentSection />
+        <FinalConversionSection />
 
         <section className="section compact">
           <div className="container cta-block">
