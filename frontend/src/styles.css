@@ -6492,3 +6492,804 @@ body.detail-voda .footer {
   background: #ffffff;
   border-top: 1px solid rgba(226, 232, 240, 0.98);
 }
+/* ===== X-inspired refinement pass ===== */
+body.home-voda .hero-section {
+  padding: 1.2rem 0 1rem;
+}
+
+body.home-voda .hero-grid {
+  grid-template-columns: minmax(0, 0.98fr) minmax(0, 1.02fr);
+  gap: 1rem;
+  align-items: stretch;
+}
+
+body.home-voda .hero-content-minimal,
+body.home-voda .hero-image-stage-minimal {
+  border-radius: 22px;
+}
+
+body.home-voda .hero-content-minimal {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.4rem;
+}
+
+body.home-voda .premium-pill {
+  background: #0f172a;
+  color: #ffffff;
+}
+
+body.home-voda .hero-mono-line {
+  margin: 0.7rem 0 1rem;
+  color: #6b7280;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+body.home-voda .hero-luxe-title {
+  max-width: 9.5ch;
+  margin: 0;
+  color: #0f172a;
+  line-height: 0.94;
+  letter-spacing: -0.06em;
+}
+
+body.home-voda .hero-luxe-copy {
+  margin-top: 0.9rem;
+  max-width: 56ch;
+  color: #5b6472;
+  font-size: 0.98rem;
+  line-height: 1.72;
+}
+
+body.home-voda .hero-actions {
+  margin-top: 1.15rem;
+}
+
+body.home-voda .hero-proof-row-minimal {
+  grid-template-columns: 1fr;
+  margin-top: 1.15rem;
+}
+
+body.home-voda .hero-proof-row-minimal .hero-proof-item {
+  padding: 0.9rem 0.95rem;
+  border-radius: 18px;
+  background: #ffffff;
+}
+
+body.home-voda .hero-proof-row-minimal .hero-proof-item strong {
+  color: #111827;
+  font-size: 0.95rem;
+}
+
+body.home-voda .hero-proof-row-minimal .hero-proof-item span {
+  color: #667085;
+}
+
+body.home-voda .hero-image-stage-minimal {
+  min-height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+body.home-voda .hero-image {
+  min-height: 620px;
+}
+
+body.home-voda .hero-floating-card {
+  max-width: 220px;
+  border-radius: 18px;
+  padding: 0.8rem 0.9rem;
+  background: rgba(255,255,255,0.92);
+  border: 1px solid rgba(226, 232, 240, 0.96);
+}
+
+body.home-voda .hero-floating-card span {
+  color: #e60028;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+}
+
+body.home-voda .hero-floating-card strong {
+  color: #0f172a;
+  font-size: 0.95rem;
+}
+
+body.home-voda .hero-floating-card p {
+  color: #6b7280;
+  font-size: 0.84rem;
+}
+
+body.home-voda .banner-card-premium,
+body.home-voda .service-card,
+body.home-voda .product-card,
+body.home-voda .why-card,
+body.home-voda .info-card,
+body.home-voda .commercial-highlight-card,
+body.home-voda .offer-pillar-card,
+body.home-voda .segment-card,
+body.home-voda .contact-wrap,
+body.services-voda .service-card,
+body.services-voda .service-intro-card,
+body.services-voda .segment-card,
+body.services-voda .info-card,
+body.services-voda .service-deliverable-card,
+body.services-voda .service-sector-card,
+body.services-voda .service-commitment-card,
+body.services-voda .service-faq-item,
+body.services-voda .premium-services-hero,
+body.detail-voda .detail-hero,
+body.detail-voda .detail-features,
+body.detail-voda .detail-page .info-card,
+body.detail-voda .detail-media-main-wrap,
+body.detail-voda .detail-thumb,
+body.detail-voda .detail-value-card,
+body.detail-voda .news-detail-card {
+  border-radius: 20px;
+  background: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.98);
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.05);
+}
+
+body.home-voda .service-card div,
+body.home-voda .product-card,
+body.home-voda .info-card,
+body.services-voda .service-deliverable-card,
+body.services-voda .service-sector-card,
+body.services-voda .service-commitment-card,
+body.services-voda .service-faq-item,
+body.detail-voda .detail-features,
+body.detail-voda .detail-page .info-card {
+  padding: 1rem;
+}
+
+body.home-voda .service-card h3,
+body.home-voda .product-card h3,
+body.home-voda .why-card h3,
+body.home-voda .info-card h3,
+body.services-voda .service-card h3,
+body.services-voda .service-deliverable-card h3,
+body.services-voda .service-sector-card h3,
+body.services-voda .service-commitment-card h3,
+body.detail-voda .detail-features h2,
+body.detail-voda .detail-page .info-card h3 {
+  letter-spacing: -0.04em;
+}
+
+body.home-voda .service-card p,
+body.home-voda .product-card p,
+body.home-voda .why-card p,
+body.home-voda .info-card p,
+body.services-voda .service-card p,
+body.services-voda .service-deliverable-card p,
+body.services-voda .service-sector-card p,
+body.services-voda .service-commitment-card p,
+body.services-voda .service-faq-item p,
+body.detail-voda .detail-page .info-card p,
+body.detail-voda .detail-features p {
+  color: #667085;
+}
+
+body.home-voda .service-card:hover,
+body.home-voda .product-card:hover,
+body.home-voda .why-card:hover,
+body.services-voda .service-card:hover,
+body.detail-voda .detail-thumb:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 32px rgba(15, 23, 42, 0.08);
+}
+
+body.services-voda .premium-services-hero,
+body.services-voda .services-hero-simple-wrap {
+  background: #ffffff;
+}
+
+body.services-voda .service-deliverable-card::before,
+body.services-voda .service-sector-card::before,
+body.detail-voda .detail-value-card::before,
+.footer-brand-column-simple::before {
+  width: 3px;
+}
+
+body.detail-voda .detail-hero,
+body.detail-voda .detail-features {
+  background: #ffffff;
+}
+
+body.detail-voda .detail-cta-block,
+body.detail-voda .facture-cta {
+  background: #ffffff;
+  text-align: left;
+}
+
+body.detail-voda .detail-cta-block .btn,
+body.detail-voda .facture-cta .btn {
+  margin-top: 0.6rem;
+}
+
+@media (max-width: 980px) {
+  body.home-voda .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  body.home-voda .hero-luxe-title {
+    max-width: none;
+  }
+
+  body.home-voda .hero-image {
+    min-height: 420px;
+  }
+}
+
+@media (max-width: 760px) {
+  body.home-voda .hero-content-minimal {
+    padding: 1rem;
+  }
+
+  body.home-voda .hero-luxe-title {
+    font-size: clamp(2rem, 11vw, 3rem);
+  }
+
+  body.home-voda .hero-floating-card {
+    position: static;
+    max-width: none;
+    margin-top: 0.75rem;
+  }
+
+  body.home-voda .hero-image {
+    min-height: 320px;
+  }
+}
+/* ===== Editorial product-page pass ===== */
+body.home-voda .hero-image-stage-minimal {
+  background: #ffffff;
+}
+
+body.home-voda .hero-image-wrap::after {
+  display: none;
+}
+
+body.home-voda .banner-section {
+  padding-top: 0.2rem;
+}
+
+body.home-voda .banner-card-premium {
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+body.home-voda .banner-layer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 220px;
+  padding: 1.35rem 1.25rem 1.2rem;
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.02) 0%, rgba(15, 23, 42, 0.84) 100%);
+}
+
+body.home-voda .banner-layer h3 {
+  max-width: 13ch;
+  margin: 0.45rem 0 0;
+  font-size: clamp(1.8rem, 3vw, 2.7rem);
+  line-height: 0.98;
+  letter-spacing: -0.05em;
+}
+
+body.home-voda .banner-layer p {
+  max-width: 48ch;
+  margin: 0.7rem 0 0;
+  font-size: 0.96rem;
+  line-height: 1.7;
+}
+
+body.home-voda .banner-editorial-index {
+  display: inline-block;
+  margin-top: 0.95rem;
+  color: rgba(255,255,255,0.74);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+body.home-voda .service-card,
+body.home-voda .product-card,
+body.services-voda .service-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+body.home-voda .service-card,
+body.services-voda .service-card {
+  overflow: hidden;
+}
+
+body.home-voda .service-card img,
+body.services-voda .service-card img {
+  height: 200px;
+  object-position: center 42%;
+}
+
+body.home-voda .product-card,
+body.home-voda .service-card div,
+body.services-voda .service-card div {
+  padding: 1rem;
+}
+
+body.home-voda .product-card h3,
+body.home-voda .service-card h3,
+body.services-voda .service-card h3 {
+  margin: 0.25rem 0 0;
+  font-size: 1.08rem;
+  line-height: 1.2;
+}
+
+body.home-voda .product-card p,
+body.home-voda .service-card p,
+body.services-voda .service-card p {
+  margin-top: 0.55rem;
+  font-size: 0.94rem;
+  line-height: 1.7;
+}
+
+body.home-voda .product-card small {
+  margin-top: 0.5rem;
+  color: #6b7280;
+  font-weight: 700;
+}
+
+body.home-voda .product-card .text-link,
+body.home-voda .service-card .text-link {
+  margin-top: 0.95rem;
+}
+
+@media (max-width: 760px) {
+  body.home-voda .banner-layer {
+    min-height: 180px;
+    padding: 1rem;
+  }
+
+  body.home-voda .banner-layer h3 {
+    max-width: none;
+    font-size: clamp(1.55rem, 8vw, 2.1rem);
+  }
+}
+/* ===== Final X product-page direction ===== */
+body.home-voda .hero-section {
+  padding: 1rem 0 0.5rem;
+}
+
+body.home-voda .hero-grid {
+  gap: 1.25rem;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  align-items: center;
+}
+
+body.home-voda .hero-content-minimal {
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  padding: 0.35rem 0;
+}
+
+body.home-voda .premium-pill {
+  width: fit-content;
+  border-radius: 999px;
+  background: #101418;
+  color: #ffffff;
+  padding: 0.42rem 0.8rem;
+  font-size: 0.76rem;
+  letter-spacing: 0.06em;
+}
+
+body.home-voda .hero-mono-line {
+  margin: 0.85rem 0 1.1rem;
+  color: #7b8494;
+  font-size: 0.74rem;
+  letter-spacing: 0.16em;
+}
+
+body.home-voda .hero-luxe-title {
+  max-width: 8.6ch;
+  font-size: clamp(3.5rem, 8vw, 6.4rem);
+  line-height: 0.9;
+  letter-spacing: -0.08em;
+  color: #0b0f14;
+}
+
+body.home-voda .hero-luxe-copy {
+  max-width: 48ch;
+  margin-top: 1rem;
+  color: #5f6877;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+body.home-voda .hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.35rem;
+}
+
+body.home-voda .hero-proof-row-minimal {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.8rem;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+body.home-voda .hero-proof-row-minimal .hero-proof-item {
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  box-shadow: none;
+}
+
+body.home-voda .hero-proof-row-minimal .hero-proof-item strong {
+  display: block;
+  margin-bottom: 0.22rem;
+  color: #111827;
+  font-size: 0.92rem;
+  letter-spacing: -0.03em;
+}
+
+body.home-voda .hero-proof-row-minimal .hero-proof-item span {
+  color: #6b7280;
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+
+body.home-voda .dots {
+  justify-content: flex-start;
+  margin-top: 1rem;
+}
+
+body.home-voda .dot {
+  width: 24px;
+  height: 3px;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.14);
+}
+
+body.home-voda .dot.active {
+  width: 42px;
+  background: #e60028;
+}
+
+body.home-voda .hero-image-stage-minimal {
+  border-radius: 30px;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  background: linear-gradient(180deg, #f8fafc 0%, #eef2f7 100%);
+  box-shadow: none;
+}
+
+body.home-voda .hero-image {
+  min-height: 680px;
+  filter: saturate(0.92) contrast(1.02);
+}
+
+body.home-voda .banner-section {
+  padding: 0.2rem 0 0;
+}
+
+body.home-voda .banner-card-premium {
+  border-radius: 30px;
+  background: #0b0f14;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: none;
+}
+
+body.home-voda .banner-image {
+  filter: grayscale(0.08) contrast(1.03) brightness(0.72);
+}
+
+body.home-voda .banner-layer {
+  min-height: 280px;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 1.6rem 1.55rem 1.45rem;
+  background: linear-gradient(180deg, rgba(11, 15, 20, 0.04) 0%, rgba(11, 15, 20, 0.92) 68%, rgba(11, 15, 20, 0.98) 100%);
+}
+
+body.home-voda .banner-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+body.home-voda .banner-kicker::before {
+  content: "";
+  width: 28px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.36);
+}
+
+body.home-voda .banner-layer h3 {
+  max-width: 11ch;
+  margin: 0.55rem 0 0;
+  color: #ffffff;
+  font-size: clamp(2.1rem, 4.5vw, 3.8rem);
+  line-height: 0.9;
+  letter-spacing: -0.07em;
+}
+
+body.home-voda .banner-layer p {
+  max-width: 34rem;
+  margin: 0.95rem 0 0;
+  color: rgba(255, 255, 255, 0.74);
+  font-size: 0.98rem;
+  line-height: 1.75;
+}
+
+body.home-voda .banner-editorial-index {
+  margin-top: 1.1rem;
+  color: rgba(255, 255, 255, 0.54);
+  font-size: 0.74rem;
+  letter-spacing: 0.22em;
+}
+
+body.home-voda .section > .container > h2,
+body.services-voda .section > .container > h2,
+body.detail-voda .section > .container > h2 {
+  max-width: 12ch;
+  color: #0b0f14;
+  font-size: clamp(2rem, 3.4vw, 3rem);
+  line-height: 0.98;
+  letter-spacing: -0.06em;
+}
+
+body.home-voda .section > .container > .sub,
+body.services-voda .section > .container > .sub,
+body.detail-voda .section > .container > .sub {
+  max-width: 44rem;
+  color: #667085;
+  font-size: 0.98rem;
+  line-height: 1.75;
+}
+
+body.home-voda .product-grid,
+body.home-voda .grid.cols-3,
+body.services-voda .services-simple-grid,
+body.services-voda .services-deliverables-grid,
+body.services-voda .services-commitment-grid,
+body.detail-voda .grid.cols-3,
+body.detail-voda .grid.cols-4 {
+  gap: 1rem;
+}
+
+body.home-voda .service-card,
+body.home-voda .product-card,
+body.services-voda .service-card,
+body.services-voda .service-intro-card,
+body.services-voda .service-deliverable-card,
+body.services-voda .service-sector-card,
+body.services-voda .service-commitment-card,
+body.services-voda .service-faq-item,
+body.home-voda .why-card,
+body.home-voda .info-card,
+body.detail-voda .detail-page .info-card,
+body.detail-voda .detail-value-card,
+body.detail-voda .detail-features,
+body.detail-voda .news-detail-card {
+  border-radius: 24px;
+  border: 1px solid rgba(15, 23, 42, 0.09);
+  background: #ffffff;
+  box-shadow: none;
+}
+
+body.home-voda .service-card:hover,
+body.home-voda .product-card:hover,
+body.home-voda .why-card:hover,
+body.services-voda .service-card:hover,
+body.detail-voda .detail-thumb:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+body.home-voda .service-card img,
+body.services-voda .service-card img {
+  height: 220px;
+  object-fit: cover;
+  object-position: center;
+}
+
+body.home-voda .product-card-image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  object-position: center;
+  margin: 0.8rem 0 0.95rem;
+  border-radius: 18px;
+}
+
+body.home-voda .product-card,
+body.home-voda .service-card div,
+body.services-voda .service-card div,
+body.services-voda .service-intro-card,
+body.services-voda .service-deliverable-card,
+body.services-voda .service-sector-card,
+body.services-voda .service-commitment-card,
+body.services-voda .service-faq-item,
+body.home-voda .why-card,
+body.home-voda .info-card,
+body.detail-voda .detail-page .info-card,
+body.detail-voda .detail-value-card,
+body.detail-voda .detail-features {
+  padding: 1.2rem;
+}
+
+body.home-voda .product-tag,
+body.home-voda .why-badge,
+body.services-voda .pill,
+body.services-voda .why-badge {
+  display: inline-flex;
+  width: fit-content;
+  padding: 0.36rem 0.72rem;
+  border-radius: 999px;
+  background: rgba(230, 0, 40, 0.08);
+  color: #c70022;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+body.home-voda .product-card h3,
+body.home-voda .service-card h3,
+body.services-voda .service-card h3,
+body.services-voda .service-intro-card h3,
+body.services-voda .service-deliverable-card h3,
+body.services-voda .service-sector-card h3,
+body.services-voda .service-commitment-card h3,
+body.home-voda .why-card h3,
+body.home-voda .info-card h3,
+body.detail-voda .detail-page .info-card h3,
+body.detail-voda .detail-features h2 {
+  margin-top: 0.8rem;
+  color: #0b0f14;
+  font-size: 1.15rem;
+  line-height: 1.15;
+  letter-spacing: -0.05em;
+}
+
+body.home-voda .product-card p,
+body.home-voda .service-card p,
+body.services-voda .service-card p,
+body.services-voda .service-intro-card p,
+body.services-voda .service-deliverable-card p,
+body.services-voda .service-sector-card p,
+body.services-voda .service-commitment-card p,
+body.services-voda .service-faq-item p,
+body.home-voda .why-card p,
+body.home-voda .info-card p,
+body.detail-voda .detail-page .info-card p,
+body.detail-voda .detail-features p {
+  margin-top: 0.55rem;
+  color: #667085;
+  font-size: 0.95rem;
+  line-height: 1.72;
+}
+
+body.home-voda .text-link,
+body.services-voda .text-link,
+body.detail-voda .text-link {
+  margin-top: auto;
+  padding-top: 1rem;
+  color: #0b0f14;
+  font-weight: 700;
+}
+
+body.services-voda .premium-services-hero,
+body.services-voda .services-hero-simple-wrap,
+body.detail-voda .detail-hero {
+  border-radius: 30px;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  background: #ffffff;
+  box-shadow: none;
+}
+
+body.services-voda .services-hero-simple-wrap h1,
+body.detail-voda .detail-hero h1 {
+  max-width: 11ch;
+  font-size: clamp(2.4rem, 5vw, 4.4rem);
+  line-height: 0.92;
+  letter-spacing: -0.07em;
+}
+
+body.services-voda .services-hero-metrics {
+  gap: 0.9rem;
+  margin-top: 1.5rem;
+}
+
+body.services-voda .services-hero-metrics div {
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 20px;
+  background: #fbfcfd;
+  box-shadow: none;
+}
+
+body.detail-voda .detail-media-main-wrap,
+body.detail-voda .detail-thumb {
+  border-radius: 24px;
+  box-shadow: none;
+}
+
+@media (max-width: 980px) {
+  body.home-voda .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  body.home-voda .hero-luxe-title,
+  body.home-voda .section > .container > h2,
+  body.services-voda .section > .container > h2,
+  body.detail-voda .section > .container > h2,
+  body.services-voda .services-hero-simple-wrap h1,
+  body.detail-voda .detail-hero h1 {
+    max-width: none;
+  }
+
+  body.home-voda .hero-proof-row-minimal {
+    grid-template-columns: 1fr;
+  }
+
+  body.home-voda .hero-image {
+    min-height: 420px;
+  }
+}
+
+@media (max-width: 760px) {
+  body.home-voda .hero-section {
+    padding-top: 0.5rem;
+  }
+
+  body.home-voda .hero-content-minimal {
+    padding: 0;
+  }
+
+  body.home-voda .hero-luxe-title {
+    font-size: clamp(2.4rem, 12vw, 3.6rem);
+  }
+
+  body.home-voda .hero-luxe-copy,
+  body.home-voda .section > .container > .sub,
+  body.services-voda .section > .container > .sub,
+  body.detail-voda .section > .container > .sub {
+    font-size: 0.94rem;
+  }
+
+  body.home-voda .hero-image-stage-minimal,
+  body.home-voda .banner-card-premium,
+  body.services-voda .premium-services-hero,
+  body.services-voda .services-hero-simple-wrap,
+  body.detail-voda .detail-hero {
+    border-radius: 22px;
+  }
+
+  body.home-voda .banner-layer {
+    min-height: 210px;
+    padding: 1rem;
+  }
+
+  body.home-voda .banner-layer h3 {
+    font-size: clamp(1.7rem, 9vw, 2.4rem);
+  }
+
+  body.home-voda .hero-image,
+  body.home-voda .product-card-image,
+  body.home-voda .service-card img,
+  body.services-voda .service-card img {
+    height: 260px;
+    min-height: 260px;
+  }
+}
