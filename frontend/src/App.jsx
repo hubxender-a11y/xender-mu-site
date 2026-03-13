@@ -2768,15 +2768,34 @@ function DetailPage() {
             <div className="rise-school-intro">
               <span className="product-tag">{product.tag || "Nouveau"}</span>
               <h1>MU-SAU SCHOOL : Application scolaire de suivi parental</h1>
-              <p>Pour une implication etroite des parents dans l'education de leurs enfants.</p>
-              <a href="/#contact" className="btn btn-red">demo</a>
+              <p>Une experience scolaire plus moderne pour renforcer la relation ecole-parents et rendre le suivi pedagogique plus lisible au quotidien.</p>
+              <a href="/#contact" className="btn btn-red">Demander une demo</a>
             </div>
             <img src="/images/detail-1.jpg" onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = detail1; }} alt="MU-SAU SCHOOL mobile app" className="rise-school-main-image" loading="lazy" decoding="async" />
           </section>
 
+          <section className="detail-features detail-value-strip">
+            <h2>Pourquoi MU-SAU SCHOOL cree plus de valeur</h2>
+            <p className="sub">Une solution bien presentee rassure les etablissements, engage les parents et donne tout de suite une image plus serieuse de votre organisation.</p>
+            <div className="detail-value-grid">
+              <article className="detail-value-card">
+                <h3>Parents mieux impliques</h3>
+                <p>Les informations importantes deviennent plus accessibles, ce qui renforce le suivi quotidien et la confiance envers l'ecole.</p>
+              </article>
+              <article className="detail-value-card">
+                <h3>Ecole mieux organisee</h3>
+                <p>Les equipes pedagogiques gagnent en lisibilite, en structure et en capacite de communication avec les familles.</p>
+              </article>
+              <article className="detail-value-card">
+                <h3>Image plus moderne</h3>
+                <p>L'etablissement se presente comme une structure serieuse, evolutive et alignee avec les attentes d'un public connecte.</p>
+              </article>
+            </div>
+          </section>
+
           <section className="detail-features">
             <h2>Galerie MU-SAU SCHOOL</h2>
-            <p className="sub">4 images minimum + miniatures pour presenter le produit comme un site corporate moderne.</p>
+            <p className="sub">Une presentation visuelle plus premium pour montrer le produit comme une solution serieuse, utile et deja prete a etre adoptee.</p>
             <ProductMediaGallery images={galleryImages} title={product.name} />
           </section>
 
@@ -2838,6 +2857,12 @@ function DetailPage() {
               <img src="/images/detail-3.jpg" onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = detail3; }} alt="Interface administrateur" loading="lazy" decoding="async" />
             </div>
           </section>
+          <section className="detail-features detail-cta-block">
+            <h2>Pret a moderniser la relation ecole-parents ?</h2>
+            <p className="sub">Nous pouvons vous presenter MU-SAU SCHOOL, cadrer les besoins de votre etablissement et vous proposer un accompagnement clair pour le deploiement.</p>
+            <Link to="/#contact" className="btn btn-red">Parler a l'equipe</Link>
+          </section>
+
         </div>
       </main>
     );
@@ -2862,7 +2887,7 @@ function DetailPage() {
             <div>
               <span className="product-tag">Conforme DGI</span>
               <h1>Facture Sign : Solution de Facturation 100% Normee DGI</h1>
-              <p>Generez, signez et gerez vos factures en toute conformite avec les standards de la Direction Generale des Impots.</p>
+              <p>Une solution premium pour fiabiliser vos operations de facturation, renforcer votre image professionnelle et rester conforme aux exigences DGI.</p>
               <p className="sub">Conforme aux normes DGI en vigueur</p>
             </div>
             <div className="facture-hero-logo" aria-hidden="true">
@@ -2878,9 +2903,28 @@ function DetailPage() {
             </div>
           </section>
 
+          <section className="detail-features detail-value-strip">
+            <h2>Pourquoi Facture Sign compte vraiment</h2>
+            <p className="sub">Au-dela de la simple emission de facture, la plateforme aide votre structure a paraitre plus fiable, mieux organisee et plus defendable face aux exigences fiscales.</p>
+            <div className="detail-value-grid">
+              <article className="detail-value-card">
+                <h3>Conformite rassurante</h3>
+                <p>Vous reduisez les risques lies a une mauvaise structure de facture et vous gagnez en serenite lors des controles.</p>
+              </article>
+              <article className="detail-value-card">
+                <h3>Gain de temps operationnel</h3>
+                <p>Les processus repetitifs sont simplifies pour accelerer l'emission, le suivi et l'archivage des documents.</p>
+              </article>
+              <article className="detail-value-card">
+                <h3>Image professionnelle</h3>
+                <p>Vos documents deviennent plus propres, plus credibles et plus coherents avec une entreprise qui inspire confiance.</p>
+              </article>
+            </div>
+          </section>
+
           <section className="detail-features">
             <h2>Galerie Facture Sign</h2>
-            <p className="sub">Presentation visuelle premium avec image principale et miniatures interactives.</p>
+            <p className="sub">Une presentation visuelle premium qui valorise le produit, rassure les parties prenantes et clarifie l'usage.</p>
             <ProductMediaGallery images={galleryImages} title={product.name} />
           </section>
 
@@ -2950,9 +2994,9 @@ function DetailPage() {
 
           <section className="detail-features facture-cta">
             <h2>Pret a Optimiser Votre Facturation ?</h2>
-            <p className="sub">Rejoignez des centaines d'entreprises qui utilisent deja Facture Sign en toute conformite DGI.</p>
+            <p className="sub">Rejoignez les structures qui veulent une facturation plus propre, plus rapide et mieux alignee avec leurs obligations.</p>
             <p className="sub">Aucune carte de credit requise • Annulation a tout moment</p>
-            <Link to="/#contact" className="btn btn-red">Demarrer maintenant</Link>
+            <Link to="/#contact" className="btn btn-red">Demander un cadrage</Link>
           </section>
         </div>
       </main>
@@ -2978,9 +3022,30 @@ function DetailPage() {
             <span className="product-tag">{product.tag}</span>
             <h1>{product.name}</h1>
             <p>{product.long_description || product.description}</p>
+            <p className="sub">Une solution pensee pour etre presentee facilement, adoptee rapidement et faire bonne impression des les premiers echanges.</p>
             <p><strong>Categorie:</strong> {product.category}</p>
             <p><strong>Stack:</strong> {product.stack}</p>
             <p><strong>Delai:</strong> {product.delivery}</p>
+            <Link to="/#contact" className="btn btn-red">Demander un cadrage</Link>
+          </div>
+        </section>
+
+        <section className="detail-features detail-value-strip">
+          <h2>Pourquoi cette solution est strategique</h2>
+          <p className="sub">Un produit bien presente ne vend pas seulement des fonctionnalites. Il montre une direction claire, une execution credible et une valeur concrete pour le client final.</p>
+          <div className="detail-value-grid">
+            <article className="detail-value-card">
+              <h3>Image plus solide</h3>
+              <p>La solution donne une meilleure impression des les premiers echanges et renforce la credibilite commerciale du projet.</p>
+            </article>
+            <article className="detail-value-card">
+              <h3>Usage plus clair</h3>
+              <p>Les points forts sont plus faciles a comprendre, a presenter et a defendre lors d'une demonstration ou d'un rendez-vous.</p>
+            </article>
+            <article className="detail-value-card">
+              <h3>Execution defendable</h3>
+              <p>Le produit apparait comme une base serieuse, evolutive et suffisamment propre pour etre adoptee par un client exigeant.</p>
+            </article>
           </div>
         </section>
 
@@ -3001,6 +3066,12 @@ function DetailPage() {
             ))}
           </div>
         </section>
+        <section className="detail-features detail-cta-block">
+          <h2>Pret a transformer cette solution en avantage concret ?</h2>
+          <p className="sub">Nous pouvons vous accompagner sur la presentation, l'adaptation fonctionnelle et le cadrage de deploiement pour en faire un produit vraiment defendable sur le marche.</p>
+          <Link to="/#contact" className="btn btn-red">Demarrer un echange</Link>
+        </section>
+
       </div>
     </main>
   );
@@ -3018,6 +3089,11 @@ export default function App() {
     </Routes>
   );
 }
+
+
+
+
+
 
 
 
