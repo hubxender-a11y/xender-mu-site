@@ -5013,3 +5013,522 @@ body.detail-voda .detail-page::after {
     height: 110px;
   }
 }
+/* ===== Iconic Vodafone-style hero focus ===== */
+body.home-voda .hero-section {
+  position: relative;
+  overflow: hidden;
+  padding: 1.7rem 0 1.6rem;
+}
+
+body.home-voda .hero-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 14% 10%, rgba(230,0,40,0.12), transparent 20%),
+    radial-gradient(circle at 88% 18%, rgba(255,120,146,0.12), transparent 24%),
+    linear-gradient(180deg, rgba(255,255,255,0.14), rgba(255,255,255,0));
+  pointer-events: none;
+}
+
+body.home-voda .hero-voda-mark {
+  position: absolute;
+  left: 50%;
+  top: 28px;
+  width: 980px;
+  height: 980px;
+  transform: translateX(-50%);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.26;
+  filter: saturate(1.05);
+}
+
+body.home-voda .hero-voda-ring {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 820px;
+  height: 820px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  border: 96px solid rgba(230, 0, 40, 0.96);
+  box-shadow:
+    0 0 120px rgba(230, 0, 40, 0.2),
+    0 0 220px rgba(230, 0, 40, 0.12),
+    inset 0 0 70px rgba(255, 116, 142, 0.2);
+}
+
+body.home-voda .hero-voda-core {
+  position: absolute;
+  left: 50%;
+  top: 176px;
+  width: 440px;
+  height: 440px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, rgba(255, 174, 191, 0.62), rgba(230, 0, 40, 0.34));
+  backdrop-filter: blur(2px);
+}
+
+body.home-voda .hero-voda-orbit {
+  position: absolute;
+  inset: 0;
+  animation: tomoeOrbit 18s linear infinite;
+}
+
+body.home-voda .hero-voda-center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 17%;
+  height: 17%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(120, 0, 0, 0.96), rgba(55, 0, 0, 0.92));
+  box-shadow: 0 0 18px rgba(255, 70, 70, 0.24);
+}
+
+body.home-voda .hero-voda-dot {
+  position: absolute;
+  width: 13%;
+  height: 13%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, rgba(95, 0, 0, 0.98), rgba(24, 0, 0, 0.95));
+  box-shadow: 0 0 14px rgba(255, 50, 50, 0.18);
+}
+
+body.home-voda .hero-voda-dot::after {
+  content: "";
+  position: absolute;
+  width: 65%;
+  height: 34%;
+  border-radius: 50%;
+  background: rgba(18, 0, 0, 0.94);
+  left: 42%;
+  top: 54%;
+  transform: rotate(-24deg);
+}
+
+body.home-voda .hero-voda-dot-1 {
+  left: 50%;
+  top: 8%;
+  transform: translateX(-50%);
+}
+
+body.home-voda .hero-voda-dot-2 {
+  right: 12%;
+  bottom: 24%;
+}
+
+body.home-voda .hero-voda-dot-3 {
+  left: 12%;
+  bottom: 24%;
+}
+
+body.home-voda .hero-grid {
+  position: relative;
+  z-index: 1;
+  grid-template-columns: minmax(0, 1.02fr) minmax(380px, 0.98fr);
+  align-items: center;
+  gap: 1.5rem;
+}
+
+body.home-voda .hero-content-premium {
+  border-radius: 36px;
+  padding: 1.95rem;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(230, 0, 40, 0.14), transparent 32%),
+    linear-gradient(180deg, rgba(255,255,255,0.94) 0%, rgba(251,247,247,0.92) 100%);
+  border: 1px solid rgba(220, 225, 236, 0.98);
+  box-shadow: 0 32px 70px rgba(20, 31, 52, 0.09);
+}
+
+body.home-voda .hero-content-premium::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(255,255,255,0.28), rgba(255,255,255,0));
+  pointer-events: none;
+}
+
+body.home-voda .premium-pill {
+  padding: 0.34rem 0.72rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+}
+
+body.home-voda .hero-luxe-title {
+  max-width: 8.7ch;
+  margin-top: 0.85rem;
+  margin-bottom: 0.95rem;
+  font-size: clamp(3rem, 5.8vw, 5.45rem);
+  line-height: 0.9;
+  letter-spacing: -0.07em;
+  color: #0f172a;
+}
+
+body.home-voda .hero-luxe-copy {
+  max-width: 52ch;
+  font-size: 1.03rem;
+  line-height: 1.8;
+  color: #5b6981;
+}
+
+body.home-voda .hero-actions {
+  margin-top: 1.15rem;
+}
+
+body.home-voda .hero-actions .btn {
+  min-height: 48px;
+}
+
+body.home-voda .hero-image-wrap {
+  border-radius: 38px;
+  background: linear-gradient(180deg, #ffffff, #f6f1f1);
+  box-shadow: 0 36px 80px rgba(20, 31, 52, 0.1);
+}
+
+body.home-voda .hero-image-wrap::before {
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.02) 0%, rgba(14, 22, 38, 0.1) 100%),
+    radial-gradient(circle at 78% 16%, rgba(230,0,40,0.24), transparent 28%),
+    radial-gradient(circle at 12% 90%, rgba(255,255,255,0.18), transparent 26%);
+}
+
+body.home-voda .hero-image {
+  min-height: 640px;
+  object-position: center 42%;
+}
+
+body.home-voda .hero-floating-card {
+  max-width: 280px;
+  border-radius: 22px;
+  background: rgba(255,255,255,0.9);
+  border: 1px solid rgba(220, 225, 236, 0.98);
+  box-shadow: 0 18px 42px rgba(18, 28, 46, 0.12);
+}
+
+body.home-voda .hero-floating-card-main {
+  left: 22px;
+  bottom: 22px;
+}
+
+body.home-voda .hero-floating-card-side {
+  right: 22px;
+  top: 22px;
+}
+
+body.home-voda .hero-proof-row {
+  gap: 0.8rem;
+  margin-top: 1.2rem;
+}
+
+body.home-voda .hero-proof-item {
+  border-radius: 20px;
+  padding: 0.92rem 0.95rem;
+}
+
+@media (max-width: 1180px) {
+  body.home-voda .hero-voda-mark {
+    width: 760px;
+    height: 760px;
+    top: 52px;
+    opacity: 0.21;
+  }
+
+  body.home-voda .hero-voda-ring {
+    width: 620px;
+    height: 620px;
+    border-width: 72px;
+  }
+
+  body.home-voda .hero-voda-core {
+    top: 136px;
+    width: 330px;
+    height: 330px;
+  }
+
+  body.home-voda .hero-grid {
+    grid-template-columns: 1fr 0.95fr;
+  }
+
+  body.home-voda .hero-image {
+    min-height: 540px;
+  }
+}
+
+@media (max-width: 980px) {
+  body.home-voda .hero-voda-mark {
+    width: 620px;
+    height: 620px;
+    top: 94px;
+    opacity: 0.16;
+  }
+
+  body.home-voda .hero-voda-ring {
+    width: 500px;
+    height: 500px;
+    border-width: 56px;
+  }
+
+  body.home-voda .hero-voda-core {
+    top: 114px;
+    width: 265px;
+    height: 265px;
+  }
+
+  body.home-voda .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  body.home-voda .hero-content-premium {
+    padding: 1.4rem;
+  }
+
+  body.home-voda .hero-luxe-title {
+    max-width: none;
+    font-size: clamp(2.4rem, 8vw, 4rem);
+  }
+
+  body.home-voda .hero-image {
+    min-height: 420px;
+  }
+}
+
+@media (max-width: 760px) {
+  body.home-voda .hero-section {
+    padding: 1.15rem 0 1rem;
+  }
+
+  body.home-voda .hero-voda-mark {
+    width: 420px;
+    height: 420px;
+    top: 118px;
+    opacity: 0.12;
+  }
+
+  body.home-voda .hero-voda-ring {
+    width: 340px;
+    height: 340px;
+    border-width: 38px;
+  }
+
+  body.home-voda .hero-voda-core {
+    top: 78px;
+    width: 178px;
+    height: 178px;
+  }
+
+  body.home-voda .hero-content-premium,
+  body.home-voda .hero-image-wrap {
+    border-radius: 26px;
+  }
+
+  body.home-voda .hero-content-premium {
+    padding: 1.08rem;
+  }
+
+  body.home-voda .hero-luxe-title {
+    font-size: clamp(2.05rem, 11vw, 3.2rem);
+    line-height: 0.95;
+  }
+
+  body.home-voda .hero-luxe-copy {
+    font-size: 0.95rem;
+    line-height: 1.68;
+  }
+
+  body.home-voda .hero-image {
+    min-height: 330px;
+  }
+
+  body.home-voda .hero-floating-card {
+    max-width: none;
+    border-radius: 18px;
+  }
+}
+/* ===== Hero framing precision pass ===== */
+body.home-voda .hero-section {
+  min-height: clamp(720px, 88vh, 940px);
+  display: flex;
+  align-items: center;
+}
+
+body.home-voda .hero-voda-mark {
+  top: 12px;
+  width: 1080px;
+  height: 1080px;
+  opacity: 0.24;
+}
+
+body.home-voda .hero-voda-ring {
+  width: 900px;
+  height: 900px;
+  border-width: 106px;
+}
+
+body.home-voda .hero-voda-core {
+  top: 194px;
+  width: 485px;
+  height: 485px;
+}
+
+body.home-voda .hero-grid {
+  grid-template-columns: minmax(0, 1fr) minmax(430px, 0.96fr);
+  gap: 1.65rem;
+}
+
+body.home-voda .hero-content-premium {
+  max-width: 680px;
+}
+
+body.home-voda .hero-luxe-title {
+  max-width: 8.2ch;
+}
+
+body.home-voda .hero-luxe-copy {
+  max-width: 50ch;
+}
+
+body.home-voda .hero-image-wrap {
+  align-self: stretch;
+}
+
+body.home-voda .hero-image {
+  min-height: 680px;
+  object-position: center 38%;
+}
+
+body.home-voda .hero-floating-card-main {
+  left: 26px;
+  bottom: 26px;
+}
+
+body.home-voda .hero-floating-card-side {
+  right: 26px;
+  top: 26px;
+}
+
+@media (max-width: 1280px) {
+  body.home-voda .hero-section {
+    min-height: clamp(680px, 84vh, 860px);
+  }
+
+  body.home-voda .hero-voda-mark {
+    top: 28px;
+    width: 920px;
+    height: 920px;
+  }
+
+  body.home-voda .hero-voda-ring {
+    width: 760px;
+    height: 760px;
+    border-width: 88px;
+  }
+
+  body.home-voda .hero-voda-core {
+    top: 166px;
+    width: 406px;
+    height: 406px;
+  }
+
+  body.home-voda .hero-image {
+    min-height: 590px;
+  }
+}
+
+@media (max-width: 980px) {
+  body.home-voda .hero-section {
+    min-height: auto;
+    display: block;
+  }
+
+  body.home-voda .hero-voda-mark {
+    top: 84px;
+    width: 640px;
+    height: 640px;
+    opacity: 0.14;
+  }
+
+  body.home-voda .hero-voda-ring {
+    width: 520px;
+    height: 520px;
+    border-width: 58px;
+  }
+
+  body.home-voda .hero-voda-core {
+    top: 118px;
+    width: 276px;
+    height: 276px;
+  }
+
+  body.home-voda .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  body.home-voda .hero-content-premium {
+    max-width: none;
+  }
+
+  body.home-voda .hero-luxe-title,
+  body.home-voda .hero-luxe-copy {
+    max-width: none;
+  }
+
+  body.home-voda .hero-image {
+    min-height: 430px;
+    object-position: center 34%;
+  }
+}
+
+@media (max-width: 760px) {
+  body.home-voda .hero-section {
+    padding-top: 1rem;
+    padding-bottom: 0.9rem;
+  }
+
+  body.home-voda .hero-voda-mark {
+    top: 120px;
+    width: 430px;
+    height: 430px;
+    opacity: 0.1;
+  }
+
+  body.home-voda .hero-voda-ring {
+    width: 340px;
+    height: 340px;
+    border-width: 38px;
+  }
+
+  body.home-voda .hero-voda-core {
+    top: 76px;
+    width: 182px;
+    height: 182px;
+  }
+
+  body.home-voda .hero-content-premium {
+    padding: 1rem;
+  }
+
+  body.home-voda .hero-luxe-title {
+    font-size: clamp(2rem, 11vw, 3rem);
+    line-height: 0.94;
+  }
+
+  body.home-voda .hero-image {
+    min-height: 320px;
+    object-position: center 30%;
+  }
+
+  body.home-voda .hero-floating-card-main,
+  body.home-voda .hero-floating-card-side {
+    left: auto;
+    right: auto;
+    top: auto;
+    bottom: auto;
+  }
+}
