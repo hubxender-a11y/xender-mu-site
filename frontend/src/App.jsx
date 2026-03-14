@@ -79,7 +79,7 @@ const bannerSlides = [
   },
   {
     kicker: "Conception premium",
-    title: "Nous concevons et mettons en oeuvre des services digitaux pour les organisations qui souhaitent structurer leur presence, leurs operations et leur relation client.",
+    title: "Nous elevons vos projets avec une execution claire et haut de gamme",
     text: "Des experiences digitales pensees pour inspirer confiance, clarifier la valeur et faire meilleure impression.",
     image: "/images/banner-1.jpg",
     fallback: banner1,
@@ -723,7 +723,7 @@ function ServicesSection({ showAllLink = false }) {
     <section className="section" id="services">
       <div className="container">
         <h2>Services</h2>
-        <p className="sub">Nous concevons et mettons en oeuvre des services digitaux pour les organisations qui souhaitent structurer leur presence, leurs operations et leur relation client.</p>
+        <p className="sub">Nous elevons vos projets avec une execution claire et haut de gamme</p>
         <div className="grid cols-3">
           {services.map((service) => (
             <article key={service.title} className="service-card">
@@ -788,12 +788,12 @@ function WhySection() {
     <section className="section alt why-section" id="why">
       <div className="container">
         <h2 className="why-title">Pourquoi Choisir Xender-MU ?</h2>
-        <p className="sub why-sub">Notre approche privilegie la clarte de cadrage, la qualite d'execution et la continuite d'accompagnement.</p>
+        <p className="sub why-sub">Nous placons le client au coeur de chaque projet pour des solutions sur mesure</p>
         <div className="grid cols-3 why-grid">
           <article className="info-card why-card">
             <span className="why-badge">AGILE</span>
             <h3>Developpement AGILE</h3>
-            <p>Nous travaillons par iterations courtes afin de garder le projet lisible, de securiser les priorites et de faciliter la prise de decision.</p>
+            <p>Xender-MU axe ses developpements sur les methodes agiles pour que le client soit aussi acteur de sa propre numerisation.</p>
             <ul>
               <li>Iterations rapides</li>
               <li>Feedback continu</li>
@@ -804,7 +804,7 @@ function WhySection() {
           <article className="info-card why-card why-card-smart">
             <span className="why-badge">SMART</span>
             <h3>Technologie SMART</h3>
-            <p>Nous concevons des solutions sur mesure alignees avec vos besoins fonctionnels, vos contraintes de gouvernance et vos objectifs de croissance.</p>
+            <p>Nous developpons des solutions sur mesure qui repondent parfaitement a vos besoins specifiques.</p>
             <ul>
               <li>Specifique</li>
               <li>Mesurable</li>
@@ -817,7 +817,7 @@ function WhySection() {
           <article className="info-card why-card why-card-support">
             <span className="why-badge">SUPPORT</span>
             <h3>Support Actif</h3>
-            <p>Nous assurons un suivi actif apres livraison afin de stabiliser les usages, corriger les points sensibles et accompagner les evolutions.</p>
+            <p>Conscient de l'importance du service apres vente, notre support vous accompagne au quotidien.</p>
             <ul>
               <li>Support 6j/7</li>
               <li>Accompagnement</li>
@@ -854,7 +854,7 @@ function ProcessSection() {
     <section className="section" id="process">
       <div className="container">
         <h2>Notre methode de travail</h2>
-        <p className="sub">Une methode simple pour cadrer, produire et mettre en service des plateformes utiles et defendables.</p>
+        <p className="sub">Une execution rapide, claire et orientee resultats.</p>
         <div className="grid cols-4 process-home-grid">
           {workProcess.map((item) => (
             <article key={item.step} className="info-card process-home-card">
@@ -874,8 +874,8 @@ function TestimonialsSection({ items = [] }) {
   return (
     <section className="section compact" id="temoignages">
       <div className="container">
-        <h2>Temoignages</h2>
-        <p className="sub">Des retours issus de contextes reels de mise en oeuvre et d'accompagnement.</p>
+        <h2>Ils nous font confiance</h2>
+        <p className="sub">Des retours concrets sur la qualite de nos livraisons.</p>
         <div className="grid cols-3 testimonials-grid">
           {items.map((item, idx) => (
             <article key={`${item.name}-${idx}`} className="info-card testimonial-card">
@@ -925,7 +925,7 @@ function NewsSection() {
     <section className="section" id="news">
       <div className="container">
         <h2>Actualites Xender-MU</h2>
-        <p className="sub">Publications, actualites produit et informations institutionnelles liees a nos activites.</p>
+        <p className="sub">Restez informe de nos dernieres innovations et actualites</p>
 
         {loading ? (
           <article className="info-card">
@@ -1014,8 +1014,8 @@ function ContactSection() {
     <section className="section" id="contact">
       <div className="container contact-wrap">
         <div>
-          <h2>Entrons en relation</h2>
-          <p>Chaque demande fait l'objet d'une premiere lecture afin d'orienter rapidement le cadrage, le budget et le format d'intervention les plus pertinents.</p>
+          <h2>Pret a lancer une plateforme plus credible ?</h2>
+          <p>Chaque demande est qualifiee rapidement pour vous apporter une reponse claire et utile.</p>
         </div>
 
         <form className="contact-form" onSubmit={handleSubmit}>
@@ -1185,13 +1185,80 @@ function HomePage() {
           </div>
         ) : null}
         <HeroCarousel />
+        <TrustStrip />
         <BannerCarousel />
         <KeyStatsSection items={statsItems} />
         <ServicesSection showAllLink />
+        <section className="section compact services-commitments">
+          <div className="container">
+            <h2>Ce qui fait la difference Xender-MU</h2>
+            <p className="sub">Une posture agence claire: mieux cadrer, mieux presenter et mieux livrer.</p>
+            <div className="grid cols-3 services-commitment-grid">
+              {serviceCommitments.map((item) => (
+                <article key={item.title} className="info-card service-commitment-card">
+                  <h3>{item.title}</h3>
+                  <p>{item.text}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="section compact services-faq">
+          <div className="container">
+            <h2>Questions frequentes sur nos services</h2>
+            <div className="faq-list services-faq-list">
+              {servicesFaq.map((item) => (
+                <article key={item.q} className="faq-item service-faq-item open">
+                  <div className="service-faq-head">
+                    <span>{item.q}</span>
+                    <strong>+</strong>
+                  </div>
+                  <p>{item.a}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <SegmentSection />
+
+        <section className="section compact">
+          <div className="container cta-block">
+            <h3>Pret a lancer une plateforme plus credible ?</h3>
+            <p>Rejoignez les nombreuses entreprises qui nous font confiance.</p>
+            <a href="#contact" className="btn btn-dark">Demarrer mon projet</a>
+          </div>
+        </section>
+
         <ProductSection items={productItems} loading={productLoading} />
         <WhySection />
+        <ProcessSection />
         <NewsSection />
+        <TestimonialsSection items={testimonialItems} />
         <FinalConversionSection />
+
+        <section className="section" id="faq">
+          <div className="container">
+            <h2>Questions essentielles</h2>
+            <div className="faq-list">
+              {faqData.map((item, idx) => {
+                const open = openFaq === idx;
+
+  return (
+                  <article key={item.q} className={open ? "faq-item open" : "faq-item"}>
+                    <button type="button" onClick={() => setOpenFaq(open ? -1 : idx)}>
+                      <span>{item.q}</span>
+                      <strong>{open ? "-" : "+"}</strong>
+                    </button>
+                    <p>{item.a}</p>
+                  </article>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
         <ContactSection />
       </main>
 
@@ -1220,18 +1287,18 @@ function ServicesPage() {
         <section className="hero-section services-hero-simple">
           <div className="container services-hero-simple-wrap premium-services-hero">
             <span className="pill premium-pill">Services Xender-MU</span>
-            <h1>Des services digitaux concus pour structurer, moderniser et faire evoluer votre organisation</h1>
+            <h1>Nous concevons des experiences digitales premium, claires et desirables</h1>
             <p>
-              Notre intervention couvre le cadrage, la conception, le developpement et l'accompagnement de solutions web, mobiles et metier adaptees a votre contexte.
+              Une approche plus claire pour presenter notre valeur: architecture metier, applications mobiles et experiences web qui renforcent votre image de marque.
             </p>
             <div className="services-hero-actions">
               <Link to="/#contact" className="btn btn-red">Demander un devis</Link>
               <Link to="/" className="btn btn-dark">Retour accueil</Link>
             </div>
             <div className="services-hero-metrics">
-              <div><strong>Image institutionnelle</strong><span>Des interfaces nettes, lisibles et rassurantes pour vos publics.</span></div>
-              <div><strong>Execution maitrisee</strong><span>Un cadre de travail clair, des arbitrages rapides et une feuille de route suivie.</span></div>
-              <div><strong>Accompagnement durable</strong><span>Maintenance, suivi et evolution de la solution dans le temps.</span></div>
+              <div><strong>Image de marque plus forte</strong><span>interfaces nettes, lisibles et rassurantes</span></div>
+              <div><strong>Execution maitrisee</strong><span>cadre agile, arbitrages rapides et delais tenus</span></div>
+              <div><strong>Presence durable</strong><span>maintenance, suivi et accompagnement dans la duree</span></div>
             </div>
           </div>
         </section>
@@ -1241,20 +1308,20 @@ function ServicesPage() {
         <section className="section" id="services-content">
           <div className="container">
             <h2>Nos Services</h2>
-            <p className="sub">Trois axes d'intervention pour couvrir les besoins les plus frequents en transformation digitale.</p>
+            <p className="sub">3 services principaux, faciles a comprendre, a presenter et a vendre</p>
 
             <div className="services-page-intro">
               <div className="service-intro-card">
-                <h3>Lecture du besoin</h3>
-                <p>Nous analysons le contexte, les priorites metier et le cadre de decision avant toute mise en oeuvre.</p>
+                <h3>Approche simple</h3>
+                <p>Nous clarifions vite le besoin, la priorite business et la feuille de route la plus pertinente.</p>
               </div>
               <div className="service-intro-card">
-                <h3>Production encadree</h3>
-                <p>Chaque service est organise autour d'un perimetre clair, de livrables definis et d'une execution suivie.</p>
+                <h3>Livraison maitrisee</h3>
+                <p>Chaque service est pense pour etre deploye, maintenu et monnayable rapidement.</p>
               </div>
               <div className="service-intro-card">
                 <h3>Support reel</h3>
-                <p>Nous prolongeons l'intervention apres mise en ligne pour accompagner les usages et les evolutions prioritaires.</p>
+                <p>Nous restons presents apres la mise en ligne pour stabiliser, optimiser et faire evoluer la solution.</p>
               </div>
             </div>
 
@@ -1275,7 +1342,7 @@ function ServicesPage() {
         <section className="section services-deliverables">
           <div className="container">
             <h2>Ce que vous recevez concretement</h2>
-            <p className="sub">Nous ne livrons pas seulement du developpement. Nous apportons un cadre de travail, une experience presentable et une base technique exploitable.</p>
+            <p className="sub">Nous ne vendons pas seulement du developpement. Nous livrons un cadre clair, un design presentable et une execution qui peut etre defendue face a un comite, un partenaire ou un client final.</p>
             <div className="grid cols-3 services-deliverables-grid">
               {serviceDeliverables.map((item) => (
                 <article key={item.title} className="service-deliverable-card">
@@ -1295,7 +1362,7 @@ function ServicesPage() {
         <section className="section compact services-sectors">
           <div className="container">
             <h2>Secteurs que nous accompagnons</h2>
-            <p className="sub">Notre positionnement s'adresse aux structures qui recherchent une solution utile, lisible et durablement exploitable.</p>
+            <p className="sub">Notre positionnement est pense pour des structures qui veulent une solution utile, presentable et exploitable rapidement.</p>
             <div className="grid cols-2 services-sectors-grid">
               {serviceSectors.map((sector) => (
                 <article key={sector} className="service-sector-card">
@@ -1312,15 +1379,15 @@ function ServicesPage() {
             <h2>Comment nous travaillons</h2>
             <div className="grid cols-3 process-grid">
               <article className="info-card process-card">
-                <h3>1. Qualification</h3>
-                <p>Nous clarifions le besoin, le contexte et les contraintes de mise en oeuvre.</p>
+                <h3>1. Echange</h3>
+                <p>Nous clarifions votre besoin en 30 minutes.</p>
               </article>
               <article className="info-card process-card">
                 <h3>2. Proposition</h3>
-                <p>Nous formulons un cadre d'intervention clair: delai, budget et livrables attendus.</p>
+                <p>Vous recevez une proposition claire: delai, budget, livrables.</p>
               </article>
               <article className="info-card process-card">
-                <h3>3. Execution</h3>
+                <h3>3. Livraison</h3>
                 <p>Nous livrons avec exigence, suivi et accompagnement apres mise en ligne.</p>
               </article>
             </div>
@@ -1330,7 +1397,7 @@ function ServicesPage() {
         <section className="section compact services-commitments">
           <div className="container">
             <h2>Ce qui fait la difference Xender-MU</h2>
-            <p className="sub">Une posture de travail exigeante, fondee sur la clarte, la maitrise et la continuite.</p>
+            <p className="sub">Une posture agence claire: mieux cadrer, mieux presenter et mieux livrer.</p>
             <div className="grid cols-3 services-commitment-grid">
               {serviceCommitments.map((item) => (
                 <article key={item.title} className="info-card service-commitment-card">
@@ -1364,8 +1431,8 @@ function ServicesPage() {
 
         <section className="section compact">
           <div className="container cta-block">
-            <h3>Un projet a etudier ?</h3>
-            <p>Recevez une premiere lecture claire ainsi qu'une proposition d'intervention adaptee a votre besoin.</p>
+            <h3>Un projet a structurer ?</h3>
+            <p>Recevez une estimation claire et une trajectoire de lancement adaptee a votre besoin.</p>
             <Link to="/#contact" className="btn btn-dark">Demarrer mon projet gratuit</Link>
           </div>
         </section>
@@ -3018,7 +3085,6 @@ export default function App() {
     </Routes>
   );
 }
-
 
 
 
