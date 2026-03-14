@@ -521,25 +521,28 @@ function DetailBackgroundMark() {
 }
 function SiteHeader({ mobileOpen, setMobileOpen }) {
   return (
-    <header className="topbar topbar-voda">
+    <header className="topbar topbar-voda topbar-wow">
       <div className="topbar-utility">
         <div className="container topbar-utility-inner">
-          <a href="/#products">Xender-MU Solutions</a>
-          <a href="/#news">Actualites</a>
-          <a href="/#contact">Nous contacter</a>
+          <a href="/#products">Xender-MU Business</a>
+          <a href="/#news">Newsroom</a>
+          <a href="/#contact">Connect</a>
         </div>
       </div>
 
-      <div className="container nav-row nav-row-voda">
+      <div className="container nav-row nav-row-voda nav-row-wow">
         <Link to="/" className="brand" aria-label="Xender-MU"><BrandIdentity /></Link>
 
-        <nav className="desktop-menu desktop-menu-voda">
-          <Link to="/">Accueil</Link>
+        <nav className="desktop-menu desktop-menu-voda desktop-menu-wow">
+          <Link to="/">everyone.connected</Link>
+          <a href="/#accueil">Our company</a>
           <a href="/#services">Services</a>
           <a href="/#products">Solutions</a>
           <a href="/#news">News</a>
           <a href="/#contact">Contact</a>
         </nav>
+
+        <button className="nav-search" type="button" aria-label="Recherche">?</button>
 
         <button className={`mobile-toggle ${mobileOpen ? "open" : ""}`} onClick={() => setMobileOpen((v) => !v)} type="button" aria-label="Menu mobile">
           <span />
@@ -549,10 +552,11 @@ function SiteHeader({ mobileOpen, setMobileOpen }) {
       </div>
 
       <div className={`mobile-menu mobile-menu-voda ${mobileOpen ? "open" : ""}`}>
-        <Link to="/" onClick={() => setMobileOpen(false)}>Accueil</Link>
+        <Link to="/" onClick={() => setMobileOpen(false)}>everyone.connected</Link>
+        <a href="/#accueil" onClick={() => setMobileOpen(false)}>Our company</a>
         <a href="/#services" onClick={() => setMobileOpen(false)}>Services</a>
         <a href="/#products" onClick={() => setMobileOpen(false)}>Solutions</a>
-        <a href="/#news" onClick={() => setMobileOpen(false)}>Actualites</a>
+        <a href="/#news" onClick={() => setMobileOpen(false)}>News</a>
         <a href="/#contact" onClick={() => setMobileOpen(false)}>Contact</a>
       </div>
     </header>
@@ -563,8 +567,8 @@ function HeroCarousel() {
   const hero = heroSlides[0];
 
   return (
-    <section className="hero-section hero-voda hero-voda-luxe" id="accueil">
-      <div className="hero-voda-background">
+    <section className="hero-section hero-voda hero-voda-luxe hero-voda-wow" id="accueil">
+      <div className="hero-voda-background hero-voda-media">
         <img
           src={hero.image}
           onError={(e) => {
@@ -572,28 +576,39 @@ function HeroCarousel() {
             e.currentTarget.src = hero.fallback;
           }}
           alt={hero.title}
-          className="hero-image"
-          style={{ objectPosition: "center 42%" }}
+          className="hero-image hero-image-fallback"
+          style={{ objectPosition: "center 40%" }}
           loading="eager"
           decoding="async"
         />
+        <video
+          className="hero-video"
+          autoPlay
+          muted
+          loop
+          playsInline
+          poster={hero.image}
+        >
+          <source src="/videos/hero-main.webm" type="video/webm" />
+          <source src="/videos/hero-main.mp4" type="video/mp4" />
+        </video>
       </div>
       <div className="hero-voda-overlay" />
+      <div className="hero-voda-graphic" />
       <div className="container hero-voda-inner">
-        <div className="hero-voda-copy">
-          <span className="hero-voda-kicker">Our digital company</span>
+        <div className="hero-voda-copy hero-voda-copy-wow">
+          <span className="hero-voda-kicker">Xender-MU digital company</span>
           <h1 className="hero-voda-title">
-            <span className="hero-voda-outline">XENDER-MU.</span>
-            <span className="hero-voda-solid">CONNECTED</span>
+            <span className="hero-voda-outline">EVERY PLATFORM.</span>
+            <span className="hero-voda-solid">MORE TRUSTED</span>
           </h1>
           <div className="hero-voda-intro">
             <p>
-              Des experiences digitales plus claires, plus fiables et plus maitrisees pour les organisations qui
-              veulent mieux presenter leur valeur, mieux servir leurs utilisateurs et mieux executer.
+              Nous concevons des experiences digitales, des plateformes metier et des systemes plus clairs pour les organisations qui veulent mieux se presenter, mieux servir et mieux evoluer.
             </p>
           </div>
           <div className="hero-actions hero-voda-actions">
-            <a className="btn btn-red hero-voda-btn-soft" href="#contact">Our purpose</a>
+            <a className="btn btn-red hero-voda-btn-soft" href="#contact">Parler a notre equipe</a>
           </div>
         </div>
       </div>
@@ -766,42 +781,70 @@ function HomeFeatureSection() {
   );
 }
 function ServicesSection({ showAllLink = false }) {
-  return (
-    <section className="section services-ledger-section" id="services">
-      <div className="container services-ledger-grid">
-        <div className="services-ledger-copy">
-          <span className="pill">Service portfolio</span>
-          <h2>Concevoir. Deployer. Faire evoluer.</h2>
-          <p className="sub">
-            Nous intervenons sur les moments qui changent vraiment la perception d'une organisation :
-            la clarte de l'offre, la qualite des parcours et la fiabilite de l'execution.
-          </p>
-          {showAllLink && (
-            <div className="services-ledger-actions">
-              <Link to="/services" className="btn btn-red">Voir la page services</Link>
-            </div>
-          )}
-        </div>
+  const visualServices = [
+    { ...services[0], visual: "/images/hero-1.jpg", fallbackVisual: "/images/service-1.jpg" },
+    { ...services[1], visual: "/images/banner-3.jpg", fallbackVisual: "/images/service-2.jpg" },
+    { ...services[2], visual: "/images/banner-2.jpg", fallbackVisual: "/images/service-3.jpg" }
+  ];
 
-        <div className="services-ledger-list">
-          {services.map((service, index) => (
-            <article key={service.title} className="services-ledger-item">
-              <div className="services-ledger-index">0{index + 1}</div>
-              <div className="services-ledger-body">
-                <h3>{service.title}</h3>
-                <p>{service.description}</p>
-              </div>
+  const primary = visualServices[0];
+  const secondary = visualServices.slice(1);
+
+  return (
+    <section className="section services-cinema-section" id="services">
+      <div className="container services-cinema-head">
+        <div>
+          <span className="pill">Service portfolio</span>
+          <h2>Des services presentes comme des experiences a deployer, pas comme une simple liste.</h2>
+        </div>
+        {showAllLink && (
+          <div className="services-cinema-actions">
+            <Link to="/services" className="btn btn-red">Voir la page services</Link>
+          </div>
+        )}
+      </div>
+
+      <div className="container services-cinema-grid">
+        <article className="services-cinema-feature">
+          <img
+            src={primary.visual}
+            onError={(e) => {
+              e.currentTarget.onerror = null;
+              e.currentTarget.src = primary.fallbackVisual;
+            }}
+            alt={primary.title}
+            className="services-cinema-image"
+            loading="lazy"
+            decoding="async"
+          />
+          <div className="services-cinema-overlay" />
+          <div className="services-cinema-copy">
+            <span className="services-cinema-index">01</span>
+            <h3>{primary.title}</h3>
+            <p>{primary.description}</p>
+          </div>
+        </article>
+
+        <div className="services-cinema-stack">
+          {secondary.map((service, index) => (
+            <article key={service.title} className="services-cinema-card">
               <img
-                src={service.image}
+                src={service.visual}
                 onError={(e) => {
                   e.currentTarget.onerror = null;
-                  e.currentTarget.src = service.fallback;
+                  e.currentTarget.src = service.fallbackVisual;
                 }}
                 alt={service.title}
-                className="services-ledger-image"
+                className="services-cinema-image"
                 loading="lazy"
                 decoding="async"
               />
+              <div className="services-cinema-overlay" />
+              <div className="services-cinema-copy">
+                <span className="services-cinema-index">0{index + 2}</span>
+                <h3>{service.title}</h3>
+                <p>{service.description}</p>
+              </div>
             </article>
           ))}
         </div>
@@ -1010,8 +1053,12 @@ function NewsSection() {
     };
   }, []);
 
+  const items = news.slice(0, 3);
+  const featured = items[0];
+  const secondary = items.slice(1);
+
   return (
-    <section className="section news-voda-section" id="news">
+    <section className="section news-voda-section news-editorial-section" id="news">
       <div className="container">
         <div className="section-heading voda-heading voda-heading-row news-voda-heading">
           <h2>All the latest</h2>
@@ -1022,30 +1069,65 @@ function NewsSection() {
           <article className="info-card news-voda-empty">
             <h3>Chargement des actualites...</h3>
           </article>
-        ) : news.length === 0 ? (
+        ) : items.length === 0 ? (
           <article className="info-card news-voda-empty">
             <h3>Aucune actualite pour le moment</h3>
             <p>Revenez bientot pour decouvrir nos dernieres nouveautes.</p>
           </article>
         ) : (
-          <div className="news-voda-grid">
-            {news.slice(0, 3).map((item) => (
-              <article key={item.id} className="news-voda-card">
-                <img src={item.image_url || "/images/banner-user.jpg"} onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = "/images/hero-1.jpg"; }} alt={item.title} className="news-card-image" />
-                <div className="news-voda-card-copy">
+          <div className="news-editorial-grid">
+            {featured ? (
+              <article className="news-editorial-feature">
+                <img
+                  src={featured.image_url || "/images/banner-4.jpg"}
+                  onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = "/images/hero-1.jpg"; }}
+                  alt={featured.title}
+                  className="news-card-image"
+                />
+                <div className="news-editorial-overlay" />
+                <div className="news-editorial-copy news-editorial-copy-feature">
                   <div className="news-voda-meta">
-                    <small className="news-date">{new Date(item.created_at).toLocaleDateString("fr-FR", { day: "2-digit", month: "short", year: "numeric" })}</small>
+                    <small className="news-date">{new Date(featured.created_at).toLocaleDateString("fr-FR", { day: "2-digit", month: "short", year: "numeric" })}</small>
                     <span className="news-voda-tag">ACTUALITE</span>
                   </div>
-                  <h3>{item.title}</h3>
-                  <p>{item.excerpt || item.content.slice(0, 150)}</p>
+                  <h3>{featured.title}</h3>
+                  <p>{featured.excerpt || featured.content.slice(0, 190)}</p>
+                  <div className="news-voda-topics">
+                    <span>Digital systems</span>
+                    <span>Operations</span>
+                  </div>
                   <div className="news-voda-footer">
                     <span className="news-voda-readtime">3 minute read</span>
-                    <Link to={`/actualites/${item.id}`} className="text-link">Lire l'article</Link>
+                    <Link to={`/actualites/${featured.id}`} className="text-link">Read story</Link>
                   </div>
                 </div>
               </article>
-            ))}
+            ) : null}
+
+            <div className="news-editorial-stack">
+              {secondary.map((item) => (
+                <article key={item.id} className="news-editorial-card">
+                  <img
+                    src={item.image_url || "/images/banner-user.jpg"}
+                    onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = "/images/hero-2.jpg"; }}
+                    alt={item.title}
+                    className="news-card-image"
+                  />
+                  <div className="news-editorial-copy">
+                    <div className="news-voda-meta">
+                      <small className="news-date">{new Date(item.created_at).toLocaleDateString("fr-FR", { day: "2-digit", month: "short", year: "numeric" })}</small>
+                      <span className="news-voda-tag">ACTUALITE</span>
+                    </div>
+                    <h3>{item.title}</h3>
+                    <p>{item.excerpt || item.content.slice(0, 120)}</p>
+                    <div className="news-voda-footer">
+                      <span className="news-voda-readtime">3 minute read</span>
+                      <Link to={`/actualites/${item.id}`} className="text-link">Read story</Link>
+                    </div>
+                  </div>
+                </article>
+              ))}
+            </div>
           </div>
         )}
       </div>
@@ -3087,6 +3169,12 @@ export default function App() {
     </Routes>
   );
 }
+
+
+
+
+
+
 
 
 
