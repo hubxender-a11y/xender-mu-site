@@ -18,9 +18,9 @@ const heroSlides = [
     title: "Nous concevons des plateformes digitales plus claires, plus elegantes et plus utiles",
     text: "Sites web, applications metier et experiences mobiles penses pour mieux presenter votre valeur, simplifier les usages et soutenir une croissance durable.",
     cta: "Demarrer mon projet",
-    image: "/images/hero-1.jpg",
-    fallback: hero1,
-    imagePosition: "center 34%"
+    image: "/images/banner-4.jpg",
+    fallback: banner4,
+    imagePosition: "center 38%"
   },
   {
     title: "Des plateformes metier pensees pour convaincre, structurer et faire evoluer votre organisation",
@@ -520,19 +520,25 @@ function DetailBackgroundMark() {
   );
 }
 function SiteHeader({ mobileOpen, setMobileOpen }) {
-
-
   return (
-    <header className="topbar">
-      <div className="container nav-row">
+    <header className="topbar topbar-voda">
+      <div className="topbar-utility">
+        <div className="container topbar-utility-inner">
+          <a href="/#products">Xender-MU Solutions</a>
+          <a href="/#news">Actualites</a>
+          <a href="/#contact">Nous contacter</a>
+        </div>
+      </div>
+
+      <div className="container nav-row nav-row-voda">
         <Link to="/" className="brand" aria-label="Xender-MU"><BrandIdentity /></Link>
 
-        <nav className="desktop-menu">
+        <nav className="desktop-menu desktop-menu-voda">
           <Link to="/">Accueil</Link>
           <a href="/#services">Services</a>
-          <a href="/#products">Produits</a>
-          
-          <a href="/#contact" className="btn btn-red">Demarrer mon projet</a>
+          <a href="/#products">Solutions</a>
+          <a href="/#news">News</a>
+          <a href="/#contact">Contact</a>
         </nav>
 
         <button className={`mobile-toggle ${mobileOpen ? "open" : ""}`} onClick={() => setMobileOpen((v) => !v)} type="button" aria-label="Menu mobile">
@@ -542,11 +548,12 @@ function SiteHeader({ mobileOpen, setMobileOpen }) {
         </button>
       </div>
 
-      <div className={`mobile-menu ${mobileOpen ? "open" : ""}`}>
+      <div className={`mobile-menu mobile-menu-voda ${mobileOpen ? "open" : ""}`}>
         <Link to="/" onClick={() => setMobileOpen(false)}>Accueil</Link>
         <a href="/#services" onClick={() => setMobileOpen(false)}>Services</a>
-        <a href="/#products" onClick={() => setMobileOpen(false)}>Produits</a>
-        <a href="/#contact" onClick={() => setMobileOpen(false)}>Demarrer mon projet</a>
+        <a href="/#products" onClick={() => setMobileOpen(false)}>Solutions</a>
+        <a href="/#news" onClick={() => setMobileOpen(false)}>Actualites</a>
+        <a href="/#contact" onClick={() => setMobileOpen(false)}>Contact</a>
       </div>
     </header>
   );
@@ -1261,13 +1268,22 @@ function HomePage() {
               </p>
               <a href="#services" className="btn btn-red">Explorer nos services</a>
             </div>
-            <div className="corporate-overview-stats">
-              {(statsItems.length ? statsItems : keyStats).slice(0, 4).map((item, idx) => (
-                <article key={`${item.label}-${idx}`} className="corporate-stat-card">
-                  <strong>{item.value}</strong>
-                  <span>{item.label}</span>
-                </article>
-              ))}
+            <div className="corporate-overview-panel">
+              <div className="corporate-overview-stats">
+                {(statsItems.length ? statsItems : keyStats).slice(0, 4).map((item, idx) => (
+                  <article key={`${item.label}-${idx}`} className="corporate-stat-card">
+                    <strong>{item.value}</strong>
+                    <span>{item.label}</span>
+                  </article>
+                ))}
+              </div>
+              <article className="corporate-overview-visual">
+                <img src="/images/banner-user.jpg" onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = "/images/hero-2.jpg"; }} alt="Xender-MU presentation" loading="lazy" decoding="async" />
+                <div className="corporate-overview-visual-copy">
+                  <span className="pill">Operational clarity</span>
+                  <h3>Une execution plus claire, du cadrage initial a la mise en ligne.</h3>
+                </div>
+              </article>
             </div>
           </div>
         </section>
@@ -1303,12 +1319,13 @@ function HomePage() {
 
 function ServicesPage() {
   const [mobileOpen, setMobileOpen] = useState(false);
-
+  const primary = services[0];
+  const secondary = services.slice(1);
 
   useEffect(() => {
     document.body.classList.add("services-voda", "home-voda");
 
-  return () => {
+    return () => {
       document.body.classList.remove("services-voda");
       document.body.classList.remove("home-voda");
     };
@@ -1318,157 +1335,108 @@ function ServicesPage() {
     <>
       <SiteHeader mobileOpen={mobileOpen} setMobileOpen={setMobileOpen} />
 
-      <main className="services-page services-page-simple">
-        <section className="hero-section services-hero-simple">
-          <div className="container services-hero-simple-wrap premium-services-hero">
-            <span className="pill premium-pill">Services Xender-MU</span>
-            <h1>Nous concevons des experiences digitales premium, claires et desirables</h1>
-            <p>
-              Une approche plus claire pour presenter notre valeur: architecture metier, applications mobiles et experiences web qui renforcent votre image de marque.
-            </p>
-            <div className="services-hero-actions">
-              <Link to="/#contact" className="btn btn-red">Demander un devis</Link>
-              <Link to="/" className="btn btn-dark">Retour accueil</Link>
-            </div>
-            <div className="services-hero-metrics">
-              <div><strong>Image de marque plus forte</strong><span>interfaces nettes, lisibles et rassurantes</span></div>
-              <div><strong>Execution maitrisee</strong><span>cadre agile, arbitrages rapides et delais tenus</span></div>
-              <div><strong>Presence durable</strong><span>maintenance, suivi et accompagnement dans la duree</span></div>
+      <main className="services-page services-page-voda">
+        <section className="services-voda-hero">
+          <img src="/images/banner-2.jpg" onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = banner2; }} alt="Xender-MU services" className="services-voda-hero-image" />
+          <div className="services-voda-hero-overlay" />
+          <div className="container services-voda-hero-inner">
+            <div className="services-voda-hero-copy">
+              <span className="pill">Services Xender-MU</span>
+              <h1>Des services structures pour concevoir, lancer et faire evoluer des plateformes digitales credibles.</h1>
+              <p>
+                Nous accompagnons les organisations qui veulent un cadre clair, une execution propre et une presence
+                digitale mieux presentee face a leurs clients, leurs equipes et leurs partenaires.
+              </p>
+              <div className="services-voda-hero-actions">
+                <Link to="/#contact" className="btn btn-red">Demander un cadrage</Link>
+                <Link to="/" className="btn btn-dark">Retour accueil</Link>
+              </div>
             </div>
           </div>
         </section>
 
-        <TrustStrip />
-
-        <section className="section" id="services-content">
+        <section className="section services-voda-page-section">
           <div className="container">
-            <h2>Nos Services</h2>
-            <p className="sub">3 services principaux, faciles a comprendre, a presenter et a vendre</p>
-
-            <div className="services-page-intro">
-              <div className="service-intro-card">
-                <h3>Approche simple</h3>
-                <p>Nous clarifions vite le besoin, la priorite business et la feuille de route la plus pertinente.</p>
-              </div>
-              <div className="service-intro-card">
-                <h3>Livraison maitrisee</h3>
-                <p>Chaque service est pense pour etre deploye, maintenu et monnayable rapidement.</p>
-              </div>
-              <div className="service-intro-card">
-                <h3>Support reel</h3>
-                <p>Nous restons presents apres la mise en ligne pour stabiliser, optimiser et faire evoluer la solution.</p>
-              </div>
+            <div className="section-heading voda-heading">
+              <span className="pill">Core services</span>
+              <h2>Une lecture plus nette de notre offre.</h2>
+              <p className="sub">
+                Notre approche est simple: clarifier le besoin, concevoir l'experience et livrer une plateforme
+                stable, presentable et plus facile a faire adopter.
+              </p>
             </div>
 
-            <div className="grid cols-3 services-simple-grid">
-              {services.map((service) => (
-                <article key={service.title} className="service-card">
-                  <img src={service.image} onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = service.fallback; }} alt={service.title} loading="lazy" decoding="async" />
-                  <div>
-                    <h3>{service.title}</h3>
-                    <p>{service.description}</p>
-                  </div>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
+            <div className="services-voda-layout">
+              <article className="service-voda-feature">
+                <img src={primary.image} onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = primary.fallback; }} alt={primary.title} loading="lazy" decoding="async" />
+                <div className="service-voda-feature-copy">
+                  <span className="service-voda-index">01</span>
+                  <h3>{primary.title}</h3>
+                  <p>{primary.description}</p>
+                </div>
+              </article>
 
-        <section className="section services-deliverables">
-          <div className="container">
-            <h2>Ce que vous recevez concretement</h2>
-            <p className="sub">Nous ne vendons pas seulement du developpement. Nous livrons un cadre clair, un design presentable et une execution qui peut etre defendue face a un comite, un partenaire ou un client final.</p>
-            <div className="grid cols-3 services-deliverables-grid">
-              {serviceDeliverables.map((item) => (
-                <article key={item.title} className="service-deliverable-card">
-                  <h3>{item.title}</h3>
-                  <p>{item.text}</p>
-                  <ul className="service-deliverable-list">
-                    {item.items.map((entry) => (
-                      <li key={entry}>{entry}</li>
-                    ))}
-                  </ul>
-                </article>
-              ))}
+              <div className="service-voda-stack">
+                {secondary.map((service, index) => (
+                  <article key={service.title} className="service-voda-item">
+                    <span className="service-voda-index">0{index + 2}</span>
+                    <div>
+                      <h3>{service.title}</h3>
+                      <p>{service.description}</p>
+                    </div>
+                  </article>
+                ))}
+              </div>
             </div>
           </div>
         </section>
 
-        <section className="section compact services-sectors">
+        <section className="section services-voda-showcase">
+          <div className="container services-voda-showcase-grid">
+            <article className="services-voda-showcase-visual">
+              <img src="/images/banner-user.jpg" onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = banner1; }} alt="Operational delivery" loading="lazy" decoding="async" />
+            </article>
+            <div className="services-voda-showcase-copy">
+              <span className="pill">Operational delivery</span>
+              <h2>Un cadre de travail plus lisible pour mieux piloter la livraison.</h2>
+              <p className="sub">
+                Nous cadrons les priorites, presentons les livrables et gardons une execution maitrisée jusqu'a la
+                mise en ligne. Cette discipline donne une meilleure perception du projet des les premiers echanges.
+              </p>
+              <div className="services-voda-points">
+                {serviceDeliverables.map((item) => (
+                  <article key={item.title} className="services-voda-point">
+                    <h3>{item.title}</h3>
+                    <p>{item.text}</p>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="section services-voda-sectors">
           <div className="container">
-            <h2>Secteurs que nous accompagnons</h2>
-            <p className="sub">Notre positionnement est pense pour des structures qui veulent une solution utile, presentable et exploitable rapidement.</p>
-            <div className="grid cols-2 services-sectors-grid">
+            <div className="section-heading voda-heading">
+              <span className="pill">Sectors</span>
+              <h2>Des interventions adaptees aux organisations qui cherchent plus de clarte et plus de structure.</h2>
+            </div>
+            <div className="services-voda-sectors-grid">
               {serviceSectors.map((sector) => (
-                <article key={sector} className="service-sector-card">
+                <article key={sector} className="services-voda-sector-card">
                   <h3>{sector}</h3>
-                  <p>Une approche adaptee a vos contraintes de gouvernance, d'image et de mise en oeuvre.</p>
+                  <p>Un cadrage plus simple, une execution propre et un accompagnement adapte a votre contexte.</p>
                 </article>
               ))}
             </div>
           </div>
         </section>
 
-        <section className="section compact services-process">
-          <div className="container">
-            <h2>Comment nous travaillons</h2>
-            <div className="grid cols-3 process-grid">
-              <article className="info-card process-card">
-                <h3>1. Echange</h3>
-                <p>Nous clarifions votre besoin en 30 minutes.</p>
-              </article>
-              <article className="info-card process-card">
-                <h3>2. Proposition</h3>
-                <p>Vous recevez une proposition claire: delai, budget, livrables.</p>
-              </article>
-              <article className="info-card process-card">
-                <h3>3. Livraison</h3>
-                <p>Nous livrons avec exigence, suivi et accompagnement apres mise en ligne.</p>
-              </article>
-            </div>
-          </div>
-        </section>
-
-        <section className="section compact services-commitments">
-          <div className="container">
-            <h2>Ce qui fait la difference Xender-MU</h2>
-            <p className="sub">Une posture agence claire: mieux cadrer, mieux presenter et mieux livrer.</p>
-            <div className="grid cols-3 services-commitment-grid">
-              {serviceCommitments.map((item) => (
-                <article key={item.title} className="info-card service-commitment-card">
-                  <h3>{item.title}</h3>
-                  <p>{item.text}</p>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="section compact services-faq">
-          <div className="container">
-            <h2>Questions frequentes sur nos services</h2>
-            <div className="faq-list services-faq-list">
-              {servicesFaq.map((item) => (
-                <article key={item.q} className="faq-item service-faq-item open">
-                  <div className="service-faq-head">
-                    <span>{item.q}</span>
-                    <strong>+</strong>
-                  </div>
-                  <p>{item.a}</p>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <SegmentSection />
-        <FinalConversionSection />
-
-        <section className="section compact">
-          <div className="container cta-block">
+        <section className="section services-voda-cta">
+          <div className="container cta-block services-voda-cta-block">
             <h3>Un projet a structurer ?</h3>
-            <p>Recevez une estimation claire et une trajectoire de lancement adaptee a votre besoin.</p>
-            <Link to="/#contact" className="btn btn-dark">Demarrer mon projet gratuit</Link>
+            <p>Recevez une reponse claire, une premiere orientation utile et un cadre de lancement plus lisible.</p>
+            <Link to="/#contact" className="btn btn-red">Parler a notre equipe</Link>
           </div>
         </section>
       </main>
@@ -3120,6 +3088,8 @@ export default function App() {
     </Routes>
   );
 }
+
+
 
 
 
