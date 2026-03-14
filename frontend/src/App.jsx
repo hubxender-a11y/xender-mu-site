@@ -1007,12 +1007,9 @@ function NewsSection() {
   return (
     <section className="section news-voda-section" id="news">
       <div className="container">
-        <div className="section-heading voda-heading voda-heading-row">
-          <div>
-            <span className="pill">Latest</span>
-            <h2>Une lecture editoriale de nos actualites et de nos evolutions recentes.</h2>
-          </div>
-          <Link to="/#news" className="text-link">Voir toutes les actualites</Link>
+        <div className="section-heading voda-heading voda-heading-row news-voda-heading">
+          <h2>All the latest</h2>
+          <Link to="/#news" className="text-link">View all news</Link>
         </div>
 
         {loading ? (
@@ -1031,12 +1028,15 @@ function NewsSection() {
                 <img src={item.image_url || "/images/banner-user.jpg"} onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = "/images/hero-1.jpg"; }} alt={item.title} className="news-card-image" />
                 <div className="news-voda-card-copy">
                   <div className="news-voda-meta">
-                    <small className="news-date">{new Date(item.created_at).toLocaleDateString("fr-FR", { day: "2-digit", month: "long", year: "numeric" })}</small>
-                    <span className="product-tag">Actualite</span>
+                    <small className="news-date">{new Date(item.created_at).toLocaleDateString("fr-FR", { day: "2-digit", month: "short", year: "numeric" })}</small>
+                    <span className="news-voda-tag">ACTUALITE</span>
                   </div>
                   <h3>{item.title}</h3>
-                  <p>{item.excerpt || item.content.slice(0, 140)}</p>
-                  <Link to={`/actualites/${item.id}`} className="text-link">Lire l'article</Link>
+                  <p>{item.excerpt || item.content.slice(0, 150)}</p>
+                  <div className="news-voda-footer">
+                    <span className="news-voda-readtime">3 minute read</span>
+                    <Link to={`/actualites/${item.id}`} className="text-link">Lire l'article</Link>
+                  </div>
                 </div>
               </article>
             ))}
@@ -1140,41 +1140,50 @@ function ContactSection() {
 }
 
 function SharedFooter() {
-
   return (
-    <footer className="footer">
-      <div className="container footer-shell footer-shell-simple">
-        <div className="footer-grid footer-grid-simple">
-          <div className="footer-column footer-brand-column footer-brand-column-simple">
-            <div className="footer-brand-lockup">
-              <BrandIdentity />
-            </div>
-            <p>Votre partenaire pour concevoir des solutions digitales plus solides, plus lisibles et mieux alignees avec vos ambitions de croissance.</p>
-          </div>
-
-          <div className="footer-column footer-links-column">
-            <h4>Navigation</h4>
-            <Link to="/">Accueil</Link>
+    <footer className="footer footer-voda">
+      <div className="container footer-shell footer-shell-voda">
+        <div className="footer-grid footer-grid-voda">
+          <div className="footer-column">
+            <h4>Our company</h4>
             <a href="/#services">Services</a>
-            <a href="/#products">Produits</a>
+            <a href="/#products">Solutions</a>
             <a href="/#news">Actualites</a>
             <a href="/#contact">Contact</a>
           </div>
 
-          <div className="footer-column footer-contact-column">
-            <h4>Adresse</h4>
-            <p>Kinshasa</p>
-            <p>Republique Democratique Du Congo</p>
-            <h4>Telephone</h4>
+          <div className="footer-column">
+            <h4>Solutions</h4>
+            <a href="/#products">Plateformes metier</a>
+            <a href="/#products">Applications mobiles</a>
+            <a href="/#products">Sites & experiences web</a>
+            <a href="/#contact">Cadrage & accompagnement</a>
+          </div>
+
+          <div className="footer-column">
+            <h4>Xender-MU websites</h4>
+            <Link to="/">Accueil</Link>
+            <Link to="/services">Services</Link>
+            <a href="/#news">Newsroom</a>
+            <a href="/#contact">Nous contacter</a>
+          </div>
+
+          <div className="footer-column footer-column-contact">
+            <h4>Connect with us</h4>
+            <p>Kinshasa, RDC</p>
             <p>+243 89 191 9192</p>
-            <h4>Email</h4>
             <p>hubxender@gmail.com</p>
           </div>
         </div>
 
-        <div className="footer-bottomline footer-bottomline-simple">
-          <p>Xender-MU. Presence digitale premium, claire et evolutive.</p>
-          <a href="/#contact" className="text-link">Demarrer un projet</a>
+        <div className="footer-bottomline footer-bottomline-voda">
+          <div className="footer-bottom-links">
+            <a href="/#contact">Privacy and cookies</a>
+            <Link to="/services">Sitemap</Link>
+            <a href="/#contact">Accessibility</a>
+            <a href="/#contact">Terms and conditions</a>
+          </div>
+          <p>© 2026 Xender-MU. Digital platforms, systems and experiences.</p>
         </div>
       </div>
     </footer>
