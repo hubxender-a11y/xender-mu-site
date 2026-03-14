@@ -3790,3 +3790,263 @@ body.services-voda .service-card div {
     padding: 1rem;
   }
 }
+/* ===== Hero layout pass: banner-like premium ===== */
+body.home-voda .hero-section {
+  padding-top: 1rem;
+}
+
+body.home-voda .hero-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+
+body.home-voda .hero-content-premium.hero-content-minimal,
+body.home-voda .hero-image-stage-minimal {
+  grid-area: 1 / 1;
+}
+
+body.home-voda .hero-image-stage-minimal {
+  position: relative;
+  min-height: 720px;
+  overflow: hidden;
+  border-radius: 34px;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  background: #0b0f14;
+  box-shadow: 0 24px 50px rgba(15, 23, 42, 0.12);
+}
+
+body.home-voda .hero-image {
+  width: 100%;
+  height: 100%;
+  min-height: 720px;
+  object-fit: cover;
+  filter: saturate(0.95) contrast(1.02) brightness(0.72);
+}
+
+body.home-voda .hero-image-stage-minimal::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 22% 30%, rgba(230, 0, 40, 0.22), transparent 26%),
+    linear-gradient(90deg, rgba(11, 15, 20, 0.88) 0%, rgba(11, 15, 20, 0.72) 42%, rgba(11, 15, 20, 0.14) 72%, rgba(11, 15, 20, 0.08) 100%),
+    linear-gradient(180deg, rgba(11, 15, 20, 0.08) 0%, rgba(11, 15, 20, 0.72) 100%);
+  z-index: 1;
+}
+
+body.home-voda .hero-content-premium.hero-content-minimal {
+  position: relative;
+  z-index: 2;
+  align-self: end;
+  max-width: 640px;
+  margin: 0 0 2rem 2rem;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}
+
+body.home-voda .premium-pill {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(10px);
+}
+
+body.home-voda .hero-mono-line {
+  margin: 0.8rem 0 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+body.home-voda .hero-luxe-title {
+  max-width: 8.6ch;
+  color: #ffffff;
+  font-size: clamp(3.2rem, 7vw, 6rem);
+  line-height: 0.9;
+  letter-spacing: -0.08em;
+  text-shadow: 0 8px 30px rgba(0, 0, 0, 0.28);
+}
+
+body.home-voda .hero-luxe-copy {
+  max-width: 54ch;
+  margin-top: 1rem;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+body.home-voda .hero-actions {
+  margin-top: 1.25rem;
+}
+
+body.home-voda .hero-proof-row-minimal {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin-top: 1.35rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+body.home-voda .hero-proof-row-minimal .hero-proof-item {
+  padding: 0;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}
+
+body.home-voda .hero-proof-row-minimal .hero-proof-item strong {
+  display: block;
+  margin-bottom: 0.24rem;
+  color: #ffffff;
+  font-size: 0.92rem;
+}
+
+body.home-voda .hero-proof-row-minimal .hero-proof-item span {
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 0.87rem;
+  line-height: 1.55;
+}
+
+body.home-voda .dots {
+  justify-content: flex-start;
+  margin-top: 1rem;
+}
+
+body.home-voda .dot {
+  width: 22px;
+  height: 3px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.22);
+}
+
+body.home-voda .dot.active {
+  width: 40px;
+  background: #ffffff;
+}
+
+body.home-voda .hero-floating-card {
+  z-index: 3;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  box-shadow: 0 18px 34px rgba(15, 23, 42, 0.14);
+  backdrop-filter: blur(14px);
+}
+
+body.home-voda .hero-floating-card-main {
+  top: 1.4rem;
+  right: 1.4rem;
+}
+
+body.home-voda .hero-floating-card-side {
+  right: 1.4rem;
+  bottom: 1.4rem;
+}
+
+@media (max-width: 980px) {
+  body.home-voda .hero-content-premium.hero-content-minimal {
+    max-width: 100%;
+    margin: 0 1.25rem 1.25rem;
+  }
+
+  body.home-voda .hero-luxe-title {
+    max-width: none;
+  }
+
+  body.home-voda .hero-proof-row-minimal {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  body.home-voda .hero-image-stage-minimal {
+    min-height: 600px;
+    border-radius: 24px;
+  }
+
+  body.home-voda .hero-image {
+    min-height: 600px;
+  }
+
+  body.home-voda .hero-image-stage-minimal::before {
+    background:
+      linear-gradient(180deg, rgba(11, 15, 20, 0.16) 0%, rgba(11, 15, 20, 0.54) 36%, rgba(11, 15, 20, 0.88) 100%),
+      radial-gradient(circle at 50% 20%, rgba(230, 0, 40, 0.2), transparent 28%);
+  }
+
+  body.home-voda .hero-content-premium.hero-content-minimal {
+    margin: 0 1rem 1rem;
+  }
+
+  body.home-voda .hero-luxe-title {
+    font-size: clamp(2.2rem, 10vw, 3.6rem);
+  }
+
+  body.home-voda .hero-luxe-copy {
+    font-size: 0.94rem;
+  }
+
+  body.home-voda .hero-floating-card {
+    display: none;
+  }
+}
+/* ===== Single premium hero banner ===== */
+body.home-voda .hero-image-stage-minimal::before {
+  background:
+    radial-gradient(circle at 24% 24%, rgba(230, 0, 40, 0.12), transparent 24%),
+    linear-gradient(90deg, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.78) 34%, rgba(255,255,255,0.18) 64%, rgba(255,255,255,0.06) 100%),
+    linear-gradient(180deg, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.18) 100%);
+}
+
+body.home-voda .hero-image {
+  filter: saturate(0.94) contrast(1.01) brightness(0.92);
+}
+
+body.home-voda .hero-content-premium.hero-content-minimal {
+  align-self: center;
+  margin: 0 0 0 2rem;
+  max-width: 620px;
+}
+
+body.home-voda .premium-pill {
+  background: rgba(230, 0, 40, 0.08);
+  color: #c70022;
+  border: 1px solid rgba(230, 0, 40, 0.14);
+}
+
+body.home-voda .hero-mono-line {
+  color: #7b8494;
+}
+
+body.home-voda .hero-luxe-title {
+  color: #0b0f14;
+  text-shadow: none;
+}
+
+body.home-voda .hero-luxe-copy {
+  color: #5f6877;
+}
+
+body.home-voda .hero-proof-row-minimal {
+  border-top: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+body.home-voda .hero-proof-row-minimal .hero-proof-item strong {
+  color: #111827;
+}
+
+body.home-voda .hero-proof-row-minimal .hero-proof-item span {
+  color: #6b7280;
+}
+
+@media (max-width: 980px) {
+  body.home-voda .hero-content-premium.hero-content-minimal {
+    align-self: end;
+    margin: 0 1.25rem 1.25rem;
+  }
+}

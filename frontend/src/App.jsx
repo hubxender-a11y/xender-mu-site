@@ -538,17 +538,7 @@ function SiteHeader({ mobileOpen, setMobileOpen }) {
 }
 
 function HeroCarousel() {
-  const [heroIndex, setHeroIndex] = useState(0);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setHeroIndex((prev) => (prev + 1) % heroSlides.length);
-    }, 5000);
-
-  return () => clearInterval(timer);
-  }, []);
-
-  const hero = heroSlides[heroIndex];
+  const hero = heroSlides[0];
 
   return (
     <section className="hero-section" id="accueil">
@@ -576,29 +566,10 @@ function HeroCarousel() {
               <span>Suivi durable, ajustements continus et support apres lancement</span>
             </div>
           </div>
-          <div className="dots">
-            {heroSlides.map((_, idx) => (
-              <button
-                type="button"
-                key={idx}
-                className={heroIndex === idx ? "dot active" : "dot"}
-                onClick={() => setHeroIndex(idx)}
-                aria-label={`Hero ${idx + 1}`}
-              />
-            ))}
-          </div>
         </div>
 
         <div className="hero-image-wrap hero-image-stage hero-image-stage-minimal">
           <img src={hero.image} onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = hero.fallback; }} alt={hero.title} className="hero-image" style={{ objectPosition: hero.imagePosition || "center center" }} loading="eager" decoding="async" />
-          <div className="hero-floating-card hero-floating-card-main">
-            <span>Experience premium</span>
-            <strong>Sites, apps et plateformes qui inspirent confiance</strong>
-          </div>
-          <div className="hero-floating-card hero-floating-card-side">
-            <strong>Architecture claire</strong>
-            <p>Design, produit, support et mise en ligne dans une logique agence moderne.</p>
-          </div>
         </div>
       </div>
     </section>
