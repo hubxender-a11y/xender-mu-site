@@ -1,4 +1,4 @@
-ï»¿import { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, Navigate, Route, Routes, useParams } from "react-router-dom";
 import hero1 from "./assets/images/hero-1.svg";
 import hero2 from "./assets/images/hero-2.svg";
@@ -34,15 +34,15 @@ const heroSlides = [
 const devisSlides = [
   {
     label: "devis",
-    title: "DÃ©couvrez comment concrÃ©tiser vos projets !",
-    text: "Demandez votre devis gratuit dÃ¨s maintenant et transformez vos idÃ©es en rÃ©alitÃ©.",
+    title: "Découvrez comment concrétiser vos projets !",
+    text: "Demandez votre devis gratuit dès maintenant et transformez vos idées en réalité.",
     image: "/images/hero-1.jpg",
     fallback: hero1
   },
   {
     label: "devis",
-    title: "X-MOMO : La gestion du cursus acadÃ©mique",
-    text: "ConÃ§u pour optimiser votre gestion acadÃ©mique grÃ¢ce Ã  des services et fonctionnalitÃ©s innovantes.",
+    title: "X-MOMO : La gestion du cursus académique",
+    text: "Conçu pour optimiser votre gestion académique grâce à des services et fonctionnalités innovantes.",
     image: "/images/hero-2.jpg",
     fallback: hero2
   }
@@ -553,73 +553,46 @@ function SiteHeader({ mobileOpen, setMobileOpen }) {
 }
 
 function HeroCarousel() {
-  const [heroIndex, setHeroIndex] = useState(0);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setHeroIndex((prev) => (prev + 1) % heroSlides.length);
-    }, 5000);
-
-  return () => clearInterval(timer);
-  }, []);
-
-  const hero = heroSlides[heroIndex];
+  const hero = heroSlides[0];
 
   return (
-    <section className="hero-section" id="accueil">
-      <div className="container hero-grid">
-        <div className="hero-content hero-content-premium hero-content-minimal">
-          <span className="pill premium-pill">Xender-MU</span>
-          <span className="hero-mono-line">Solutions digitales pour entreprises, ecoles et institutions</span>
-          <h1 className="hero-luxe-title">{hero.title}</h1>
-          <p className="hero-luxe-copy">{hero.text}</p>
-          <div className="hero-actions">
-            <a className="btn btn-red" href="#contact">{hero.cta}</a>
-            <a className="btn btn-ghost-light" href="#products">Voir nos solutions</a>
+    <section className="hero-section hero-voda" id="accueil">
+      <div className="hero-voda-background">
+        <img
+          src={hero.image}
+          onError={(e) => {
+            e.currentTarget.onerror = null;
+            e.currentTarget.src = hero.fallback;
+          }}
+          alt={hero.title}
+          className="hero-image"
+          style={{ objectPosition: "center 42%" }}
+          loading="eager"
+          decoding="async"
+        />
+      </div>
+      <div className="hero-voda-overlay" />
+      <div className="container hero-voda-inner">
+        <div className="hero-voda-copy">
+          <span className="hero-voda-kicker">xender-mu.connected</span>
+          <h1 className="hero-voda-title">
+            <span className="hero-voda-outline">XENDER-MU.</span>
+            <span className="hero-voda-solid">CONNECTED</span>
+          </h1>
+          <div className="hero-voda-intro">
+            <p>
+              Nous concevons des plateformes digitales qui clarifient les operations, renforcent la confiance
+              et donnent a votre organisation une presence plus forte et plus lisible.
+            </p>
           </div>
-          <div className="hero-proof-row hero-proof-row-minimal">
-            <div className="hero-proof-item">
-              <strong>Web & plateforme</strong>
-              <span>Des interfaces nettes, credibles et faciles a deployer</span>
-            </div>
-            <div className="hero-proof-item">
-              <strong>Produit mobile</strong>
-              <span>Des experiences fluides et plus agreables a utiliser</span>
-            </div>
-            <div className="hero-proof-item">
-              <strong>Support durable</strong>
-              <span>Un accompagnement reel apres la mise en ligne</span>
-            </div>
-          </div>
-          <div className="dots">
-            {heroSlides.map((_, idx) => (
-              <button
-                type="button"
-                key={idx}
-                className={heroIndex === idx ? "dot active" : "dot"}
-                onClick={() => setHeroIndex(idx)}
-                aria-label={`Hero ${idx + 1}`}
-              />
-            ))}
-          </div>
-        </div>
-
-        <div className="hero-image-wrap hero-image-stage hero-image-stage-minimal">
-          <img src={hero.image} onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = hero.fallback; }} alt={hero.title} className="hero-image" style={{ objectPosition: hero.imagePosition || "center center" }} loading="eager" decoding="async" />
-          <div className="hero-floating-card hero-floating-card-main">
-            <span>Signature digitale</span>
-            <strong>Des experiences mieux presentees et plus rassurantes</strong>
-          </div>
-          <div className="hero-floating-card hero-floating-card-side">
-            <strong>Execution maitrisee</strong>
-            <p>Une methode simple pour cadrer, livrer et faire evoluer vos solutions.</p>
+          <div className="hero-actions hero-voda-actions">
+            <a className="btn btn-red" href="#contact">Demarrer mon projet</a>
           </div>
         </div>
       </div>
     </section>
   );
 }
-
 
 function BannerCarousel() {
   const [bannerIndex, setBannerIndex] = useState(0);
@@ -3059,7 +3032,7 @@ function DetailPage() {
           <section className="detail-features facture-cta">
             <h2>Pret a Optimiser Votre Facturation ?</h2>
             <p className="sub">Rejoignez les structures qui veulent une facturation plus propre, plus rapide et mieux alignee avec leurs obligations.</p>
-            <p className="sub">Aucune carte de credit requise â€¢ Annulation a tout moment</p>
+            <p className="sub">Aucune carte de credit requise • Annulation a tout moment</p>
             <Link to="/#contact" className="btn btn-red">Demander un cadrage</Link>
           </section>
         </div>
@@ -3153,6 +3126,9 @@ export default function App() {
     </Routes>
   );
 }
+
+
+
 
 
 
