@@ -764,7 +764,7 @@ function ServicesSection({ showAllLink = false }) {
     <section className="section" id="services">
       <div className="container">
         <h2>Services</h2>
-        <p className="sub">Nous elevons vos projets avec une execution claire et haut de gamme</p>
+          <p className="sub">Des services structures pour concevoir, lancer et faire evoluer des plateformes digitales plus credibles.</p>
         <div className="grid cols-3">
           {services.map((service) => (
             <article key={service.title} className="service-card">
@@ -791,8 +791,8 @@ function ProductSection({ items = fallbackProducts, loading = false }) {
   return (
     <section className="section product-section" id="products">
       <div className="container">
-        <h2>Decouvrez Nos Produits</h2>
-        <p className="sub">Une gamme variee d'applications pretes a l'emploi</p>
+        <h2>Solutions</h2>
+          <p className="sub">Des produits metier pensés pour simplifier les operations et renforcer la qualite de service.</p>
         {loading ? <p className="sub">Chargement des produits...</p> : null}
         <div className="grid cols-4 product-grid">
           {items.map((product) => (
@@ -965,8 +965,8 @@ function NewsSection() {
   return (
     <section className="section" id="news">
       <div className="container">
-        <h2>Actualites Xender-MU</h2>
-        <p className="sub">Restez informe de nos dernieres innovations et actualites</p>
+        <h2>Dernieres actualites</h2>
+          <p className="sub">Une lecture simple de nos evolutions produit, de nos lancements et de nos travaux recents.</p>
 
         {loading ? (
           <article className="info-card">
@@ -1055,8 +1055,8 @@ function ContactSection() {
     <section className="section" id="contact">
       <div className="container contact-wrap">
         <div>
-          <h2>Pret a lancer une plateforme plus credible ?</h2>
-          <p>Chaque demande est qualifiee rapidement pour vous apporter une reponse claire et utile.</p>
+          <h2>Parlons de votre prochaine plateforme.</h2>
+            <p>Nous qualifions rapidement chaque besoin pour proposer un cadrage clair, utile et directement exploitable.</p>
         </div>
 
         <form className="contact-form" onSubmit={handleSubmit}>
@@ -1132,25 +1132,14 @@ function SharedFooter() {
 
 function HomePage() {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [openFaq, setOpenFaq] = useState(0);
-  const [showIntro, setShowIntro] = useState(true);
   const [statsItems, setStatsItems] = useState([]);
-  const [testimonialItems, setTestimonialItems] = useState([]);
   const [productItems, setProductItems] = useState([]);
   const [productLoading, setProductLoading] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowIntro(false);
-    }, 4000);
-
-  return () => clearTimeout(timer);
-  }, []);
-
-  useEffect(() => {
     document.body.classList.add("home-voda");
 
-  return () => document.body.classList.remove("home-voda");
+    return () => document.body.classList.remove("home-voda");
   }, []);
 
   useEffect(() => {
@@ -1159,26 +1148,16 @@ function HomePage() {
     async function loadDynamicHomeContent() {
       setProductLoading(true);
       try {
-        const [statsResponse, testimonialsResponse, productsResponse] = await Promise.all([
+        const [statsResponse, productsResponse] = await Promise.all([
           fetch(apiUrl("/api/stats")),
-          fetch(apiUrl("/api/testimonials")),
           fetch(apiUrl("/api/products"))
         ]);
 
         const statsData = await statsResponse.json().catch(() => ({}));
-        const testimonialsData = await testimonialsResponse.json().catch(() => ({}));
         const productsData = await productsResponse.json().catch(() => ({}));
 
         if (!cancelled && statsResponse.ok && Array.isArray(statsData.stats) && statsData.stats.length > 0) {
           setStatsItems(statsData.stats.map((item) => ({ value: item.value, label: item.label })));
-        }
-
-        if (!cancelled && testimonialsResponse.ok && Array.isArray(testimonialsData.testimonials) && testimonialsData.testimonials.length > 0) {
-          setTestimonialItems(testimonialsData.testimonials.map((item) => ({
-            name: item.name,
-            role: item.role || "",
-            quote: item.quote
-          })));
         }
 
         if (!cancelled && productsResponse.ok && Array.isArray(productsData.products) && productsData.products.length > 0) {
@@ -1188,7 +1167,7 @@ function HomePage() {
           }
         }
       } catch {
-        // fallback: keep local defaults
+        // keep fallback content
       } finally {
         if (!cancelled) {
           setProductLoading(false);
@@ -1198,45 +1177,52 @@ function HomePage() {
 
     loadDynamicHomeContent();
 
-  return () => {
+    return () => {
       cancelled = true;
     };
   }, []);
-
 
   return (
     <>
       <SiteHeader mobileOpen={mobileOpen} setMobileOpen={setMobileOpen} />
 
-      <main id="accueil" className={showIntro ? "home-main intro-active" : "home-main"}>
-        {showIntro ? (
-          <div className="intro-loader" aria-hidden="true">
-            <div className="xender-mark intro-mark">
-              <div className="xender-ring" />
-              <div className="xender-core">
-                <div className="tomoe-orbit">
-                  <i className="tomoe tomoe-1" />
-                  <i className="tomoe tomoe-2" />
-                  <i className="tomoe tomoe-3" />
-                </div>
-                <i className="center-dot" />
-              </div>
-              
+      <main id="accueil" className="home-main home-main-corporate">
+        <HeroCarousel />
+
+        <section className="section corporate-overview-section">
+          <div className="container corporate-overview-grid">
+            <div className="corporate-overview-copy">
+              <span className="pill">Future-defining systems</span>
+              <h2>Des solutions digitales plus lisibles pour structurer les operations et renforcer la confiance.</h2>
+              <p className="sub">
+                Xender-MU conçoit des plateformes metier, des experiences web et des applications mobiles
+                pour les organisations qui veulent une execution propre, durable et defendable face a leurs
+                clients, leurs equipes et leurs partenaires.
+              </p>
+              <a href="#services" className="btn btn-red">Explorer nos services</a>
+            </div>
+            <div className="corporate-overview-stats">
+              {(statsItems.length ? statsItems : keyStats).slice(0, 4).map((item, idx) => (
+                <article key={`${item.label}-${idx}`} className="corporate-stat-card">
+                  <strong>{item.value}</strong>
+                  <span>{item.label}</span>
+                </article>
+              ))}
             </div>
           </div>
-        ) : null}
-        <HeroCarousel />
-        <TrustStrip />
-        <BannerCarousel />
-        <KeyStatsSection items={statsItems} />
+        </section>
+
         <ServicesSection showAllLink />
-        <section className="section compact services-commitments">
+
+        <section className="section corporate-capabilities-section">
           <div className="container">
-            <h2>Ce qui fait la difference Xender-MU</h2>
-            <p className="sub">Une posture agence claire: mieux cadrer, mieux presenter et mieux livrer.</p>
-            <div className="grid cols-3 services-commitment-grid">
+            <div className="section-heading section-heading-tight">
+              <span className="pill">Operational focus</span>
+              <h2>Une execution plus claire, de la phase de cadrage jusqu'a la mise en ligne.</h2>
+            </div>
+            <div className="grid cols-3 corporate-capabilities-grid">
               {serviceCommitments.map((item) => (
-                <article key={item.title} className="info-card service-commitment-card">
+                <article key={item.title} className="corporate-capability-card">
                   <h3>{item.title}</h3>
                   <p>{item.text}</p>
                 </article>
@@ -1245,61 +1231,8 @@ function HomePage() {
           </div>
         </section>
 
-        <section className="section compact services-faq">
-          <div className="container">
-            <h2>Questions frequentes sur nos services</h2>
-            <div className="faq-list services-faq-list">
-              {servicesFaq.map((item) => (
-                <article key={item.q} className="faq-item service-faq-item open">
-                  <div className="service-faq-head">
-                    <span>{item.q}</span>
-                    <strong>+</strong>
-                  </div>
-                  <p>{item.a}</p>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <SegmentSection />
-
-        <section className="section compact">
-          <div className="container cta-block">
-            <h3>Pret a lancer une plateforme plus credible ?</h3>
-            <p>Rejoignez les nombreuses entreprises qui nous font confiance.</p>
-            <a href="#contact" className="btn btn-dark">Demarrer mon projet</a>
-          </div>
-        </section>
-
         <ProductSection items={productItems} loading={productLoading} />
-        <WhySection />
-        <ProcessSection />
         <NewsSection />
-        <TestimonialsSection items={testimonialItems} />
-        <FinalConversionSection />
-
-        <section className="section" id="faq">
-          <div className="container">
-            <h2>Questions essentielles</h2>
-            <div className="faq-list">
-              {faqData.map((item, idx) => {
-                const open = openFaq === idx;
-
-  return (
-                  <article key={item.q} className={open ? "faq-item open" : "faq-item"}>
-                    <button type="button" onClick={() => setOpenFaq(open ? -1 : idx)}>
-                      <span>{item.q}</span>
-                      <strong>{open ? "-" : "+"}</strong>
-                    </button>
-                    <p>{item.a}</p>
-                  </article>
-                );
-              })}
-            </div>
-          </div>
-        </section>
-
         <ContactSection />
       </main>
 
@@ -1307,6 +1240,7 @@ function HomePage() {
     </>
   );
 }
+
 function ServicesPage() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -3126,6 +3060,8 @@ export default function App() {
     </Routes>
   );
 }
+
+
 
 
 

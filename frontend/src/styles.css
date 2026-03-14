@@ -1789,3 +1789,187 @@ body {
     line-height: 0.94;
   }
 }
+
+/* ===== Corporate homepage rebuild ===== */
+.home-main-corporate {
+  background: #f4f1eb;
+}
+
+.corporate-overview-section {
+  padding-top: 84px;
+  padding-bottom: 92px;
+  background: linear-gradient(180deg, #f4f1eb 0%, #efebe3 100%);
+}
+
+.corporate-overview-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+  gap: 56px;
+  align-items: start;
+}
+
+.corporate-overview-copy h2,
+.section-heading h2 {
+  margin: 16px 0 18px;
+  font-size: clamp(2.1rem, 4.2vw, 3.8rem);
+  line-height: 1.05;
+  letter-spacing: -0.06em;
+}
+
+.corporate-overview-copy .sub,
+.section-heading .sub {
+  max-width: 720px;
+  font-size: 1.08rem;
+  line-height: 1.8;
+  color: #535861;
+}
+
+.corporate-overview-copy .btn-red {
+  margin-top: 26px;
+}
+
+.corporate-overview-stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.corporate-stat-card,
+.corporate-capability-card {
+  background: rgba(255,255,255,0.78);
+  border: 1px solid rgba(27, 31, 38, 0.08);
+  border-radius: 24px;
+  padding: 26px;
+  box-shadow: 0 14px 36px rgba(18, 24, 38, 0.05);
+  backdrop-filter: blur(8px);
+}
+
+.corporate-stat-card strong {
+  display: block;
+  margin-bottom: 10px;
+  color: #e60028;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1;
+  letter-spacing: -0.06em;
+}
+
+.corporate-stat-card span {
+  display: block;
+  color: #2a3038;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.corporate-capabilities-section {
+  padding-top: 92px;
+  padding-bottom: 92px;
+  background: #faf8f4;
+}
+
+.section-heading-tight {
+  max-width: 760px;
+  margin-bottom: 34px;
+}
+
+.corporate-capabilities-grid {
+  align-items: stretch;
+}
+
+.corporate-capability-card h3 {
+  margin: 0 0 14px;
+  font-size: 1.3rem;
+  letter-spacing: -0.04em;
+}
+
+.corporate-capability-card p {
+  margin: 0;
+  color: #5c6370;
+  line-height: 1.74;
+}
+
+#services,
+.product-section,
+#news,
+#contact {
+  scroll-margin-top: 100px;
+}
+
+#services h2,
+.product-section h2,
+#news h2,
+#contact h2 {
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  line-height: 1.08;
+  letter-spacing: -0.055em;
+}
+
+#services > .container > .sub,
+.product-section > .container > .sub,
+#news > .container > .sub,
+#contact .container > div > p {
+  max-width: 720px;
+  font-size: 1.04rem;
+  line-height: 1.76;
+}
+
+.service-card,
+.product-card,
+#news .info-card {
+  border-radius: 24px;
+  border: 1px solid rgba(21, 26, 34, 0.08);
+  box-shadow: 0 16px 40px rgba(18, 24, 38, 0.05);
+}
+
+.footer {
+  background: #20242b;
+}
+
+.footer p,
+.footer a,
+.footer h4,
+.footer-bottomline-simple p {
+  color: rgba(255,255,255,0.82);
+}
+
+.footer .text-link {
+  color: #fff;
+}
+
+@media (max-width: 980px) {
+  .corporate-overview-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .corporate-overview-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .corporate-overview-section,
+  .corporate-capabilities-section {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+
+  .corporate-overview-grid,
+  .corporate-overview-stats {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .corporate-stat-card,
+  .corporate-capability-card {
+    padding: 22px;
+    border-radius: 20px;
+  }
+
+  .corporate-overview-copy h2,
+  .section-heading h2,
+  #services h2,
+  .product-section h2,
+  #news h2,
+  #contact h2 {
+    font-size: clamp(1.8rem, 9vw, 2.8rem);
+  }
+}
