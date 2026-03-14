@@ -111,6 +111,56 @@ const bannerSlides = [
   }
 ];
 
+const homeSnapshotStats = [
+  { value: "24h", label: "delai moyen de reponse" },
+  { value: "06", label: "jours de support actif" },
+  { value: "04", label: "produits deja structures" },
+  { value: "100%", label: "execution orientee resultat" }
+];
+
+const homeCapabilityItems = [
+  {
+    title: "Applications metier sur mesure",
+    text: "Des plateformes web et mobiles qui clarifient les operations et renforcent la qualite de service."
+  },
+  {
+    title: "Design d'interfaces credibles",
+    text: "Une presentation plus nette, plus institutionnelle et plus rassurante pour vos utilisateurs."
+  },
+  {
+    title: "Infrastructure cloud evolutive",
+    text: "Une base deployee, maintenable et suffisamment souple pour accompagner votre croissance."
+  },
+  {
+    title: "Digitalisation des parcours",
+    text: "Nous simplifions les taches critiques, de l'inscription a la facturation jusqu'au suivi quotidien."
+  },
+  {
+    title: "Accompagnement post-lancement",
+    text: "Support, ajustements et conseils afin de stabiliser durablement les usages apres mise en ligne."
+  },
+  {
+    title: "Approche orientee gouvernance",
+    text: "Chaque projet est cadre avec une logique claire de priorites, de responsabilites et de continuite."
+  }
+];
+
+const homeMarketCards = [
+  {
+    title: "Nos services",
+    text: "Des interventions claires pour cadrer, concevoir, lancer et faire evoluer vos solutions digitales.",
+    image: "/images/banner-2.jpg",
+    fallback: banner2,
+    href: "/services"
+  },
+  {
+    title: "Nos produits",
+    text: "Des applications deja structurees pour l'education, les operations, la facturation et les evenements.",
+    image: "/images/banner-4.jpg",
+    fallback: banner4,
+    href: "/#products"
+  }
+];
 const services = [
   {
     title: "Applications ERP pour votre gestion d'entreprise",
@@ -924,8 +974,8 @@ function NewsSection() {
   return (
     <section className="section" id="news">
       <div className="container">
-        <h2>Actualites Xender-MU</h2>
-        <p className="sub">Publications, actualites produit et informations institutionnelles liees a nos activites.</p>
+        <h2>All the latest</h2>
+        <p className="sub">Actualites institutionnelles, annonces produit et publications recentes de Xender-MU.</p>
 
         {loading ? (
           <article className="info-card">
@@ -1047,48 +1097,240 @@ function ContactSection() {
   );
 }
 
-function SharedFooter() {
+function HomeEditorialHero() {
+  const hero = heroSlides[0];
 
   return (
-    <footer className="footer">
-      <div className="container footer-shell footer-shell-simple">
-        <div className="footer-grid footer-grid-simple">
-          <div className="footer-column footer-brand-column footer-brand-column-simple">
-            <div className="footer-brand-lockup">
-              <BrandIdentity />
-            </div>
-            <p>Votre partenaire pour concevoir des solutions digitales plus solides, plus lisibles et mieux alignees avec vos ambitions de croissance.</p>
-          </div>
-
-          <div className="footer-column footer-links-column">
-            <h4>Navigation</h4>
-            <Link to="/">Accueil</Link>
-            <a href="/#services">Services</a>
-            <a href="/#products">Produits</a>
-            <a href="/#news">Actualites</a>
-            <a href="/#contact">Contact</a>
-          </div>
-
-          <div className="footer-column footer-contact-column">
-            <h4>Adresse</h4>
-            <p>Kinshasa</p>
-            <p>Republique Democratique Du Congo</p>
-            <h4>Telephone</h4>
-            <p>+243 89 191 9192</p>
-            <h4>Email</h4>
-            <p>hubxender@gmail.com</p>
+    <section className="corporate-hero" id="accueil">
+      <div className="container corporate-hero-grid">
+        <div className="corporate-hero-copy">
+          <span className="corporate-kicker">Xender-MU</span>
+          <h1>Des services digitaux penses pour structurer les operations, la marque et l'execution.</h1>
+          <p>
+            Nous accompagnons les entreprises, les ecoles et les organisations qui veulent une presence
+            digitale plus credible, des outils mieux cadres et des produits capables de soutenir leur croissance.
+          </p>
+          <div className="corporate-hero-actions">
+            <a className="btn btn-red" href="#contact">Demarrer un projet</a>
+            <Link className="text-link corporate-inline-link" to="/services">Explorer nos services</Link>
           </div>
         </div>
 
-        <div className="footer-bottomline footer-bottomline-simple">
-          <p>Xender-MU. Presence digitale premium, claire et evolutive.</p>
-          <a href="/#contact" className="text-link">Demarrer un projet</a>
+        <div className="corporate-hero-visual">
+          <div className="corporate-hero-rings" aria-hidden="true" />
+          <img
+            src={hero.image}
+            onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = hero.fallback; }}
+            alt="Xender-MU"
+            className="corporate-hero-image"
+            loading="eager"
+            decoding="async"
+          />
         </div>
+      </div>
+    </section>
+  );
+}
+
+function HomeOverviewSection({ statsItems = [] }) {
+  const displayStats = statsItems.length ? statsItems.slice(0, 4) : homeSnapshotStats;
+
+  return (
+    <section className="corporate-overview section">
+      <div className="container corporate-overview-grid">
+        <div className="corporate-overview-copy">
+          <span className="corporate-kicker">Future-defining services</span>
+          <h2>Une execution digitale claire, stable et orientee resultat.</h2>
+          <p>
+            Xender-MU conçoit et met en oeuvre des plateformes qui clarifient les parcours, renforcent la
+            qualite de service et donnent a chaque organisation une base technique exploitable dans le temps.
+          </p>
+          <Link to="/services" className="btn btn-red">Voir nos services</Link>
+        </div>
+
+        <div className="corporate-stats-panel">
+          {displayStats.map((item, idx) => (
+            <article key={`${item.value}-${item.label}-${idx}`} className="corporate-stat-item">
+              <strong>{item.value}</strong>
+              <span>{item.label}</span>
+            </article>
+          ))}
+          <div className="corporate-side-word" aria-hidden="true">WHAT WE DO</div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function HomeCapabilitiesSection() {
+  return (
+    <section className="corporate-capabilities section">
+      <div className="container">
+        <div className="corporate-section-head">
+          <span className="corporate-kicker">At a glance</span>
+          <h2>Ce que nous apportons a chaque mission.</h2>
+        </div>
+        <div className="corporate-capabilities-grid">
+          {homeCapabilityItems.map((item) => (
+            <article key={item.title} className="corporate-capability-item">
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function HomeMarketsSection() {
+  return (
+    <section className="corporate-markets section">
+      <div className="container corporate-markets-grid">
+        <div className="corporate-markets-copy">
+          <span className="corporate-kicker corporate-kicker-light">Our markets</span>
+          <h2>Des solutions utiles pour les structures qui veulent mieux operer.</h2>
+          <p>
+            Nous intervenons a l'intersection de la marque, du produit et de l'organisation afin de rendre les
+            services digitaux plus lisibles, plus defendables et plus faciles a faire grandir.
+          </p>
+          <div className="corporate-markets-word" aria-hidden="true">OUR MARKETS</div>
+        </div>
+
+        <div className="corporate-market-cards">
+          {homeMarketCards.map((item) => (
+            <article key={item.title} className="corporate-market-card">
+              <img
+                src={item.image}
+                onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = item.fallback; }}
+                alt={item.title}
+                loading="lazy"
+                decoding="async"
+              />
+              <div className="corporate-market-overlay">
+                {item.href.startsWith('/') && !item.href.startsWith('/#') ? (
+                  <Link to={item.href}>{item.title}</Link>
+                ) : (
+                  <a href={item.href}>{item.title}</a>
+                )}
+                <p>{item.text}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function HomeProductsShowcase({ items = fallbackProducts, loading = false }) {
+  const displayProducts = items.length ? items.slice(0, 3) : fallbackProducts.slice(0, 3);
+
+  return (
+    <section className="corporate-products section" id="products">
+      <div className="container">
+        <div className="corporate-section-head corporate-section-head-row">
+          <div>
+            <span className="corporate-kicker">Solutions</span>
+            <h2>Des produits prets a structurer des usages concrets.</h2>
+          </div>
+          <Link to="/services" className="text-link corporate-inline-link">Voir notre approche</Link>
+        </div>
+        {loading ? <p className="sub">Chargement des produits...</p> : null}
+        <div className="corporate-products-grid">
+          {displayProducts.map((product) => (
+            <article key={product.slug} className="corporate-product-card">
+              <div className="corporate-product-media">
+                {product.image_url ? <img src={product.image_url} alt={product.name} loading="lazy" decoding="async" /> : null}
+              </div>
+              <div className="corporate-product-body">
+                <span className="corporate-product-tag">{product.category}</span>
+                <h3>{product.headline}</h3>
+                <p>{product.description}</p>
+                {product.is_available ? (
+                  <Link to={`/details/${product.slug}`} className="text-link">Voir les details</Link>
+                ) : (
+                  <span className="coming">Bientot disponible</span>
+                )}
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function HomeLeadershipSection() {
+  return (
+    <section className="corporate-leadership section">
+      <div className="container corporate-leadership-shell">
+        <div className="corporate-leadership-media">
+          <img src="/images/banner-user.jpg" alt="Equipe Xender-MU" loading="lazy" decoding="async" />
+        </div>
+        <div className="corporate-leadership-copy">
+          <span className="corporate-kicker corporate-kicker-on-red">Impactful leadership</span>
+          <h2>Un pilotage simple, une execution stable et des choix assumés.</h2>
+          <p>
+            Notre equipe garde le cap sur l'utilite, la lisibilite et la mise en production. Chaque intervention
+            cherche a produire de la valeur concrete et une meilleure perception de votre structure.
+          </p>
+          <a href="#contact" className="btn btn-light">Parler de votre projet</a>
+        </div>
+      </div>
+    </section>
+  );
+}
+function SharedFooter() {
+  return (
+    <footer className="footer corporate-footer">
+      <div className="container corporate-footer-grid">
+        <div className="corporate-footer-column">
+          <h4>Our company</h4>
+          <a href="/#accueil">Xender-MU at a glance</a>
+          <a href="/#services">Nos services</a>
+          <a href="/#products">Nos produits</a>
+          <a href="/#news">Nos actualites</a>
+          <a href="/#contact">Nous contacter</a>
+        </div>
+
+        <div className="corporate-footer-column">
+          <h4>Solutions</h4>
+          <Link to="/details/rise">MU-SAU</Link>
+          <Link to="/details/rise-school">MU-SAU School</Link>
+          <Link to="/details/facture-sign">Facture Sign</Link>
+          <a href="/#products">XMOMO</a>
+        </div>
+
+        <div className="corporate-footer-column">
+          <h4>Xender-MU websites</h4>
+          <a href="/#services">Applications web</a>
+          <a href="/#products">Applications metier</a>
+          <a href="/#contact">Cadrage & accompagnement</a>
+          <Link to="/services">Voir toutes les offres</Link>
+        </div>
+
+        <div className="corporate-footer-column corporate-footer-contact">
+          <h4>Contact</h4>
+          <p>Kinshasa</p>
+          <p>Republique Democratique du Congo</p>
+          <p>+243 89 191 9192</p>
+          <p>hubxender@gmail.com</p>
+        </div>
+      </div>
+
+      <div className="container corporate-footer-bottom">
+        <div className="corporate-footer-legal">
+          <a href="/#contact">Privacy & Contact</a>
+          <a href="/#services">Services</a>
+          <a href="/#news">Sitemap</a>
+          <span>© 2026 Xender-MU</span>
+        </div>
+        <p>Xender-MU developpe des services digitaux plus lisibles, plus utiles et mieux cadres pour les organisations qui veulent avancer avec clarte.</p>
       </div>
     </footer>
   );
 }
-
 function HomePage() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openFaq, setOpenFaq] = useState(0);
@@ -1184,14 +1426,13 @@ function HomePage() {
             </div>
           </div>
         ) : null}
-        <HeroCarousel />
-        <BannerCarousel />
-        <KeyStatsSection items={statsItems} />
-        <ServicesSection showAllLink />
-        <ProductSection items={productItems} loading={productLoading} />
-        <WhySection />
+        <HomeEditorialHero />
+        <HomeOverviewSection statsItems={statsItems} />
+        <HomeCapabilitiesSection />
+        <HomeMarketsSection />
+        <HomeProductsShowcase items={productItems} loading={productLoading} />
+        <HomeLeadershipSection />
         <NewsSection />
-        <FinalConversionSection />
         <ContactSection />
       </main>
 
@@ -3018,6 +3259,16 @@ export default function App() {
     </Routes>
   );
 }
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -5129,3 +5129,769 @@ body.detail-voda .footer a:hover {
     font-size: clamp(2.2rem, 10vw, 3.4rem);
   }
 }
+
+/* ===== Final Vodafone-inspired corporate home rebuild ===== */
+body.home-voda {
+  background: #f2f2f0;
+  color: #1f242b;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body.home-voda .topbar {
+  background: #26292d;
+  border-bottom: none;
+}
+
+body.home-voda .topbar-inner {
+  min-height: 84px;
+}
+
+body.home-voda .desktop-menu a,
+body.home-voda .mobile-menu a,
+body.home-voda .brand-word {
+  color: #fff;
+}
+
+body.home-voda .brand-mark {
+  box-shadow: none;
+}
+
+body.home-voda .home-main,
+body.home-voda .home-main::before,
+body.home-voda .home-main::after {
+  background: transparent;
+}
+
+body.home-voda .home-main::before,
+body.home-voda .home-main::after,
+body.home-voda .section:nth-of-type(odd)::after {
+  display: none;
+}
+
+body.home-voda .section {
+  padding: 0;
+}
+
+body.home-voda .container {
+  width: min(1280px, calc(100% - 80px));
+}
+
+.corporate-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.2rem;
+  color: #cb0000;
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.corporate-kicker-light {
+  color: rgba(255,255,255,0.78);
+}
+
+.corporate-kicker-on-red {
+  color: rgba(255,255,255,0.9);
+}
+
+.corporate-section-head {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-bottom: 2.6rem;
+}
+
+.corporate-section-head-row {
+  align-items: flex-start;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.corporate-inline-link {
+  margin-top: 1rem;
+  font-weight: 700;
+}
+
+.corporate-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 3.5rem 0 2.5rem;
+  background: linear-gradient(180deg, #f7f6f3 0%, #f0efec 100%);
+}
+
+.corporate-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(340px, 1fr) minmax(420px, 1.08fr);
+  gap: 2rem;
+  align-items: center;
+  min-height: 700px;
+}
+
+.corporate-hero-copy {
+  max-width: 560px;
+  padding: 4rem 0 4rem 0.2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.corporate-hero-copy h1 {
+  margin: 0 0 1.4rem;
+  color: #232930;
+  font-size: clamp(2.8rem, 5.4vw, 5.1rem);
+  font-weight: 300;
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+}
+
+.corporate-hero-copy h1 strong,
+.corporate-hero-copy h1 b {
+  font-weight: 700;
+}
+
+.corporate-hero-copy p {
+  max-width: 540px;
+  margin: 0 0 2rem;
+  color: #434a54;
+  font-size: 1.22rem;
+  line-height: 1.7;
+}
+
+.corporate-hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+}
+
+.corporate-hero-visual {
+  position: relative;
+  min-height: 700px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.corporate-hero-rings {
+  position: absolute;
+  inset: 3% -8% 0 auto;
+  width: min(720px, 92%);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at center, rgba(255,255,255,0) 0 44%, rgba(255,255,255,0.9) 45% 49%, rgba(255,255,255,0) 50%),
+    repeating-radial-gradient(circle at center, rgba(229, 0, 0, 0.88) 0 3px, rgba(229,0,0,0) 3px 16px);
+  aspect-ratio: 1 / 1;
+  opacity: 0.92;
+  filter: saturate(1.05);
+}
+
+.corporate-hero-rings::after {
+  content: "";
+  position: absolute;
+  inset: 16% 10% 8% 22%;
+  border: 14px solid #e60000;
+  border-radius: 42% 58% 58% 42% / 34% 46% 54% 66%;
+  transform: rotate(12deg);
+}
+
+.corporate-hero-image {
+  position: relative;
+  z-index: 2;
+  width: min(100%, 620px);
+  max-height: 700px;
+  object-fit: contain;
+  object-position: center bottom;
+  filter: drop-shadow(0 30px 40px rgba(50, 44, 39, 0.12));
+}
+
+.corporate-overview {
+  background: #f4f2ee;
+  padding: 5.5rem 0;
+}
+
+.corporate-overview-grid {
+  display: grid;
+  grid-template-columns: minmax(320px, 0.95fr) minmax(360px, 1fr);
+  gap: 3.5rem;
+  align-items: start;
+}
+
+.corporate-overview-copy h2,
+.corporate-capabilities h2,
+.corporate-products h2,
+#news h2,
+#contact h2 {
+  margin: 0;
+  color: #222831;
+  font-size: clamp(2.2rem, 4vw, 3.85rem);
+  font-weight: 300;
+  letter-spacing: -0.04em;
+  line-height: 1.02;
+}
+
+.corporate-overview-copy p,
+.corporate-section-head p,
+#news .sub,
+#contact p {
+  color: #434a54;
+  font-size: 1.14rem;
+  line-height: 1.75;
+}
+
+.corporate-stats-panel {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2.4rem 2.8rem;
+  padding-right: 5rem;
+}
+
+.corporate-stat-item {
+  position: relative;
+  padding-left: 1rem;
+}
+
+.corporate-stat-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.45rem;
+  bottom: 0.45rem;
+  width: 2px;
+  background: #e60000;
+}
+
+.corporate-stat-item strong {
+  display: block;
+  color: #e60000;
+  font-size: clamp(2.5rem, 4vw, 4rem);
+  font-weight: 800;
+  line-height: 0.96;
+}
+
+.corporate-stat-item span {
+  display: block;
+  margin-top: 0.75rem;
+  color: #2b3138;
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.35;
+  text-transform: lowercase;
+}
+
+.corporate-side-word {
+  position: absolute;
+  right: -1rem;
+  top: 0.5rem;
+  color: transparent;
+  -webkit-text-stroke: 2px #e60000;
+  font-size: clamp(3.6rem, 9vw, 7.4rem);
+  font-weight: 800;
+  line-height: 0.85;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+.corporate-capabilities {
+  padding: 5.25rem 0 6rem;
+  background: #f7f5f1;
+}
+
+.corporate-capabilities-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 3rem 3.5rem;
+}
+
+.corporate-capability-item {
+  padding: 0.35rem 0 0;
+}
+
+.corporate-capability-item h3 {
+  margin: 0 0 0.8rem;
+  color: #20262d;
+  font-size: 1.35rem;
+  line-height: 1.28;
+}
+
+.corporate-capability-item p {
+  margin: 0;
+  color: #454d58;
+  font-size: 1.04rem;
+  line-height: 1.7;
+}
+
+.corporate-markets {
+  position: relative;
+  overflow: hidden;
+  padding: 6rem 0;
+  background: #26292d;
+}
+
+.corporate-markets-grid {
+  display: grid;
+  grid-template-columns: minmax(320px, 0.95fr) minmax(340px, 1fr);
+  gap: 3.5rem;
+  align-items: start;
+}
+
+.corporate-markets-copy {
+  position: relative;
+  padding-top: 1rem;
+}
+
+.corporate-markets-copy h2,
+.corporate-markets-copy p {
+  position: relative;
+  z-index: 2;
+}
+
+.corporate-markets-copy h2 {
+  margin: 0 0 1.2rem;
+  color: #fff;
+  font-size: clamp(2.4rem, 4.2vw, 4.6rem);
+  font-weight: 300;
+  letter-spacing: -0.04em;
+  line-height: 0.98;
+}
+
+.corporate-markets-copy p {
+  max-width: 620px;
+  margin: 0;
+  color: rgba(255,255,255,0.84);
+  font-size: 1.12rem;
+  line-height: 1.8;
+}
+
+.corporate-markets-word {
+  position: absolute;
+  left: 0;
+  bottom: -2.5rem;
+  color: transparent;
+  -webkit-text-stroke: 2px #e60000;
+  font-size: clamp(4rem, 10vw, 9.5rem);
+  font-weight: 800;
+  line-height: 0.84;
+  pointer-events: none;
+}
+
+.corporate-market-cards {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.corporate-market-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+  min-height: 310px;
+  background: #1f2226;
+}
+
+.corporate-market-card img {
+  width: 100%;
+  height: 100%;
+  min-height: 310px;
+  object-fit: cover;
+}
+
+.corporate-market-overlay {
+  position: absolute;
+  left: 1.4rem;
+  right: 1.4rem;
+  bottom: 1.3rem;
+  padding: 1.4rem 1.5rem;
+  background: rgba(245, 242, 237, 0.96);
+  border-radius: 8px;
+}
+
+.corporate-market-overlay a {
+  color: #232930;
+  font-size: 1.75rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.corporate-market-overlay p {
+  margin: 0.55rem 0 0;
+  color: #4b525c;
+  line-height: 1.6;
+}
+
+.corporate-products {
+  padding: 5.6rem 0;
+  background: #f7f5f1;
+}
+
+.corporate-products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.8rem;
+}
+
+.corporate-product-card {
+  overflow: hidden;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: none;
+  border: 1px solid rgba(26, 31, 40, 0.08);
+}
+
+.corporate-product-media {
+  background: #ece8e2;
+  aspect-ratio: 16 / 10;
+}
+
+.corporate-product-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.corporate-product-body {
+  padding: 1.5rem 1.5rem 1.7rem;
+}
+
+.corporate-product-tag {
+  display: inline-block;
+  margin-bottom: 0.9rem;
+  padding: 0.32rem 0.55rem;
+  border: 1px solid #e60000;
+  color: #313842;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+}
+
+.corporate-product-body h3 {
+  margin: 0 0 0.9rem;
+  color: #242a33;
+  font-size: 1.65rem;
+  line-height: 1.2;
+}
+
+.corporate-product-body p {
+  margin: 0 0 1rem;
+  color: #4c5560;
+  line-height: 1.7;
+}
+
+.corporate-leadership {
+  padding: 5.8rem 0;
+  background: #f7f5f1;
+}
+
+.corporate-leadership-shell {
+  display: grid;
+  grid-template-columns: minmax(320px, 1fr) minmax(320px, 1fr);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.corporate-leadership-media img {
+  width: 100%;
+  height: 100%;
+  min-height: 520px;
+  object-fit: cover;
+}
+
+.corporate-leadership-copy {
+  padding: 4rem 3.7rem;
+  background: #c90000;
+  color: #fff;
+}
+
+.corporate-leadership-copy h2 {
+  margin: 0 0 1.3rem;
+  font-size: clamp(2.3rem, 4vw, 4rem);
+  font-weight: 300;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.corporate-leadership-copy p {
+  margin: 0 0 2rem;
+  color: rgba(255,255,255,0.88);
+  font-size: 1.08rem;
+  line-height: 1.75;
+}
+
+.btn.btn-light {
+  background: #fff;
+  border-color: #fff;
+  color: #c90000;
+}
+
+body.home-voda #news {
+  position: relative;
+  padding: 5.8rem 0 6.2rem;
+  background: #f4f2ee;
+}
+
+body.home-voda #news .container {
+  position: relative;
+}
+
+body.home-voda #news .container::after {
+  content: "NEWS";
+  position: absolute;
+  right: -1rem;
+  top: 1rem;
+  color: transparent;
+  -webkit-text-stroke: 2px #e60000;
+  font-size: clamp(4rem, 10vw, 8.5rem);
+  font-weight: 800;
+  line-height: 0.84;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  pointer-events: none;
+}
+
+body.home-voda #news .grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.8rem;
+}
+
+body.home-voda #news .info-card {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  border: 1px solid rgba(26, 31, 40, 0.08);
+  background: #fff;
+  box-shadow: none;
+}
+
+body.home-voda .news-card-image {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+}
+
+body.home-voda #news .info-card h3 {
+  margin: 0;
+  padding: 0 1.5rem;
+  color: #252b33;
+  font-size: 1.9rem;
+  line-height: 1.28;
+}
+
+body.home-voda #news .info-card p {
+  padding: 0 1.5rem;
+  margin: 0.95rem 0 0;
+  color: #4d5560;
+  line-height: 1.7;
+}
+
+body.home-voda .news-date {
+  order: -1;
+  display: inline-flex;
+  gap: 0.75rem;
+  align-self: flex-start;
+  margin: 1.35rem 1.5rem 0.85rem;
+  color: #2f3640;
+  font-size: 0.84rem;
+  text-transform: uppercase;
+}
+
+body.home-voda #news .text-link {
+  padding: 0 1.5rem 1.6rem;
+  margin-top: auto;
+  font-weight: 700;
+}
+
+body.home-voda #contact {
+  padding: 5.8rem 0 6rem;
+  background: #f7f5f1;
+}
+
+body.home-voda .contact-wrap {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.8fr) minmax(320px, 1fr);
+  gap: 2.5rem;
+  padding: 0;
+  border: none;
+  box-shadow: none;
+  background: transparent;
+}
+
+body.home-voda .contact-wrap > div:first-child {
+  padding-top: 0.5rem;
+}
+
+body.home-voda .contact-form {
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid rgba(26, 31, 40, 0.08);
+  background: #fff;
+}
+
+body.home-voda .contact-form input,
+body.home-voda .contact-form select,
+body.home-voda .contact-form textarea {
+  border-radius: 8px;
+  background: #fff;
+}
+
+.corporate-footer {
+  padding: 4.8rem 0 2rem;
+  background: #26292d;
+  color: rgba(255,255,255,0.82);
+}
+
+.corporate-footer-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 2.6rem;
+}
+
+.corporate-footer-column h4 {
+  margin: 0 0 1.25rem;
+  color: #fff;
+  font-size: 1.05rem;
+}
+
+.corporate-footer-column a,
+.corporate-footer-column p,
+.corporate-footer-bottom p,
+.corporate-footer-legal a,
+.corporate-footer-legal span {
+  color: rgba(255,255,255,0.78);
+  text-decoration: none;
+  line-height: 1.9;
+}
+
+.corporate-footer-bottom {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255,255,255,0.12);
+}
+
+.corporate-footer-legal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 1.2rem;
+  align-items: center;
+}
+
+@media (max-width: 1100px) {
+  body.home-voda .container {
+    width: min(1280px, calc(100% - 48px));
+  }
+
+  .corporate-hero-grid,
+  .corporate-overview-grid,
+  .corporate-markets-grid,
+  .corporate-leadership-shell,
+  body.home-voda .contact-wrap,
+  .corporate-footer-bottom {
+    grid-template-columns: 1fr;
+  }
+
+  .corporate-products-grid,
+  body.home-voda #news .grid,
+  .corporate-capabilities-grid,
+  .corporate-footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .corporate-hero-visual {
+    min-height: 520px;
+  }
+
+  .corporate-side-word,
+  body.home-voda #news .container::after {
+    display: none;
+  }
+}
+
+@media (max-width: 760px) {
+  body.home-voda .container {
+    width: calc(100% - 32px);
+  }
+
+  .corporate-hero {
+    padding: 2rem 0 1.4rem;
+  }
+
+  .corporate-hero-grid {
+    gap: 1rem;
+    min-height: auto;
+  }
+
+  .corporate-hero-copy {
+    padding: 1.6rem 0 0;
+  }
+
+  .corporate-hero-copy h1,
+  .corporate-overview-copy h2,
+  .corporate-capabilities h2,
+  .corporate-products h2,
+  #news h2,
+  #contact h2,
+  .corporate-markets-copy h2,
+  .corporate-leadership-copy h2 {
+    font-size: 2.4rem;
+    line-height: 1.02;
+  }
+
+  .corporate-hero-copy p,
+  .corporate-overview-copy p,
+  .corporate-markets-copy p,
+  .corporate-capability-item p,
+  .corporate-product-body p,
+  .corporate-leadership-copy p,
+  #news .sub,
+  #contact p {
+    font-size: 1rem;
+  }
+
+  .corporate-hero-visual {
+    min-height: 360px;
+  }
+
+  .corporate-hero-rings {
+    inset: 4% 0 0 auto;
+    width: 100%;
+  }
+
+  .corporate-products-grid,
+  body.home-voda #news .grid,
+  .corporate-capabilities-grid,
+  .corporate-footer-grid,
+  .corporate-stats-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .corporate-section-head-row {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .corporate-markets {
+    padding-bottom: 4.2rem;
+  }
+
+  .corporate-markets-word {
+    bottom: -0.8rem;
+    font-size: 4rem;
+    -webkit-text-stroke-width: 1px;
+  }
+
+  .corporate-market-overlay a {
+    font-size: 1.35rem;
+  }
+
+  .corporate-leadership-copy {
+    padding: 2rem 1.5rem;
+  }
+
+  .corporate-footer {
+    padding-top: 3.5rem;
+  }
+}
