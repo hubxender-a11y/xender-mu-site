@@ -556,7 +556,7 @@ function HeroCarousel() {
   const hero = heroSlides[0];
 
   return (
-    <section className="hero-section hero-voda" id="accueil">
+    <section className="hero-section hero-voda hero-voda-luxe" id="accueil">
       <div className="hero-voda-background">
         <img
           src={hero.image}
@@ -574,19 +574,19 @@ function HeroCarousel() {
       <div className="hero-voda-overlay" />
       <div className="container hero-voda-inner">
         <div className="hero-voda-copy">
-          <span className="hero-voda-kicker">xender-mu.connected</span>
+          <span className="hero-voda-kicker">Xender-MU digital systems</span>
           <h1 className="hero-voda-title">
             <span className="hero-voda-outline">XENDER-MU.</span>
             <span className="hero-voda-solid">CONNECTED</span>
           </h1>
           <div className="hero-voda-intro">
             <p>
-              Nous concevons des plateformes digitales qui clarifient les operations, renforcent la confiance
-              et donnent a votre organisation une presence plus forte et plus lisible.
+              Des experiences digitales plus claires, plus fiables et plus maitrisées pour les organisations qui
+              veulent mieux presenter leur valeur et mieux executer.
             </p>
           </div>
           <div className="hero-actions hero-voda-actions">
-            <a className="btn btn-red" href="#contact">Demarrer mon projet</a>
+            <a className="btn btn-red hero-voda-btn-soft" href="#contact">Echanger avec notre equipe</a>
           </div>
         </div>
       </div>
@@ -3126,6 +3126,7 @@ export default function App() {
     </Routes>
   );
 }
+
 
 
 
