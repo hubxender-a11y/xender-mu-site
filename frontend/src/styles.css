@@ -3226,3 +3226,119 @@ h1, h2, h3, h4 {
     min-height: 260px;
   }
 }
+
+/* ===== Vodafone structure polish ===== */
+.nav-row-voda {
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  align-items: center;
+  gap: 24px;
+}
+
+.desktop-menu-voda {
+  justify-content: center;
+}
+
+.nav-search {
+  width: 58px;
+  height: 58px;
+  border: none;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.08);
+  color: rgba(255,255,255,0.88);
+  font-size: 1.6rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 180ms ease, transform 180ms ease;
+}
+
+.nav-search:hover {
+  background: rgba(255,255,255,0.16);
+  transform: translateY(-1px);
+}
+
+.hero-voda-luxe .hero-voda-kicker {
+  color: rgba(255,255,255,0.92);
+  letter-spacing: -0.02em;
+}
+
+.hero-voda-luxe .hero-voda-title {
+  max-width: 760px;
+}
+
+.hero-voda-luxe .hero-voda-outline,
+.hero-voda-luxe .hero-voda-solid {
+  letter-spacing: -0.075em;
+}
+
+.hero-voda-luxe .hero-voda-intro {
+  max-width: 520px;
+}
+
+.hero-voda-luxe .hero-voda-btn-soft {
+  min-width: 188px;
+}
+
+.news-voda-topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.news-voda-topics span {
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: #f1efe9;
+  color: #3a4049;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.footer-grid-voda {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.footer-column-metric {
+  min-width: 0;
+}
+
+.footer-metric-value {
+  margin: 8px 0 10px;
+  color: #fff;
+  font-size: 3rem;
+  line-height: 1;
+  letter-spacing: -0.06em;
+}
+
+@media (max-width: 1120px) {
+  .nav-row-voda {
+    grid-template-columns: auto 1fr auto;
+  }
+
+  .nav-search {
+    display: none;
+  }
+
+  .footer-grid-voda {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .nav-row-voda {
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  .footer-grid-voda {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-metric-value {
+    font-size: 2.4rem;
+  }
+}

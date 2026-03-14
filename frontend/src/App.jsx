@@ -581,7 +581,7 @@ function HeroCarousel() {
       <div className="hero-voda-overlay" />
       <div className="container hero-voda-inner">
         <div className="hero-voda-copy">
-          <span className="hero-voda-kicker">Xender-MU digital systems</span>
+          <span className="hero-voda-kicker">Our digital company</span>
           <h1 className="hero-voda-title">
             <span className="hero-voda-outline">XENDER-MU.</span>
             <span className="hero-voda-solid">CONNECTED</span>
@@ -593,7 +593,7 @@ function HeroCarousel() {
             </p>
           </div>
           <div className="hero-actions hero-voda-actions">
-            <a className="btn btn-red hero-voda-btn-soft" href="#contact">Echanger avec notre equipe</a>
+            <a className="btn btn-red hero-voda-btn-soft" href="#contact">Our purpose</a>
           </div>
         </div>
       </div>
@@ -3088,6 +3088,7 @@ export default function App() {
     </Routes>
   );
 }
+
 
 
 
