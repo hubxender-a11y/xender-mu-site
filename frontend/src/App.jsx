@@ -1103,16 +1103,6 @@ function HomeEditorialHero() {
   return (
     <section className="corporate-hero corporate-hero-immersive" id="accueil">
       <div className="corporate-hero-backdrop">
-        <video
-          className="corporate-hero-bg-video"
-          autoPlay
-          muted
-          loop
-          playsInline
-          poster="/images/hero-2.jpg"
-        >
-          <source src="/videos/hero-home.webm" type="video/webm" />
-        </video>
         <img
           src="/images/hero-2.jpg"
           onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = hero.fallback; }}
@@ -1449,6 +1439,7 @@ function HomePage() {
         <HomeEditorialHero />
         <HomeOverviewSection statsItems={statsItems} />
         <HomeCapabilitiesSection />
+        <HomeMarketsSection />
         <HomeProductsShowcase items={productItems} loading={productLoading} />
         <HomeLeadershipSection />
         <NewsSection />
@@ -3278,9 +3269,6 @@ export default function App() {
     </Routes>
   );
 }
-
-
-
 
 
 
