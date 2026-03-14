@@ -68,6 +68,21 @@ const targetSegments = [
   }
 ];
 
+const homeFeatureNotes = [
+  {
+    title: "Cadrage plus clair",
+    text: "Nous transformons les besoins en trajectoires simples a comprendre, a presenter et a executer."
+  },
+  {
+    title: "Produits plus credibles",
+    text: "Chaque interface est pensee pour inspirer confiance et soutenir votre image de marque."
+  },
+  {
+    title: "Execution durable",
+    text: "Nous livrons avec une logique de support, d'evolution et de stabilite dans le temps."
+  }
+];
+
 const bannerSlides = [
   {
     kicker: "Equipe & execution",
@@ -746,6 +761,30 @@ function FinalConversionSection() {
   );
 }
 
+function HomeFeatureSection() {
+  return (
+    <section className="section home-feature-section">
+      <div className="container home-feature-grid">
+        <div className="home-feature-copy">
+          <span className="pill">Notre approche</span>
+          <h2>Une interface plus claire commence toujours par un meilleur cadrage.</h2>
+          <p className="sub">
+            Nous aidons les organisations a clarifier leur offre, structurer leurs parcours et deployer des produits
+            plus comprehensibles pour leurs clients, leurs equipes et leurs partenaires.
+          </p>
+        </div>
+        <div className="home-feature-cards">
+          {homeFeatureNotes.map((item) => (
+            <article key={item.title} className="info-card home-feature-card">
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
 function ServicesSection({ showAllLink = false }) {
 
   return (
@@ -3114,6 +3153,10 @@ export default function App() {
     </Routes>
   );
 }
+
+
+
+
 
 
 
