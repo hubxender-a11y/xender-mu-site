@@ -15,8 +15,8 @@ import detail3 from "./assets/images/detail-3.svg";
 
 const heroSlides = [
   {
-    title: "Donnez a votre presence digitale une allure plus grande, plus nette et plus premium",
-    text: "Nous concevons des experiences web et mobiles qui renforcent la perception de votre marque, fluidifient l'usage et installent la confiance des le premier regard.",
+    title: "Nous concevons des plateformes digitales plus claires, plus elegantes et plus utiles",
+    text: "Sites web, applications metier et experiences mobiles penses pour mieux presenter votre valeur, simplifier les usages et soutenir une croissance durable.",
     cta: "Demarrer mon projet",
     image: "/images/hero-1.jpg",
     fallback: hero1,
@@ -570,7 +570,7 @@ function HeroCarousel() {
       <div className="container hero-grid">
         <div className="hero-content hero-content-premium hero-content-minimal">
           <span className="pill premium-pill">Xender-MU</span>
-          <span className="hero-mono-line">Applications, plateformes et experiences digitales premium</span>
+          <span className="hero-mono-line">Solutions digitales pour entreprises, ecoles et institutions</span>
           <h1 className="hero-luxe-title">{hero.title}</h1>
           <p className="hero-luxe-copy">{hero.text}</p>
           <div className="hero-actions">
@@ -579,16 +579,16 @@ function HeroCarousel() {
           </div>
           <div className="hero-proof-row hero-proof-row-minimal">
             <div className="hero-proof-item">
-              <strong>Applications web</strong>
-              <span>Conception sur mesure, structure claire et mise en ligne maitrisee</span>
+              <strong>Web & plateforme</strong>
+              <span>Des interfaces nettes, credibles et faciles a deployer</span>
             </div>
             <div className="hero-proof-item">
-              <strong>Applications mobiles</strong>
-              <span>Experiences mobiles fluides, elegantes et rassurantes</span>
+              <strong>Produit mobile</strong>
+              <span>Des experiences fluides et plus agreables a utiliser</span>
             </div>
             <div className="hero-proof-item">
-              <strong>Presence durable</strong>
-              <span>Suivi durable, ajustements continus et support apres lancement</span>
+              <strong>Support durable</strong>
+              <span>Un accompagnement reel apres la mise en ligne</span>
             </div>
           </div>
           <div className="dots">
@@ -607,12 +607,12 @@ function HeroCarousel() {
         <div className="hero-image-wrap hero-image-stage hero-image-stage-minimal">
           <img src={hero.image} onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = hero.fallback; }} alt={hero.title} className="hero-image" style={{ objectPosition: hero.imagePosition || "center center" }} loading="eager" decoding="async" />
           <div className="hero-floating-card hero-floating-card-main">
-            <span>Experience premium</span>
-            <strong>Sites, apps et plateformes qui inspirent confiance</strong>
+            <span>Signature digitale</span>
+            <strong>Des experiences mieux presentees et plus rassurantes</strong>
           </div>
           <div className="hero-floating-card hero-floating-card-side">
-            <strong>Architecture claire</strong>
-            <p>Design, produit, support et mise en ligne dans une logique agence moderne.</p>
+            <strong>Execution maitrisee</strong>
+            <p>Une methode simple pour cadrer, livrer et faire evoluer vos solutions.</p>
           </div>
         </div>
       </div>
