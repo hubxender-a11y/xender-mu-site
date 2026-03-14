@@ -581,8 +581,8 @@ function HeroCarousel() {
           </h1>
           <div className="hero-voda-intro">
             <p>
-              Des experiences digitales plus claires, plus fiables et plus maitrisées pour les organisations qui
-              veulent mieux presenter leur valeur et mieux executer.
+              Des experiences digitales plus claires, plus fiables et plus maitrisees pour les organisations qui
+              veulent mieux presenter leur valeur, mieux servir leurs utilisateurs et mieux executer.
             </p>
           </div>
           <div className="hero-actions hero-voda-actions">
@@ -759,25 +759,46 @@ function HomeFeatureSection() {
   );
 }
 function ServicesSection({ showAllLink = false }) {
+  const primary = services[0];
+  const secondary = services.slice(1);
 
   return (
-    <section className="section" id="services">
+    <section className="section services-voda-section" id="services">
       <div className="container">
-        <h2>Services</h2>
-          <p className="sub">Des services structures pour concevoir, lancer et faire evoluer des plateformes digitales plus credibles.</p>
-        <div className="grid cols-3">
-          {services.map((service) => (
-            <article key={service.title} className="service-card">
-              <img src={service.image} onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = service.fallback; }} alt={service.title} loading="lazy" decoding="async" />
-              <div>
-                <h3>{service.title}</h3>
-                <p>{service.description}</p>
-              </div>
-            </article>
-          ))}
+        <div className="section-heading voda-heading">
+          <span className="pill">Core services</span>
+          <h2>Des services concus pour clarifier, deployer et faire evoluer votre presence digitale.</h2>
+          <p className="sub">
+            Une lecture plus simple de notre offre: cadrage produit, experiences web et applications metier pour
+            les organisations qui veulent une execution serieuse et plus defendable.
+          </p>
         </div>
+
+        <div className="services-voda-layout">
+          <article className="service-voda-feature">
+            <img src={primary.image} onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = primary.fallback; }} alt={primary.title} loading="lazy" decoding="async" />
+            <div className="service-voda-feature-copy">
+              <span className="service-voda-index">01</span>
+              <h3>{primary.title}</h3>
+              <p>{primary.description}</p>
+            </div>
+          </article>
+
+          <div className="service-voda-stack">
+            {secondary.map((service, index) => (
+              <article key={service.title} className="service-voda-item">
+                <span className="service-voda-index">0{index + 2}</span>
+                <div>
+                  <h3>{service.title}</h3>
+                  <p>{service.description}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+
         {showAllLink && (
-          <div className="services-more">
+          <div className="services-more services-more-voda">
             <Link to="/services" className="btn btn-red">Voir la page services</Link>
           </div>
         )}
@@ -787,37 +808,59 @@ function ServicesSection({ showAllLink = false }) {
 }
 
 function ProductSection({ items = fallbackProducts, loading = false }) {
+  const featured = items[0];
+  const remaining = items.slice(1, 4);
 
   return (
-    <section className="section product-section" id="products">
+    <section className="section product-voda-section" id="products">
       <div className="container">
-        <h2>Solutions</h2>
-          <p className="sub">Des produits metier pensés pour simplifier les operations et renforcer la qualite de service.</p>
-        {loading ? <p className="sub">Chargement des produits...</p> : null}
-        <div className="grid cols-4 product-grid">
-          {items.map((product) => (
-            <article key={product.slug} className="product-card vod-card">
-              <span className="product-tag">{product.tag}</span>
-              {product.image_url ? (
-                <img
-                  src={product.image_url}
-                  alt={product.name}
-                  className="product-card-image"
-                  loading="lazy"
-                  decoding="async"
-                />
-              ) : null}
-              <h3>{product.headline}</h3>
-              <p>{product.description}</p>
-              <small>{product.category}</small>
-              {product.is_available ? (
-                <Link to={`/details/${product.slug}`} className="text-link">Voir les details</Link>
-              ) : (
-                <span className="coming">Bientot disponible</span>
-              )}
-            </article>
-          ))}
+        <div className="section-heading voda-heading">
+          <span className="pill">Solutions</span>
+          <h2>Des produits metier presentes comme de vraies solutions d'organisation.</h2>
+          <p className="sub">
+            Chaque solution est formulee pour etre comprise rapidement, rassurer la prise de decision et montrer
+            une execution plus structuree.
+          </p>
         </div>
+
+        {loading ? <p className="sub">Chargement des produits...</p> : null}
+
+        {featured ? (
+          <div className="product-voda-layout">
+            <article className="product-voda-feature">
+              {featured.image_url ? (
+                <img src={featured.image_url} alt={featured.name} className="product-card-image" loading="lazy" decoding="async" />
+              ) : null}
+              <div className="product-voda-feature-copy">
+                <span className="product-tag">{featured.tag}</span>
+                <h3>{featured.headline}</h3>
+                <p>{featured.description}</p>
+                <small>{featured.category}</small>
+                {featured.is_available ? (
+                  <Link to={`/details/${featured.slug}`} className="text-link">Voir les details</Link>
+                ) : (
+                  <span className="coming">Bientot disponible</span>
+                )}
+              </div>
+            </article>
+
+            <div className="product-voda-rail">
+              {remaining.map((product) => (
+                <article key={product.slug} className="product-voda-card">
+                  <span className="product-tag">{product.tag}</span>
+                  <h3>{product.headline}</h3>
+                  <p>{product.description}</p>
+                  <small>{product.category}</small>
+                  {product.is_available ? (
+                    <Link to={`/details/${product.slug}`} className="text-link">Voir les details</Link>
+                  ) : (
+                    <span className="coming">Bientot disponible</span>
+                  )}
+                </article>
+              ))}
+            </div>
+          </div>
+        ) : null}
       </div>
     </section>
   );
@@ -956,37 +999,45 @@ function NewsSection() {
 
     loadNews();
 
-  return () => {
+    return () => {
       cancelled = true;
     };
   }, []);
 
-
   return (
-    <section className="section" id="news">
+    <section className="section news-voda-section" id="news">
       <div className="container">
-        <h2>Dernieres actualites</h2>
-          <p className="sub">Une lecture simple de nos evolutions produit, de nos lancements et de nos travaux recents.</p>
+        <div className="section-heading voda-heading voda-heading-row">
+          <div>
+            <span className="pill">Latest</span>
+            <h2>Une lecture editoriale de nos actualites et de nos evolutions recentes.</h2>
+          </div>
+          <Link to="/#news" className="text-link">Voir toutes les actualites</Link>
+        </div>
 
         {loading ? (
-          <article className="info-card">
+          <article className="info-card news-voda-empty">
             <h3>Chargement des actualites...</h3>
           </article>
         ) : news.length === 0 ? (
-          <article className="info-card">
+          <article className="info-card news-voda-empty">
             <h3>Aucune actualite pour le moment</h3>
             <p>Revenez bientot pour decouvrir nos dernieres nouveautes.</p>
-            <a href="#accueil" className="text-link">Voir toutes les actualites</a>
           </article>
         ) : (
-          <div className="grid cols-3">
-            {news.slice(0, 4).map((item) => (
-              <article key={item.id} className="info-card">
+          <div className="news-voda-grid">
+            {news.slice(0, 3).map((item) => (
+              <article key={item.id} className="news-voda-card">
                 <img src={item.image_url || "/images/banner-user.jpg"} onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = "/images/hero-1.jpg"; }} alt={item.title} className="news-card-image" />
-                <h3>{item.title}</h3>
-                <p>{item.excerpt || item.content.slice(0, 140)}</p>
-                <small className="news-date">Publie le {new Date(item.created_at).toLocaleDateString("fr-FR", { day: "2-digit", month: "long", year: "numeric" })}</small>
-                <Link to={`/actualites/${item.id}`} className="text-link">Voir plus</Link>
+                <div className="news-voda-card-copy">
+                  <div className="news-voda-meta">
+                    <small className="news-date">{new Date(item.created_at).toLocaleDateString("fr-FR", { day: "2-digit", month: "long", year: "numeric" })}</small>
+                    <span className="product-tag">Actualite</span>
+                  </div>
+                  <h3>{item.title}</h3>
+                  <p>{item.excerpt || item.content.slice(0, 140)}</p>
+                  <Link to={`/actualites/${item.id}`} className="text-link">Lire l'article</Link>
+                </div>
               </article>
             ))}
           </div>
