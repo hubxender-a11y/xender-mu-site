@@ -766,49 +766,45 @@ function HomeFeatureSection() {
   );
 }
 function ServicesSection({ showAllLink = false }) {
-  const primary = services[0];
-  const secondary = services.slice(1);
-
   return (
-    <section className="section services-voda-section" id="services">
-      <div className="container">
-        <div className="section-heading voda-heading">
-          <span className="pill">Core services</span>
-          <h2>Des services concus pour clarifier, deployer et faire evoluer votre presence digitale.</h2>
+    <section className="section services-ledger-section" id="services">
+      <div className="container services-ledger-grid">
+        <div className="services-ledger-copy">
+          <span className="pill">Service portfolio</span>
+          <h2>Concevoir. Deployer. Faire evoluer.</h2>
           <p className="sub">
-            Une lecture plus simple de notre offre: cadrage produit, experiences web et applications metier pour
-            les organisations qui veulent une execution serieuse et plus defendable.
+            Nous intervenons sur les moments qui changent vraiment la perception d'une organisation :
+            la clarte de l'offre, la qualite des parcours et la fiabilite de l'execution.
           </p>
-        </div>
-
-        <div className="services-voda-layout">
-          <article className="service-voda-feature">
-            <img src={primary.image} onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = primary.fallback; }} alt={primary.title} loading="lazy" decoding="async" />
-            <div className="service-voda-feature-copy">
-              <span className="service-voda-index">01</span>
-              <h3>{primary.title}</h3>
-              <p>{primary.description}</p>
+          {showAllLink && (
+            <div className="services-ledger-actions">
+              <Link to="/services" className="btn btn-red">Voir la page services</Link>
             </div>
-          </article>
-
-          <div className="service-voda-stack">
-            {secondary.map((service, index) => (
-              <article key={service.title} className="service-voda-item">
-                <span className="service-voda-index">0{index + 2}</span>
-                <div>
-                  <h3>{service.title}</h3>
-                  <p>{service.description}</p>
-                </div>
-              </article>
-            ))}
-          </div>
+          )}
         </div>
 
-        {showAllLink && (
-          <div className="services-more services-more-voda">
-            <Link to="/services" className="btn btn-red">Voir la page services</Link>
-          </div>
-        )}
+        <div className="services-ledger-list">
+          {services.map((service, index) => (
+            <article key={service.title} className="services-ledger-item">
+              <div className="services-ledger-index">0{index + 1}</div>
+              <div className="services-ledger-body">
+                <h3>{service.title}</h3>
+                <p>{service.description}</p>
+              </div>
+              <img
+                src={service.image}
+                onError={(e) => {
+                  e.currentTarget.onerror = null;
+                  e.currentTarget.src = service.fallback;
+                }}
+                alt={service.title}
+                className="services-ledger-image"
+                loading="lazy"
+                decoding="async"
+              />
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -819,26 +815,26 @@ function ProductSection({ items = fallbackProducts, loading = false }) {
   const remaining = items.slice(1, 4);
 
   return (
-    <section className="section product-voda-section" id="products">
-      <div className="container">
-        <div className="section-heading voda-heading">
+    <section className="section product-gallery-section" id="products">
+      <div className="container product-gallery-shell">
+        <div className="section-heading voda-heading product-gallery-heading">
           <span className="pill">Solutions</span>
-          <h2>Des produits metier presentes comme de vraies solutions d'organisation.</h2>
+          <h2>Des plateformes presentees comme des outils de transformation concrets.</h2>
           <p className="sub">
-            Chaque solution est formulee pour etre comprise rapidement, rassurer la prise de decision et montrer
-            une execution plus structuree.
+            Chaque produit est formule pour rendre la decision plus simple : ce que la solution fait,
+            ce qu'elle clarifie et la valeur qu'elle apporte a l'organisation.
           </p>
         </div>
 
         {loading ? <p className="sub">Chargement des produits...</p> : null}
 
         {featured ? (
-          <div className="product-voda-layout">
-            <article className="product-voda-feature">
+          <div className="product-gallery-grid">
+            <article className="product-gallery-feature">
               {featured.image_url ? (
-                <img src={featured.image_url} alt={featured.name} className="product-card-image" loading="lazy" decoding="async" />
+                <img src={featured.image_url} alt={featured.name} className="product-gallery-image" loading="lazy" decoding="async" />
               ) : null}
-              <div className="product-voda-feature-copy">
+              <div className="product-gallery-copy">
                 <span className="product-tag">{featured.tag}</span>
                 <h3>{featured.headline}</h3>
                 <p>{featured.description}</p>
@@ -851,13 +847,16 @@ function ProductSection({ items = fallbackProducts, loading = false }) {
               </div>
             </article>
 
-            <div className="product-voda-rail">
-              {remaining.map((product) => (
-                <article key={product.slug} className="product-voda-card">
-                  <span className="product-tag">{product.tag}</span>
-                  <h3>{product.headline}</h3>
-                  <p>{product.description}</p>
-                  <small>{product.category}</small>
+            <div className="product-gallery-list">
+              {remaining.map((product, index) => (
+                <article key={product.slug} className="product-gallery-item">
+                  <span className="product-gallery-index">0{index + 2}</span>
+                  <div>
+                    <span className="product-tag">{product.tag}</span>
+                    <h3>{product.headline}</h3>
+                    <p>{product.description}</p>
+                    <small>{product.category}</small>
+                  </div>
                   {product.is_available ? (
                     <Link to={`/details/${product.slug}`} className="text-link">Voir les details</Link>
                   ) : (
@@ -3088,6 +3087,8 @@ export default function App() {
     </Routes>
   );
 }
+
+
 
 
 
