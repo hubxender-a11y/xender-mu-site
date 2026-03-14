@@ -1101,31 +1101,34 @@ function HomeEditorialHero() {
   const hero = heroSlides[0];
 
   return (
-    <section className="corporate-hero" id="accueil">
-      <div className="container corporate-hero-grid">
-        <div className="corporate-hero-copy">
-          <span className="corporate-kicker">Xender-MU</span>
-          <h1>Des services digitaux penses pour structurer les operations, la marque et l'execution.</h1>
-          <p>
-            Nous accompagnons les entreprises, les ecoles et les organisations qui veulent une presence
-            digitale plus credible, des outils mieux cadres et des produits capables de soutenir leur croissance.
-          </p>
-          <div className="corporate-hero-actions">
-            <a className="btn btn-red" href="#contact">Demarrer un projet</a>
-            <Link className="text-link corporate-inline-link" to="/services">Explorer nos services</Link>
+    <section className="corporate-hero corporate-hero-immersive" id="accueil">
+      <div className="corporate-hero-backdrop">
+        <img
+          src="/images/hero-2.jpg"
+          onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = hero.fallback; }}
+          alt="Xender-MU"
+          className="corporate-hero-bg-image"
+          loading="eager"
+          decoding="async"
+        />
+      </div>
+      <div className="corporate-hero-overlay" />
+      <div className="container corporate-hero-grid immersive-grid">
+        <div className="corporate-hero-copy immersive-copy">
+          <span className="corporate-kicker corporate-kicker-light">xender-mu.connected</span>
+          <h1 className="immersive-title">
+            <span className="outline-line">XENDER-MU.</span>
+            <span className="solid-line">CONNECTED</span>
+          </h1>
+          <div className="immersive-copy-block">
+            <p>
+              Nous concevons des plateformes et services digitaux qui structurent les operations,
+              renforcent la credibilite et donnent a chaque organisation une base solide pour grandir.
+            </p>
           </div>
-        </div>
-
-        <div className="corporate-hero-visual">
-          <div className="corporate-hero-rings" aria-hidden="true" />
-          <img
-            src={hero.image}
-            onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = hero.fallback; }}
-            alt="Xender-MU"
-            className="corporate-hero-image"
-            loading="eager"
-            decoding="async"
-          />
+          <div className="corporate-hero-actions immersive-actions">
+            <a className="btn btn-red" href="#contact">Demarrer un projet</a>
+          </div>
         </div>
       </div>
     </section>
@@ -1149,6 +1152,13 @@ function HomeOverviewSection({ statsItems = [] }) {
         </div>
 
         <div className="corporate-stats-panel">
+          <article className="corporate-overview-feature">
+            <img src="/images/banner-1.jpg" alt="Execution Xender-MU" loading="lazy" decoding="async" />
+            <div className="corporate-overview-feature-copy">
+              <strong>Execution premium</strong>
+              <span>Des services digitaux mieux cadres, mieux presentes et plus faciles a projeter.</span>
+            </div>
+          </article>
           {displayStats.map((item, idx) => (
             <article key={`${item.value}-${item.label}-${idx}`} className="corporate-stat-item">
               <strong>{item.value}</strong>
@@ -3259,6 +3269,9 @@ export default function App() {
     </Routes>
   );
 }
+
+
+
 
 
 
