@@ -570,7 +570,7 @@ function HeroCarousel() {
     <section className="hero-section hero-voda hero-voda-luxe hero-voda-wow" id="accueil">
       <div className="hero-voda-background hero-voda-media">
         <img
-          src={hero.image}
+          src="/images/banner-4.jpg"
           onError={(e) => {
             e.currentTarget.onerror = null;
             e.currentTarget.src = hero.fallback;
@@ -581,17 +581,6 @@ function HeroCarousel() {
           loading="eager"
           decoding="async"
         />
-        <video
-          className="hero-video"
-          autoPlay
-          muted
-          loop
-          playsInline
-          poster={hero.image}
-        >
-          <source src="/videos/hero-main.webm" type="video/webm" />
-          <source src="/videos/hero-main.mp4" type="video/mp4" />
-        </video>
       </div>
       <div className="hero-voda-overlay" />
       <div className="hero-voda-graphic" />
@@ -3169,6 +3158,7 @@ export default function App() {
     </Routes>
   );
 }
+
 
 
 
