@@ -581,6 +581,9 @@ function HeroCarousel() {
           loading="eager"
           decoding="async"
         />
+        <video className="hero-video" autoPlay muted loop playsInline poster="/images/banner-4.jpg">
+          <source src="/videos/hero-main.mp4" type="video/mp4" />
+        </video>
       </div>
       <div className="hero-voda-overlay" />
       <div className="hero-voda-graphic" />
@@ -3158,6 +3161,7 @@ export default function App() {
     </Routes>
   );
 }
+
 
 
 
