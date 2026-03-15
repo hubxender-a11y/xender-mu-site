@@ -4298,3 +4298,63 @@ h1, h2, h3, h4 {
   position: relative;
   z-index: 1;
 }
+
+/* ===== Hero video final responsive tuning ===== */
+.hero-voda-wow {
+  min-height: clamp(720px, 100vh, 980px);
+}
+
+.hero-voda-wow .hero-voda-inner {
+  min-height: clamp(720px, 100vh, 980px);
+  align-items: center;
+}
+
+.hero-voda-wow .hero-video,
+.hero-voda-wow .hero-image-fallback {
+  object-position: center 34%;
+}
+
+.hero-voda-wow .hero-voda-overlay {
+  background:
+    radial-gradient(circle at 74% 24%, rgba(230,0,40,0.14), transparent 18%),
+    linear-gradient(90deg, rgba(8,10,14,0.92) 0%, rgba(8,10,14,0.76) 34%, rgba(8,10,14,0.56) 58%, rgba(8,10,14,0.82) 100%);
+}
+
+@media (max-width: 980px) {
+  .hero-voda-wow {
+    min-height: 82vh;
+  }
+
+  .hero-voda-wow .hero-voda-inner {
+    min-height: 82vh;
+    align-items: flex-end;
+    padding-bottom: 56px;
+  }
+
+  .hero-voda-wow .hero-video,
+  .hero-voda-wow .hero-image-fallback {
+    object-position: center 40%;
+  }
+}
+
+@media (max-width: 760px) {
+  .hero-voda-wow {
+    min-height: calc(100vh - 64px);
+  }
+
+  .hero-voda-wow .hero-voda-inner {
+    min-height: calc(100vh - 64px);
+    padding-bottom: 38px;
+  }
+
+  .hero-voda-wow .hero-video,
+  .hero-voda-wow .hero-image-fallback {
+    object-position: center 46%;
+  }
+
+  .hero-voda-wow .hero-voda-overlay {
+    background:
+      radial-gradient(circle at 70% 20%, rgba(230,0,40,0.12), transparent 16%),
+      linear-gradient(180deg, rgba(8,10,14,0.46) 0%, rgba(8,10,14,0.54) 18%, rgba(8,10,14,0.72) 58%, rgba(8,10,14,0.88) 100%);
+  }
+}
